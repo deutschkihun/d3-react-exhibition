@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import LeftMenu from './Sections/LeftMenu';
-import RightMenu from './Sections/RightMenu';
+import {LeftMenu} from './Section/LeftMenu';
+import {RightMenu} from './Section/RightMenu';
 import { Drawer, Button, Icon } from 'antd';
-import './Sections/Navbar.css';
+import './Section/Navbar.css';
 
-function NavBar() {
+export const Navbar = () => {
   const [visible, setVisible] = useState(false)
 
   const showDrawer = () => {
@@ -50,4 +50,3 @@ function NavBar() {
   )
 }
 
-export default NavBar

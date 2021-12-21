@@ -1,7 +1,7 @@
 import React from 'react'
 import {Icon} from 'antd';
 
-function Footer() {
+export const Footer = () => {
     return (
         <div style={{
             height: '80px', display: 'flex',
@@ -13,4 +13,3 @@ function Footer() {
     )
 }
 
-export default Footer

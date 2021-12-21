@@ -3,7 +3,7 @@ import { Menu } from 'antd';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
-function LeftMenu(props) {
+export const LeftMenu = (props) => {
   return (
     <Menu mode={props.mode}>
     <Menu.Item key="mail">
@@ -23,4 +23,3 @@ function LeftMenu(props) {
   )
 }
 
-export default LeftMenu

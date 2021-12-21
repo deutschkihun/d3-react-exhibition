@@ -3,7 +3,7 @@ import { Input } from 'antd';
 
 const { Search } = Input;
 
-function SearchFeature(props) {
+export const SearchEngine = (props) =>  {
 
     const [SearchTerm, setSearchTerm] = useState("")
 
@@ -24,4 +24,3 @@ function SearchFeature(props) {
     )
 }
 
-export default SearchFeature

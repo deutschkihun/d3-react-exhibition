@@ -3,7 +3,7 @@ import { Collapse, Checkbox } from 'antd';
 
 const { Panel } = Collapse;
 
-function CheckBox(props) {
+export const CheckBox = (props) => {
 
     const [Checked, setChecked] = useState([])
 
@@ -46,5 +46,3 @@ function CheckBox(props) {
         </div>
     )
 }
-
-export default CheckBox

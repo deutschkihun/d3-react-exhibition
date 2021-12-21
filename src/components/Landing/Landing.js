@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { Icon, Col, Card, Row, } from 'antd';
 import Meta from 'antd/lib/card/Meta';
-import ImageSlider from '../../utils/ImageSlider';
-import Checkbox from './Sections/CheckBox';
-import Radiobox from './Sections/RadioBox';
-import SearchFeature from './Sections/SearchFeature';
-import { continents, price } from './Sections/Datas';
+import { CheckBox } from './Section/CheckBox';
+import { RadioBox } from './Section/RadioBox';
+import { SearchEngine } from './Section/SearchEngine';
+import { continents, price } from './Section/Data';
 
-function LandingPage() {
+export const Landing = () => {
 
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
@@ -22,22 +21,23 @@ function LandingPage() {
     const loadMoreHanlder = () => {
 
         let skip = Skip + Limit
-        let body = {
+        /*let body = {
             skip: skip,
             limit: Limit,
             loadMore: true,
             filters: Filters
-        }
+        }*/
 
         setSkip(skip)
     }
 
-
+    // need to build a producht data 
     const renderCards = Products.map((product, index) => {
 
         return <Col lg={6} md={8} xs={24} key={index}>
             <Card
-                cover={<a href={`/product/${product._id}`} ><ImageSlider images={product.images} /></a>}
+                // eslint-disable-next-line jsx-a11y/anchor-has-content
+                cover={<a href={`/product/${product._id}`} ></a>}
             >
                 <Meta
                     title={product.title}
@@ -90,12 +90,12 @@ function LandingPage() {
 
     const updateSearchTerm = (newSearchTerm) => {
 
-        let body = {
+        /*let body = {
             skip: 0,
             limit: Limit,
             filters: Filters,
             searchTerm: newSearchTerm
-        }
+        }*/
 
         setSkip(0)
         setSearchTerm(newSearchTerm)
@@ -116,11 +116,11 @@ function LandingPage() {
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24}>
                     {/* CheckBox */}
-                    <Checkbox list={continents} handleFilters={filters => handleFilters(filters, "continents")} />
+                    <CheckBox list={continents} handleFilters={filters => handleFilters(filters, "continents")} />
                 </Col>
                 <Col lg={12} xs={24}>
                     {/* RadioBox */}
-                    <Radiobox list={price} handleFilters={filters => handleFilters(filters, "price")} />
+                    <RadioBox list={price} handleFilters={filters => handleFilters(filters, "price")} />
                 </Col>
             </Row>
 
@@ -131,7 +131,7 @@ function LandingPage() {
             {/* Search */}
 
             <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
-                <SearchFeature
+                <SearchEngine
                     refreshFunction={updateSearchTerm}
                 />
             </div>
@@ -155,4 +155,8 @@ function LandingPage() {
     )
 }
 
-export default LandingPage
+
+
+// content
+// svg 
+// https://www.d3-graph-gallery.com/graph/shape.html

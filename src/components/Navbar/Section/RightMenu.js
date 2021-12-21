@@ -1,8 +1,7 @@
 import React from 'react';
 import { Menu, Icon, Badge } from 'antd';
-import { withRouter } from 'react-router-dom';
 
-function RightMenu(props) {
+export const RightMenu = (props) => {
 
     return (
       <Menu mode={props.mode}>
@@ -24,5 +23,4 @@ function RightMenu(props) {
     )
 }
 
-export default withRouter(RightMenu);
 

@@ -4,7 +4,7 @@ import { Collapse, Radio } from 'antd';
 const { Panel } = Collapse;
 
 
-function RadioBox(props) {
+export const RadioBox = (props) => {
 
     const [Value, setValue] = useState(0)
 
@@ -35,4 +35,3 @@ function RadioBox(props) {
     )
 }
 
-export default RadioBox
