@@ -1,23 +1,29 @@
 import React from 'react';
 import { Menu, Icon, Badge } from 'antd';
+import {Link} from 'react-router-dom'
+import styled from 'styled-components'
+
+const Profile = styled(Link)`
+  margin-right: -22px;
+`;
+
+const ProfileIcon = styled(Icon)`
+  font-size: 30px !important;
+`;
 
 export const RightMenu = (props) => {
-
     return (
       <Menu mode={props.mode}>
-        <Menu.Item key="upload">
-          <a href="/product/upload">Upload</a>
+        <Menu.Item>
+          <Link to="/about">About</Link>
         </Menu.Item>
 
-        <Menu.Item key="cart" style={{ paddingBottom: 3 }}>
-          <Badge count={0}>
-            <a href="/123" className="head-example" style={{ marginRight: -22, color: '#667777' }} >
-              <Icon type="shopping-cart" style={{ fontSize: 30, marginBottom: 3 }} />
-            </a>
+        <Menu.Item style={{ paddingBottom: 3 }}>
+          <Badge>
+            <Profile to="/profile">
+              <ProfileIcon type="profile"/>
+            </Profile>
           </Badge>
-        </Menu.Item>
-
-        <Menu.Item key="logout">
         </Menu.Item>
       </Menu>
     )

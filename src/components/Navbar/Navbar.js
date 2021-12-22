@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom'
 import {LeftMenu} from './Section/LeftMenu';
 import {RightMenu} from './Section/RightMenu';
-import { Drawer, Button, Icon } from 'antd';
+import styled from "styled-components"
 import './Section/Navbar.css';
 
+const Menu = styled.nav`
+  padding: 0 20px;
+  border-bottom: solid 1px #e8e8e8;
+  overflow: auto;
+  box-shadow: 0 0 30px #f3f1f1;
+  background-color: white;
+  position: fixed;
+  z-index:5;
+  width:100%;
+`;
+
 export const Navbar = () => {
-  const [visible, setVisible] = useState(false)
-
-  const showDrawer = () => {
-    setVisible(true)
-  };
-
-  const onClose = () => {
-    setVisible(false)
-  };
 
   return (
-    <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
+    <Menu>
       <div className="menu__logo">
         <Link to="/">HOME</Link>
       </div>
@@ -28,26 +30,8 @@ export const Navbar = () => {
         <div className="menu_rigth">
           <RightMenu mode="horizontal" />
         </div>
-        <Button
-          className="menu__mobile-button"
-          type="primary"
-          onClick={showDrawer}
-        >
-          <Icon type="align-right" />
-        </Button>
-        <Drawer
-          title="Basic Drawer"
-          placement="right"
-          className="menu_drawer"
-          closable={false}
-          onClose={onClose}
-          visible={visible}
-        >
-          <LeftMenu mode="inline" />
-          <RightMenu mode="inline" />
-        </Drawer>
       </div>
-    </nav>
+    </Menu>
   )
 }
 
