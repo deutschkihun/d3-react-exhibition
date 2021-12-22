@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Icon, Col, Card, Row, Button } from 'antd';
+import { Icon, Col, Card, Row } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import { CheckBox } from './Section/CheckBox';
 import { RadioBox } from './Section/RadioBox';
 import { SearchEngine } from './Section/SearchEngine';
-import { continents, price } from './Section/Data';
+import { categories, price, previewData } from './Section/Data';
+import { ImageSlider } from '../utils/ImageSilder';
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -24,66 +25,60 @@ const SearchContainer = styled.div`
 
 const Title = styled.h2``;
 
-const SeeMoreContainer = styled.div`
-    display: flex;
-    justify-content: center;
-`;
-
-
-
 export const Landing = () => {
-
-    const [Products, setProducts] = useState([])
-    const [Skip, setSkip] = useState(0)
-    const [Limit, setLimit] = useState(8)
-    const [PostSize, setPostSize] = useState(0)
+    const [SearchTerm, setSearchTerm] = useState("")
+    const [preview, setpreview] = useState(previewData)
     const [Filters, setFilters] = useState({
-        continents: [],
+        categories: [],
         price: []
     })
-    const [SearchTerm, setSearchTerm] = useState("")
 
-    const loadMoreHanlder = () => {
-
-        let skip = Skip + Limit
-        /*let body = {
-            skip: skip,
-            limit: Limit,
-            loadMore: true,
-            filters: Filters
-        }*/
-
-        setSkip(skip)
-    }
-
-    // need to build a producht data 
-    const renderCards = Products.map((product, index) => {
+    const renderCards = previewData.map((preview, index) => {
 
         return <Col lg={6} md={8} xs={24} key={index}>
             <Card
                 // eslint-disable-next-line jsx-a11y/anchor-has-content
-                cover={<a href={`/product/${product._id}`} ></a>}
+                cover={<a href={`/product/${preview._id}`} ><ImageSlider images={preview.images} /></a>}
             >
                 <Meta
-                    title={product.title}
-                    description={`$${product.price}`}
+                    title={preview.name}
+                    description={`$${preview.price}`}
                 />
             </Card>
         </Col>
     })
 
     const showFilteredResults = (filters) => {
-
-        /*let body = {
-            skip: 0,
-            limit: Limit,
-            filters: filters
-        }*/
-
-        setSkip(0)
-
+ 
+        /*const test = previewData.filter((element) => element['categoryNr.'] === 1)
+        console.log(test)*/
+    
+       //const fwefw = preview.filter((element) =>  filters.categories.forEach((index) => index === element._id ))
+        /*const previewUpdate = preview.filter((element) => filters.categories.forEach((index) => 
+            index === element._id
+        ))
+        console.log(previewUpdate)*/
+       /*
+       {
+    "categories": [
+        3
+    ],
+    "price": [
+        280,
+        299
+    ]
+}*/
     }
 
+    /*const updateSearchTerm = (newSearchTerm) => {
+        let body = {
+            filters: Filters,
+            searchTerm: newSearchTerm
+        }
+
+        setSearchTerm(newSearchTerm)
+
+    }*/
 
     const handlePrice = (value) => {
         const data = price;
@@ -97,38 +92,19 @@ export const Landing = () => {
         return array;
     }
 
-    const handleFilters = (filters, category) => {
+    const handleFilters = (filters, field) => {
 
         const newFilters = { ...Filters }
+        newFilters[field] = filters
 
-        newFilters[category] = filters
-
-        console.log('filters', filters)
-
-        if (category === "price") {
+        if (field === "price") {
             let priceValues = handlePrice(filters)
-            newFilters[category] = priceValues
+            newFilters[field] = priceValues
         }
+
         showFilteredResults(newFilters)
         setFilters(newFilters)
     }
-
-    const updateSearchTerm = (newSearchTerm) => {
-
-        /*let body = {
-            skip: 0,
-            limit: Limit,
-            filters: Filters,
-            searchTerm: newSearchTerm
-        }*/
-
-        setSkip(0)
-        setSearchTerm(newSearchTerm)
-
-    }
-
-
-
     return (
         <Container>
             <TitleContainer>
@@ -137,7 +113,7 @@ export const Landing = () => {
 
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24}>
-                    <CheckBox list={continents} handleFilters={filters => handleFilters(filters, "continents")} />
+                    <CheckBox list={categories} handleFilters={filters => handleFilters(filters, "categories")} />
                 </Col>
                 <Col lg={12} xs={24}>
                     <RadioBox list={price} handleFilters={filters => handleFilters(filters, "price")} />
@@ -145,25 +121,14 @@ export const Landing = () => {
             </Row>
 
             <SearchContainer>
-                <SearchEngine refreshFunction={updateSearchTerm}/>
+                {/*<SearchEngine refreshFunction={updateSearchTerm}/>*/}
+                <SearchEngine />
             </SearchContainer>
             
             <Row gutter={[16, 16]} >
                 {renderCards}
             </Row>
-
             <br />
-
-            {PostSize >= Limit &&
-                <SeeMoreContainer>
-                    <Button onClick={loadMoreHanlder}>See more</Button>
-                </SeeMoreContainer>
-            }
-
         </Container>
     )
 }
-
-// content
-// svg 
-// https://www.d3-graph-gallery.com/graph/shape.html

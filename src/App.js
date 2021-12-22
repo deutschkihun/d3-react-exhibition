@@ -4,6 +4,7 @@ import { Landing } from './components/Landing/Landing';
 import { Error } from './components/Error/Error';
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
+import { SVG } from './components/Visualization/SVG/SVG'
 import styled from "styled-components";
 
 const Seperator = styled.div`
@@ -20,6 +21,7 @@ function App() {
         <Seperator>
           <Switch>
             <Router exact path="/" component={Landing} />
+            <Router exact path="/svg" component={SVG} />
             <Router path="*" component={Error} />
           </Switch>
         </Seperator>

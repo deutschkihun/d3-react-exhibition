@@ -1,4 +1,4 @@
-const continents = [
+const categories = [
     {
         "_id": 1,
         "name": "Pie Chart"
@@ -9,7 +9,7 @@ const continents = [
     },
     {
         "_id": 3,
-        "name": "Asia"
+        "name": "Density"
     },
     {
         "_id": 4,
@@ -63,10 +63,92 @@ const price = [
     }
 ]
 
+const previewData = [
+    {
+        "_id": 1,
+        "name": "SVG",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 2,
+        "name": "Pie Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 3,
+        "name": "Bar Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 4,
+        "name": "Line Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 5,
+        "name": "SVG",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 6,
+        "name": "Pie Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 7,
+        "name": "Bar Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 8,
+        "name": "Line Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 9,
+        "name": "SVG",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 10,
+        "name": "Pie Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 11,
+        "name": "Bar Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 12,
+        "name": "Line Chart",
+        "categoryNr.":1,
+        "price": 100
+    },
+    {
+        "_id": 13,
+        "name": "SVG",
+        "categoryNr.":2,
+        "price": 100
+    },
+]
+
 
 
 
 export {
-    continents,
-    price
+    categories,
+    price,
+    previewData
 }
