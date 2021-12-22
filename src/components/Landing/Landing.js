@@ -1,10 +1,35 @@
 import React, { useState } from 'react'
-import { Icon, Col, Card, Row, } from 'antd';
+import { Icon, Col, Card, Row, Button } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import { CheckBox } from './Section/CheckBox';
 import { RadioBox } from './Section/RadioBox';
 import { SearchEngine } from './Section/SearchEngine';
 import { continents, price } from './Section/Data';
+import styled from "styled-components"
+
+const Container = styled.div`
+    width: 75%;
+    margin: 3rem auto;
+`;
+
+const TitleContainer = styled.div`
+    text-align:center;
+`;
+
+const SearchContainer = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem auto;
+`;
+
+const Title = styled.h2``;
+
+const SeeMoreContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+
 
 export const Landing = () => {
 
@@ -105,40 +130,24 @@ export const Landing = () => {
 
 
     return (
-        <div style={{ width: '75%', margin: '3rem auto' }}>
-
-            <div style={{ textAlign: 'center' }}>
-                <h2>Let's Travel Anywhere <Icon type="rocket" /> </h2>
-            </div>
-
-            {/* Filter */}
+        <Container>
+            <TitleContainer>
+                <Title> Welcome to D3 & React Exhibition <Icon type="car" /> </Title>
+            </TitleContainer>
 
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24}>
-                    {/* CheckBox */}
                     <CheckBox list={continents} handleFilters={filters => handleFilters(filters, "continents")} />
                 </Col>
                 <Col lg={12} xs={24}>
-                    {/* RadioBox */}
                     <RadioBox list={price} handleFilters={filters => handleFilters(filters, "price")} />
                 </Col>
             </Row>
 
-
-
-
-
-            {/* Search */}
-
-            <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
-                <SearchEngine
-                    refreshFunction={updateSearchTerm}
-                />
-            </div>
-
-            {/* Cards */}
-
-
+            <SearchContainer>
+                <SearchEngine refreshFunction={updateSearchTerm}/>
+            </SearchContainer>
+            
             <Row gutter={[16, 16]} >
                 {renderCards}
             </Row>
@@ -146,16 +155,14 @@ export const Landing = () => {
             <br />
 
             {PostSize >= Limit &&
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button onClick={loadMoreHanlder}>더보기</button>
-                </div>
+                <SeeMoreContainer>
+                    <Button onClick={loadMoreHanlder}>See more</Button>
+                </SeeMoreContainer>
             }
 
-        </div>
+        </Container>
     )
 }
-
-
 
 // content
 // svg 

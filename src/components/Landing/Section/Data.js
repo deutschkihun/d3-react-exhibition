@@ -1,11 +1,11 @@
 const continents = [
     {
         "_id": 1,
-        "name": "Africa"
+        "name": "Pie Chart"
     },
     {
         "_id": 2,
-        "name": "Europe"
+        "name": "Bar Chart"
     },
     {
         "_id": 3,

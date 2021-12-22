@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 import {LeftMenu} from './Section/LeftMenu';
 import {RightMenu} from './Section/RightMenu';
 import { Drawer, Button, Icon } from 'antd';
@@ -18,7 +19,7 @@ export const Navbar = () => {
   return (
     <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
       <div className="menu__logo">
-        <a href="/">Logo</a>
+        <Link to="/">HOME</Link>
       </div>
       <div className="menu__container">
         <div className="menu_left">

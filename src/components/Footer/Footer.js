@@ -1,15 +1,23 @@
 import React from 'react'
 import {Icon} from 'antd';
+import styled from "styled-components"
+
+const FooterWrapper = styled.div`
+    height:80px;
+    display: flex;
+    fiex-direction:column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+`;
+
+const FooterText = styled.p``
 
 export const Footer = () => {
     return (
-        <div style={{
-            height: '80px', display: 'flex',
-            flexDirection: 'column', alignItems: 'center',
-            justifyContent: 'center', fontSize:'1rem'
-        }}>
-           <p> Happy Coding  <Icon type="smile" /></p>
-        </div>
+        <FooterWrapper>
+            <FooterText> D3 & React Exhibition <Icon type="smile" /></FooterText>
+        </FooterWrapper>
     )
 }
 

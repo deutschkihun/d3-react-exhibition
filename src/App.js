@@ -5,7 +5,6 @@ import { Error } from './components/Error/Error';
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
 import styled from "styled-components";
-import './App.css';
 
 const Seperator = styled.div`
   padding-top:69px;

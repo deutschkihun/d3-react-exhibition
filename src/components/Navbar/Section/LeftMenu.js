@@ -7,7 +7,7 @@ export const LeftMenu = (props) => {
   return (
     <Menu mode={props.mode}>
     <Menu.Item key="mail">
-      <a href="/">Home</a>
+      <a href="/">Homee</a>
     </Menu.Item>
     <SubMenu title={<span>Blogs</span>}>
       <MenuItemGroup title="Item 1">
