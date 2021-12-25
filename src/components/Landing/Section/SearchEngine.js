@@ -11,7 +11,6 @@ export const SearchEngine = (props) =>  {
 
     const [SearchTerm, setSearchTerm] = useState("")
     const searchHandler = (event) => {
-        console.log(event.currentTarget.value)
         setSearchTerm(event.currentTarget.value)
         props.refreshFunction(event.currentTarget.value)
     }

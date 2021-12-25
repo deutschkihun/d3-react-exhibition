@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Icon, Col, Card, Row } from 'antd';
+import axios from "axios";
 import Meta from 'antd/lib/card/Meta';
 import { CheckBox } from './Section/CheckBox';
 import { RadioBox } from './Section/RadioBox';
 import { SearchEngine } from './Section/SearchEngine';
-import { categories, price, previewData } from './Section/Data';
+import { categories, level } from './Section/Data';
 import { ImageSlider } from '../utils/ImageSilder';
 import styled from "styled-components"
 
@@ -26,85 +27,66 @@ const SearchContainer = styled.div`
 const Title = styled.h2``;
 
 export const Landing = () => {
+    const [items, setItems] = useState([])
     const [SearchTerm, setSearchTerm] = useState("")
-    const [preview, setpreview] = useState(previewData)
     const [Filters, setFilters] = useState({
         categories: [],
-        price: []
+        level: []
     })
 
-    const renderCards = previewData.map((preview, index) => {
+    useEffect(() => {
+        getAllProducts()
+    }, [])
 
+    const getAllProducts = async () => {
+        await axios.get('/api/v1/products')
+            .then(response => {
+                if(response.data.length > 0) {
+                    setItems(response.data.d3react)
+                }
+            })
+    }
+
+    const getProducts = async (body) => {
+        await axios.post('/api/v1/products/filter', body)
+            .then(response => {
+                if (response.data.success) {
+                    console.log(response.data)
+                } else {
+                    alert("Fail to load data")
+                }
+            })
+    }
+
+
+    const renderCards = items.map((item, index) => {
         return <Col lg={6} md={8} xs={24} key={index}>
-            <Card
-                // eslint-disable-next-line jsx-a11y/anchor-has-content
-                cover={<a href={`/product/${preview._id}`} ><ImageSlider images={preview.images} /></a>}
-            >
+            <Card cover={<a href={`/product/${item._id}`} ><ImageSlider images={item.images} /></a>}>
                 <Meta
-                    title={preview.name}
-                    description={`$${preview.price}`}
+                    title={item.name}
+                    description={`level: ${item.level}`}
                 />
             </Card>
         </Col>
     })
 
-    const showFilteredResults = (filters) => {
- 
-        /*const test = previewData.filter((element) => element['categoryNr.'] === 1)
-        console.log(test)*/
-    
-       //const fwefw = preview.filter((element) =>  filters.categories.forEach((index) => index === element._id ))
-        /*const previewUpdate = preview.filter((element) => filters.categories.forEach((index) => 
-            index === element._id
-        ))
-        console.log(previewUpdate)*/
-       /*
-       {
-    "categories": [
-        3
-    ],
-    "price": [
-        280,
-        299
-    ]
-}*/
-    }
-
-    /*const updateSearchTerm = (newSearchTerm) => {
-        let body = {
+    const updateSearchTerm = (newSearchTerm) => {
+        setSearchTerm(newSearchTerm)
+        getProducts({
             filters: Filters,
             searchTerm: newSearchTerm
-        }
+        })
 
-        setSearchTerm(newSearchTerm)
-
-    }*/
-
-    const handlePrice = (value) => {
-        const data = price;
-        let array = [];
-
-        for (let key in data) {
-            if (data[key]._id === parseInt(value, 10)) {
-                array = data[key].array;
-            }
-        }
-        return array;
     }
 
     const handleFilters = (filters, field) => {
-
         const newFilters = { ...Filters }
         newFilters[field] = filters
-
-        if (field === "price") {
-            let priceValues = handlePrice(filters)
-            newFilters[field] = priceValues
-        }
-
-        showFilteredResults(newFilters)
-        setFilters(newFilters)
+        getProducts({
+            filters:filters
+        }).then(() => setFilters(newFilters))
     }
+
     return (
         <Container>
             <TitleContainer>
@@ -116,13 +98,12 @@ export const Landing = () => {
                     <CheckBox list={categories} handleFilters={filters => handleFilters(filters, "categories")} />
                 </Col>
                 <Col lg={12} xs={24}>
-                    <RadioBox list={price} handleFilters={filters => handleFilters(filters, "price")} />
+                    <RadioBox list={level} handleFilters={filters => handleFilters(filters, "level")} />
                 </Col>
             </Row>
 
             <SearchContainer>
-                {/*<SearchEngine refreshFunction={updateSearchTerm}/>*/}
-                <SearchEngine />
+                <SearchEngine refreshFunction={updateSearchTerm}/>
             </SearchContainer>
             
             <Row gutter={[16, 16]} >
