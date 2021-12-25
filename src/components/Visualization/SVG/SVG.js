@@ -2,8 +2,7 @@ import React, { useEffect } from 'react'
 import * as d3 from 'd3'
 import styled from 'styled-components'
 
-export const OutLine = styled.div`
-  max-width: 1440px;
+export const Wrapper = styled.div`
   margin: auto;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -12,17 +11,18 @@ export const OutLine = styled.div`
   padding-right: 5vw;
 `;
 export const ProjectContainer = styled.form`
-  max-width: 1000px;
+  width: 60vw;
   margin: 0 auto;
   margin-top: 6rem;
 `;
+
 
 export const SVG = () => {
 
     // 8 to 10 different variation
     
     useEffect(() => {
-        var svg = d3.select("#dataviz_area")
+        var svg = d3.select("#dataviz_area").attr('width','55vw')
         svg.append("circle")
             .attr("cx", 2).attr("cy", 2).attr("r", 40).style("fill", "blue");
         svg.append("circle")
@@ -45,26 +45,57 @@ export const SVG = () => {
 
     return (
         <>
-        <OutLine>
-            <ProjectContainer>
-                
-            </ProjectContainer>
-        </OutLine>
-            {/* svg without d3 */}
-            <svg>
-                <circle style={{fill:"#69b3a2"}} stroke="black" cx="100" cy="100" r="10"></circle>
-            </svg>
-
+            <Wrapper>
+                <ProjectContainer>
+                {/* svg without d3 */}
+                <svg>
+                    <circle style={{fill:"#69b3a2"}} stroke="black" cx="100" cy="100" r="10"></circle>
+                    <circle style={{fill:"#69b3a2"}} stroke="black" cx="150" cy="130" r="20"></circle>
+                    <circle style={{fill:"#69b3a2"}} stroke="black" cx="300" cy="130" r="20"></circle>
+                </svg>
+                <svg>
+                </svg>
+                </ProjectContainer>
+            </Wrapper>
+            <Wrapper>
+                <ProjectContainer>
             {/* svg with d3 */}
             <svg id="dataviz_area" height="200" width="450" />
-            <svg> 
-                <circle id="target" style={{fill:"#69b3a2"}} stroke="black" cx="50" cy="50" r="40"></circle>
-            </svg>
-
-            {/* svg with d3 */}
-            <svg id="rect"/>
+                </ProjectContainer>
+            </Wrapper>
+            <Wrapper>
+                <ProjectContainer>
+                <svg> 
+                    <circle id="target" style={{fill:"#69b3a2"}} stroke="black" cx="50" cy="50" r="40"></circle>
+                </svg>
+                </ProjectContainer>
+            </Wrapper>
+            <Wrapper>
+                <ProjectContainer>
+                <svg id="rect"/>
+                </ProjectContainer>
+            </Wrapper>
+            <Wrapper>
+                <ProjectContainer>
+                <svg id="rect"/>
+                </ProjectContainer>
+            </Wrapper>
+            <Wrapper>
+                <ProjectContainer>
+                <svg id="rect"/>
+                </ProjectContainer>
+            </Wrapper>
+            <Wrapper>
+                <ProjectContainer>
+                <svg id="rect"/>
+                </ProjectContainer>
+            </Wrapper>
+            <Wrapper>
+                <ProjectContainer>
+                <svg id="rect"/>
+                </ProjectContainer>
+            </Wrapper>
         </>
-       
     )
 }
 

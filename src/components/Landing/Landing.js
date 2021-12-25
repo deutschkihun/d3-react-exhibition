@@ -28,6 +28,7 @@ const Title = styled.h2``;
 
 export const Landing = () => {
     const [items, setItems] = useState([])
+    // eslint-disable-next-line no-unused-vars
     const [SearchTerm, setSearchTerm] = useState("")
     const [Filters, setFilters] = useState({
         categories: [],
@@ -61,7 +62,7 @@ export const Landing = () => {
 
     const renderCards = items.map((item, index) => {
         return <Col lg={6} md={8} xs={24} key={index}>
-            <Card cover={<a href={`/product/${item._id}`} ><ImageSlider images={item.images} /></a>}>
+            <Card cover={<a href={`/product/${item._id}`} ><ImageSlider name={item.name} /></a>}>
                 <Meta
                     title={item.name}
                     description={`${item.description}`}

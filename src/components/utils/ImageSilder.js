@@ -1,17 +1,19 @@
 import React from 'react'
 import { Carousel } from 'antd';
+import flag from '../../uploads/SVG/flag.jpg'
 
 export const ImageSlider = (props) => {
+    //const image = props.name && require(`./../../brands/${brand}/${branding.dashboardBackground}`).default;
+    console.log(props.name)
+    const image = require(`../../uploads/SVG`).default
+    console.log("image",flag)
     return (
         <div>
             <Carousel autoplay >
-                {props.images.length > 0 ? props.images.map((image, index) => (
-                    <div key={index}>
+                    <div key={props.name}>
                         <img style={{ width: '100%', maxHeight: '150px' }}
-                            src={`http://localhost:3000/${image}`} alt="hello" />
-                    </div>
-                )) :  <img style={{ width: '100%', maxHeight: '150px' }}
-                src={`http://localhost:3000/`} alt="hello" />}
+                            src={flag} alt={props.name} />
+    </div>
             </Carousel>
         </div>
     )
