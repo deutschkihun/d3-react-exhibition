@@ -1,114 +1,30 @@
 [
     {
         "name": "SVG",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
+        "level": 1,
         "images":[],
-        "categories":1
+        "categories":1,
+        "description":"SVG gallery thumbnail"
     },
     {
         "name": "Pie Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
+        "level": 2,
         "images":[],
-        "categories":2
-    },
-    {
-        "name": "Bar Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":3
+        "categories":2,
+        "description":"Pie Chart gallery thumbnail"
     },
     {
         "name": "Line Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
+        "level": 3,
         "images":[],
-        "categories":4
-    },
-    {
-        "name": "SVG",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":5
-    },
-    {
-        "name": "Pie Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":6
+        "categories":3,
+        "description":"Line Chart gallery thumbnail"
     },
     {
         "name": "Bar Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
+        "level": 4,
         "images":[],
-        "categories":7
-    },
-    {
-        "name": "Line Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":1
-    },
-    {
-        "name": "SVG",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":2
-    },
-    {
-        "name": "Pie Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":3
-    },
-    {
-        "name": "Bar Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":4
-    },
-    {
-        "name": "Line Chart",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":5
-    },
-    {
-        "name": "SVG",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":6
-    },
-    {
-        "name": "SVG",
-        "level": "Newbie",
-        "title":"fwefw",
-        "description":"fewf",
-        "images":[],
-        "categories":7
+        "categories":4,
+        "description":"Bar Chart gallery thumbnail"
     }
 ]

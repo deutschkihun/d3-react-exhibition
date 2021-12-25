@@ -17,7 +17,7 @@ export const RadioBox = (props) => {
 
     const handleChange = (event) => {
         setValue(event.target.value)
-        props.handleFilters(event.target.value)
+        props.handleFilters([event.target.value])
     }
 
     return (

@@ -51,7 +51,7 @@ export const Landing = () => {
         await axios.post('/api/v1/products/filter', body)
             .then(response => {
                 if (response.data.success) {
-                    console.log(response.data)
+                    setItems([...response.data.data])
                 } else {
                     alert("Fail to load data")
                 }
@@ -64,7 +64,7 @@ export const Landing = () => {
             <Card cover={<a href={`/product/${item._id}`} ><ImageSlider images={item.images} /></a>}>
                 <Meta
                     title={item.name}
-                    description={`level: ${item.level}`}
+                    description={`${item.description}`}
                 />
             </Card>
         </Col>
@@ -81,10 +81,11 @@ export const Landing = () => {
 
     const handleFilters = (filters, field) => {
         const newFilters = { ...Filters }
-        newFilters[field] = filters
+        newFilters[field] = filters;
+        setFilters(newFilters)
         getProducts({
-            filters:filters
-        }).then(() => setFilters(newFilters))
+                filters:newFilters,
+            }).then(() => setFilters(newFilters))
     }
 
     return (

@@ -1,5 +1,21 @@
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
+import styled from 'styled-components'
+
+export const OutLine = styled.div`
+  max-width: 1440px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-row-gap: 0px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+`;
+export const ProjectContainer = styled.form`
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 6rem;
+`;
 
 export const SVG = () => {
 
@@ -29,6 +45,11 @@ export const SVG = () => {
 
     return (
         <>
+        <OutLine>
+            <ProjectContainer>
+                
+            </ProjectContainer>
+        </OutLine>
             {/* svg without d3 */}
             <svg>
                 <circle style={{fill:"#69b3a2"}} stroke="black" cx="100" cy="100" r="10"></circle>

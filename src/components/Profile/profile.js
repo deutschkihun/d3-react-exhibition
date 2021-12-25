@@ -28,7 +28,7 @@ export const Profile = () => {
     return (
         <ProfileWrapper>
             <ProfileTitle>Kihun Kim</ProfileTitle>
-            <ProfileMessage>This page is made by Kihun Kim. He is current frontend engineer in PACE Telematics in Germany. 
+            <ProfileMessage>This page is made by Kihun Kim. He is current frontend engineer at PACE Telematics in Germany. 
                 <Icon type="smile" /></ProfileMessage>
             <Button onClick={() => window.location.assign('https://www.deutschkihun.com')}>Get to more about Kihun</Button>
             <LogoWrapper>
