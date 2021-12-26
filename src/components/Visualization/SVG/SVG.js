@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
+import { range } from 'd3';
 import styled from 'styled-components'
+import { Face } from './Face';
 
 export const Wrapper = styled.div`
   margin: auto;
@@ -40,20 +42,71 @@ export const Code = styled.code``;
 
 export const SVG = () => {
 
-    // 8 to 10 different variation
+    const width = 160;
+    const height = 160;
+    const array = range(6 * 3);
     
     useEffect(() => {
         var svg = d3.select("#ex_rect1").attr('width','55vw')
         svg.append("circle")
-            .attr("cx", 2).attr("cy", 2).attr("r", 40).style("fill", "blue");
+            .attr("cx", 6).attr("cy", 6).attr("r", 70).style("fill", "blue").attr('fill-opacity','0.6');
         svg.append("circle")
-            .attr("cx", 140).attr("cy", 70).attr("r", 40).style("fill", "red");
+            .attr("cx", 10).attr("cy", 10).attr("r", 80).style("fill", "black").attr('fill-opacity','0.6');
         svg.append("circle")
-            .attr("cx", 300).attr("cy", 100).attr("r", 40).style("fill", "green");
+            .attr("cx", 10).attr("cy", 10).attr("r", 90).style("fill", "yello").attr('fill-opacity','0.6');
+        svg.append("circle")
+            .attr("cx", 10).attr("cy", 10).attr("r", 100).style("fill", "grey").attr('fill-opacity','0.6');
+        svg.append("circle")
+            .attr("cx", 200).attr("cy", 70).attr("r", 40).style("fill", "red");
+        svg.append("circle")
+            .attr("cx", 300).attr("cy", 100).attr("r", 40).style("fill", "blue");
+        svg.append("circle")
+            .attr("cx", 400).attr("cy", 70).attr("r", 40).style("fill", "black");
+        svg.append("circle")
+            .attr("cx", 500).attr("cy", 100).attr("r", 40).style("fill", "green");
+        svg.append("circle")
+            .attr("cx", 600).attr("cy", 70).attr("r", 40).style("fill", "yellow");
+        svg.append("circle")
+            .attr("cx", 700).attr("cy", 100).attr("r", 40).style("fill", "pink");
+        svg.append("circle")
+            .attr("cx", 800).attr("cy", 70).attr("r", 40).style("fill", "yellow");
+        svg.append("circle")
+            .attr("cx", 900).attr("cy", 100).attr("r", 40).style("fill", "pink");
 
-        d3.select('#target')
-        .style("stroke-width", 8) // change their style: stroke width is not equal to 8 pixels
-
+        var olympicFlag = d3.select('#olympic_flag').attr('width','55vw').attr('height',"250px")
+        olympicFlag.append('circle')
+            .attr("cx", 110).attr("cy", 100).attr("r", 60).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 240).attr("cy", 100).attr("r", 60).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 370).attr("cy", 100).attr("r", 60).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 175).attr("cy", 175).attr("r", 60).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 305).attr("cy", 175).attr("r", 60).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")
+        
+        olympicFlag.append('circle')
+            .attr("cx", 500).attr("cy", 100).attr("r", 40).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 600).attr("cy", 100).attr("r", 40).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 700).attr("cy", 100).attr("r", 40).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 550).attr("cy", 150).attr("r", 40).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 650).attr("cy", 150).attr("r", 40).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")
+         
+        olympicFlag.append('circle')
+            .attr("cx", 500).attr("cy", 100).attr("r", 20).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 600).attr("cy", 100).attr("r", 20).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 700).attr("cy", 100).attr("r", 20).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 550).attr("cy", 150).attr("r", 20).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")
+        olympicFlag.append('circle')
+            .attr("cx", 650).attr("cy", 150).attr("r", 20).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")
+      
         var rect = d3.select("#rect").append("svg").attr("width", 800).attr("height", 200)
         rect.append('rect')
             .attr('x', 10)
@@ -97,45 +150,111 @@ export const SVG = () => {
                     <h4>stroke: Outline color of the shape</h4>
                     <h4>cx / cy / r: X-axis coordination / y-axis coordination / radius of circle</h4>
                 </Explanation>
+            </Wrapper>
 
+            <Wrapper>
+                <Container>
+                    <Title>SVG with D3</Title>
+                    <svg id="ex_rect1"/>
+                </Container>
+                <Explanation>
+                    <h3>Creat a {"<svg> tag"} and wrap circle with {"<circle> tag"}. This should be selectd by d3.select</h3>
+                    <Pre>
+                    <Code>
+                        <span>{'useEffect(() => {'}</span>
+                            <br/>
+                        <span>{'    var svg = d3.select("#ex_rect1").attr("width","55vw")'}</span>
+                            <br/>
+                        <span>{'    svg.append("circle")'}</span>
+                            <br/>
+                        <span>{`        .attr("cx", 6).attr("cy", 6).attr("r", 70).style("fill", "blue").attr('fill-opacity','0.6')`}</span>
+                            <br/>
+                        <span>{'    svg.append("circle")'}</span>
+                            <br/>
+                        <span>{`        .attr("cx", 200).attr("cy", 70).attr("r", 40).style("fill", "red")`}</span>
+                            <br/>
+                        <span>{'}, [])'}</span>
+                            <br/>
+                            <br/>
+                        <span>{'<svg id="ex_rect1"/>'}</span>
+                    </Code>
+                    </Pre>
+                    <h4>style: CSS styling</h4>
+                    <h4>attr: Abbrevitation for attribute. With this keyword, we can add new attribute in svg</h4>
+                    <h4>cx / cy / r: X-axis coordination / y-axis coordination / radius of circle</h4>
+                </Explanation>
+            </Wrapper>
+
+            <Wrapper>
+                <Container>
+                    <Title>Ex.) Olympic flag</Title>
+                    <svg id="olympic_flag"/>
+                </Container>
+                <Explanation>
+                    <h3>Building a olympic flag by d3 and React</h3>
+                    <Pre>
+                    <Code>
+                        <span>{'useEffect(() => {'}</span>
+                            <br/>
+                        <span>{'    var olympicFlag = d3.select("#olympic_flag").attr("width","55vw").attr("height","250px")'}</span>
+                            <br/>
+                        <span>{'     olympicFlag.append("circle")'}</span>   
+                            <br/>
+                        <span>{`        .attr("cx", 500).attr("cy", 100).attr("r", 40).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")`}</span>
+                            <br/>
+                        <span>{`        .attr("cx", 600).attr("cy", 100).attr("r", 40).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")`}</span>
+                            <br/>
+                        <span>{`        .attr("cx", 700).attr("cy", 100).attr("r", 40).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")`}</span>
+                            <br/>
+                        <span>{`        .attr("cx", 550).attr("cy", 150).attr("r", 20).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")`}</span>
+                            <br/>
+                        <span>{`        .attr("cx",650).attr("cy", 150).attr("r", 20).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")`}</span>
+                            <br/>
+                        <span>{'}, [])'}</span>
+                            <br/>
+                            <br/>
+                        <span>{'<svg id="olympic_flag"/>'}</span>
+                    </Code>
+                    </Pre>
+                    <h4>stroke-width: width of stroke on svg</h4>
+                </Explanation>
             </Wrapper>
             <Wrapper>
                 <Container>
-            <svg id="ex_rect1" height="200" width="450" />
+                    <Title>Ex.2) Emoji</Title>
+                    {array.map(() => (
+                        <Face
+                        width={width}
+                        height={height}
+                        centerX={width / 2}
+                        centerY={height / 2}
+                        strokeWidth={6 + Math.random() * 3}
+                        eyeOffsetX={20 + Math.random() * 9}
+                        eyeOffsetY={20 + Math.random() * 15}
+                        eyeRadius={5 + Math.random() * 10}
+                        mouthWidth={7 + Math.random() * 9}
+                        mouthRadius={30 + Math.random() * 10}
+                        />
+                    ))}
                 </Container>
             </Wrapper>
             <Wrapper>
                 <Container>
-                <svg> 
-                    <circle id="target" style={{fill:"#69b3a2"}} stroke="black" cx="50" cy="50" r="40"></circle>
-                </svg>
+                <Title>SVG Transformation</Title>
                 </Container>
             </Wrapper>
             <Wrapper>
                 <Container>
-                {/* smile svg */}
+                    <Title>SVG Morph</Title>
                 </Container>
             </Wrapper>
             <Wrapper>
                 <Container>
-                <svg id="rect"/>
+                    <Title>SVG Draw</Title>
                 </Container>
             </Wrapper>
-            <Wrapper>
-                <Container>
-                <svg id="rect"/>
-                </Container>
-            </Wrapper>
-            <Wrapper>
-                <Container>
-                <svg id="rect"/>
-                </Container>
-            </Wrapper>
-            <Wrapper>
-                <Container>
-                <svg id="rect"/>
-                </Container>
-            </Wrapper>
+            <div>
+            </div>
         </>
     )
 }
