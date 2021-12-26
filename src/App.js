@@ -14,6 +14,7 @@ const Seperator = styled.div`
   min-height:calc(100vh - 80px);
 `
 
+
 function App() {
   return (
     <>
@@ -23,7 +24,10 @@ function App() {
         <Seperator>
           <Switch>
             <Router exact path="/" component={Landing} />
-            <Router exact path="/svg" component={SVG} />
+            <Router exact path="/SVG" component={SVG} />
+            <Router exact path="/PieChart" component={SVG} />
+            <Router exact path="/LineChart" component={SVG} />
+            <Router exact path="/BarChart" component={SVG} />
             <Router exact path="/about" component={About} />
             <Router exact path="/profile" component={Profile} />
             <Router path="*" component={Error} />

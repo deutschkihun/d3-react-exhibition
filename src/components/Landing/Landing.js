@@ -59,10 +59,9 @@ export const Landing = () => {
             })
     }
 
-
     const renderCards = items.map((item, index) => {
         return <Col lg={6} md={8} xs={24} key={index}>
-            <Card cover={<a href={`/product/${item._id}`} ><ImageSlider name={item.name} /></a>}>
+            <Card cover={<a href={`${item.name.replace(/\s/g, '')}`} ><ImageSlider name={item.name} /></a>}>
                 <Meta
                     title={item.name}
                     description={`${item.description}`}
