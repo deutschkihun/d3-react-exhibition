@@ -14,10 +14,6 @@ const productSchema = mongoose.Schema({
     level: {
         type: Number,
     },
-    images: {
-        type: Array,
-        default: []
-    },
     categories: {
         type: Number,
     },
