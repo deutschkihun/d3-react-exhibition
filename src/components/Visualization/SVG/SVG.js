@@ -231,18 +231,6 @@ export const SVG = () => {
 
             <Wrapper>
                 <Container>
-                <Title>SVG with D3: Linear line </Title>
-                </Container>
-            </Wrapper>
-
-            <Wrapper>
-                <Container>
-                <Title>SVG with D3: Curve </Title>
-                </Container>
-            </Wrapper>
-
-            <Wrapper>
-                <Container>
                     <Title>Ex.1) Olympic flag</Title>
                     <svg id="olympic_flag"/>
                 </Container>
@@ -278,6 +266,67 @@ export const SVG = () => {
 
             <Wrapper>
                 <Container>
+                    <Title>Ex.2) Emoji Basic: Smile,Bad,Crying,Angry</Title>
+                        <Face
+                            width={width}
+                            height={height}
+                            centerX={width / 2}
+                            centerY={height / 2}
+                            strokeWidth={9}
+                            eyeOffsetX={29}
+                            eyeOffsetY={35}
+                            eyeRadius={10}
+                            mouthWidth={10}
+                            mouthRadius={35}
+                            type={"smile"}
+                        />
+                        <Face
+                            width={width}
+                            height={height}
+                            centerX={width / 2}
+                            centerY={height / 2}
+                            strokeWidth={9}
+                            eyeOffsetX={29}
+                            eyeOffsetY={35}
+                            eyeRadius={10}
+                            mouthWidth={10}
+                            mouthRadius={35}
+                            type={"bad"}
+                        />
+                         <Face
+                            width={width}
+                            height={height}
+                            centerX={width / 2}
+                            centerY={height / 2}
+                            strokeWidth={9}
+                            eyeOffsetX={29}
+                            eyeOffsetY={35}
+                            eyeRadius={10}
+                            mouthWidth={10}
+                            mouthRadius={35}
+                            type={"crying"}
+                        />
+                         <Face
+                            width={width}
+                            height={height}
+                            centerX={width / 2}
+                            centerY={height / 2}
+                            strokeWidth={9}
+                            eyeOffsetX={29}
+                            eyeOffsetY={35}
+                            eyeRadius={10}
+                            mouthWidth={10}
+                            mouthRadius={35}
+                            type={"angry"}
+                        />
+                </Container>
+              
+            </Wrapper>
+
+
+
+            <Wrapper>
+                <Container>
                     <Title>Ex.2) Random Emoji</Title>
                     {array.map(() => (
                         <Face
@@ -291,6 +340,7 @@ export const SVG = () => {
                         eyeRadius={5 + Math.random() * 10}
                         mouthWidth={7 + Math.random() * 9}
                         mouthRadius={30 + Math.random() * 10}
+                        type={"smile"}
                         />
                     ))}
                 </Container>
@@ -340,7 +390,6 @@ export const SVG = () => {
                 <Container>
                     <Title>Ex.6) SVG Draw</Title>
                 </Container>
-                
             </Wrapper>
         </>
     )
