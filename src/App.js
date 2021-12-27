@@ -8,6 +8,7 @@ import { SVG } from './components/Visualization/SVG/SVG'
 import { About } from './components/About/about';
 import { Profile } from './components/Profile/profile';
 import styled from "styled-components";
+import { LineChart } from './components/Visualization/LineChart/LineChart';
 
 const Seperator = styled.div`
   padding-top:69px;
@@ -26,7 +27,7 @@ function App() {
             <Router exact path="/" component={Landing} />
             <Router exact path="/SVG" component={SVG} />
             <Router exact path="/PieChart" component={SVG} />
-            <Router exact path="/LineChart" component={SVG} />
+            <Router exact path="/LineChart" component={LineChart} />
             <Router exact path="/BarChart" component={SVG} />
             <Router exact path="/about" component={About} />
             <Router exact path="/profile" component={Profile} />

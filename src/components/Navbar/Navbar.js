@@ -1,9 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import {LeftMenu} from './Section/LeftMenu';
-import {RightMenu} from './Section/RightMenu';
+import {useHistory} from 'react-router-dom'
+import {LeftMenu} from './LeftMenu';
+import {RightMenu} from './RightMenu';
 import styled from "styled-components"
-import './Section/Navbar.css';
+import {Icon} from 'antd';
+import 'antd/dist/antd.css';
+
 
 const Menu = styled.nav`
   padding: 0 20px;
@@ -16,21 +18,54 @@ const Menu = styled.nav`
   width:100%;
 `;
 
+const HomeLogo = styled.div`
+  float:left;
+  .home {
+    display: inline-block;
+    font-size: 20px;
+    padding: 19px 20px;
+    font-size: 30px !important;
+  }
+`;
+
+const MenuContainer = styled.div`
+  .ant-menu-item {
+    padding: 0px 5px;
+  }
+
+  .ant-menu-submenu-title {
+    padding: 10px 20px;
+  }
+
+  .ant-menu-item a, .ant-menu-submenu-title a {
+  padding: 10px 15px;
+  }
+`;
+
+const Left = styled.div`
+  float:left;
+`;
+
+const Right = styled.div`
+  float:right;
+`
+
 export const Navbar = () => {
+  const history = useHistory()
 
   return (
     <Menu>
-      <div className="menu__logo">
-        <Link to="/">HOME</Link>
-      </div>
-      <div className="menu__container">
-        <div className="menu_left">
-          <LeftMenu mode="horizontal" />
-        </div>
-        <div className="menu_rigth">
-          <RightMenu mode="horizontal" />
-        </div>
-      </div>
+      <HomeLogo>
+        <Icon className="home" type="home" onClick={() => history.push('/')} />
+      </HomeLogo>
+      <MenuContainer>
+        <Left>
+          <LeftMenu mode="horizontal"/>
+        </Left>
+        <Right>
+          <RightMenu mode="horizontal"/>
+        </Right>
+      </MenuContainer>
     </Menu>
   )
 }

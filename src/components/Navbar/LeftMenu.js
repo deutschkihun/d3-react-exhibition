@@ -7,9 +7,6 @@ const MenuItemGroup = Menu.ItemGroup;
 export const LeftMenu = (props) => {
   return (
     <Menu mode={props.mode}>
-    <Menu.Item key="mail">
-      <a href="/">TBD</a>
-    </Menu.Item>
     <SubMenu title={<span>Quick</span>}>
       <MenuItemGroup title="Newbie">
         <Menu.Item key="setting:1"><Link to="/SVG">SVG</Link></Menu.Item>
