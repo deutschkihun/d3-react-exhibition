@@ -38,6 +38,17 @@ export const Explanation = styled.form`
     max-width: 1200px;
 `;
 
+export const Content = styled.div`
+    margin: 0 auto;
+    box-shadow: none;
+    margin-top: 3rem;
+    width: 60vw;
+    min-width: 400px;
+    max-width: 1200px;
+    justify-content:flex-end;
+`;
+
+
 export const Code = styled.code``;
 
 export const SVG = () => {
@@ -139,12 +150,15 @@ export const SVG = () => {
     return (
         <>
             <Wrapper>
-                    <Explanation>
+                    <Content>
                         <Title>Welcome to SVG exhibition</Title>
-                        <Explanation>
-                            <p>This page is for svg</p>
-                        </Explanation>
-                    </Explanation>
+                            <p>Scalable Vector Graphics (SVG) are an XML-based markup language for describing two-dimensional based vector graphics.SVG is open Web standard 
+                            for describing images that can be rendered cleanly at any size and are designed specifically to work well with other web standards including CSS, 
+                            DOM, JavaScript, and SMIL. SVG is, essentially, to graphics what HTML is to text. SVG images and their related behaviors are defined in XML text 
+                            files, which means they can be searched, indexed, scripted, and compressed. Additionally, this means they can be created and edited with any text 
+                            editor or with drawing software. Compared to classic bitmapped image formats such as JPEG or PNG, SVG-format vector images can be rendered at any 
+                            size without loss of quality and can be easily localized by updating the text within them, without the need of a graphical editor to do so.</p>
+                    </Content>
             </Wrapper>
             
             <Wrapper>
@@ -444,19 +458,8 @@ export const SVG = () => {
 
             <Wrapper>
                 <Container>
-                <Title>Ex.4) SVG Transformation</Title>
-                </Container>
-            </Wrapper>
-
-            <Wrapper>
-                <Container>
-                    <Title>Ex.5) SVG Morph</Title>
-                </Container>
-            </Wrapper>
-
-            <Wrapper>
-                <Container>
-                    <Title>Ex.6) SVG Draw</Title>
+                <Title>Ex.4) SVG Animation with gsap: Tweens</Title>
+                <p>GSAP is one of the most powerful javascript library for web animation. With this library, we can make a svg animation, such as transform or morph</p>
                 </Container>
             </Wrapper>
         </>
