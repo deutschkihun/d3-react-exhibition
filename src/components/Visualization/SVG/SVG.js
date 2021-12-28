@@ -139,6 +139,15 @@ export const SVG = () => {
     return (
         <>
             <Wrapper>
+                    <Explanation>
+                        <Title>Welcome to SVG exhibition</Title>
+                        <Explanation>
+                            <p>This page is for svg</p>
+                        </Explanation>
+                    </Explanation>
+            </Wrapper>
+            
+            <Wrapper>
                 <Container>
                 <Title>SVG without D3: Circle</Title>
                 <svg style={{width:'55vw'}}> 
@@ -320,10 +329,93 @@ export const SVG = () => {
                             type={"angry"}
                         />
                 </Container>
-              
+                <Explanation>
+                <Pre>
+                        <Code>
+                            <span>{' <Face '} </span>
+                            <br/>
+                            <span>{'    width={width} '} </span>
+                            <br/>
+                            <span>{'    height={height}'} </span>
+                            <br/>
+                            <span>{'    centerX={width / 2} '} </span>
+                            <br/>
+                            <span>{'    strokeWidth={9} '} </span>
+                            <br/>
+                            <span>{'    eyeOffsetX={29} '} </span>
+                            <br/>
+                            <span>{'    eyeOffsetY={35} '} </span>
+                            <br/>
+                            <span>{'    eyeRadius={10} '} </span>
+                            <br/>
+                            <span>{'    mouthRadius={35} '} </span>
+                            <br/>
+                            <span>{'    type={"angry"} '} </span>     
+                            <br/> 
+                            <span>{' />'} </span>                                                     
+                        </Code>
+                </Pre>
+                        <h4>Face is a functional component that takes width,height,centerX,strokeWidth,eyeOffSetX,eyeOffSetY,mouthRadius,type as a properties to make a different emoji.</h4>
+                        <h4>The face component is composed of several child components for example, Mouth, FaceContainer, Eye, Tear, EyeBrow. </h4>
+                <Pre>
+                        <Code>
+                            <span>**Eyes component**</span>
+                            <br/> 
+                            <br/> 
+                            <span>{'export const Eyes = ({eyeOffsetX, eyeOffsetY, eyeRadius}) => ('} </span>
+                            <br/> 
+                            <span>{'<>'} </span>
+                            <br/> 
+                            <span>{'    <circle'} </span>
+                            <br/> 
+                            <span>{'        cx={-eyeOffsetX}'} </span>
+                            <br/> 
+                            <span>{'        cy={-eyeOffsetY}'} </span>
+                            <br/> 
+                            <span>{'        r={eyeRadius}'} </span>
+                            <br/> 
+                            <span>{'    <circle'} </span>
+                            <br/> 
+                            <span>{'        cx={eyeOffsetX}'} </span>
+                            <br/> 
+                            <span>{'        cy={-eyeOffsetY}'} </span>
+                            <br/> 
+                            <span>{'        r={eyeRadius}'} </span>
+                            <br/> 
+                            <span>{'    />'} </span>
+                            <br/> 
+                            <span>{'</>'} </span>                               
+                        </Code>
+                </Pre>
+                <Pre>
+                        <Code>
+                            <span>**Tears component**</span>
+                            <br/> 
+                            <br/> 
+                            <span>{'export const EyeBrow = () => {'} </span>
+                            <br/> 
+                            <span>{'    const leftEyeBrow = [{x: -20, y: -20}, {x: -45, y: -45}]'} </span>
+                            <br/> 
+                            <span>{'    const rightEyeBrow = [{x: 20, y: -20}, {x: 45, y: -45}]'} </span>
+                            <br/> 
+                            <span>{'    const eyebrow =  d3.line().x(function(d) {return d.x}).y(function(d) {return d.y})'} </span>
+                            <br/> 
+                            <span>{'        return ('} </span>
+                            <br/> 
+                            <span>{'            <>'} </span>
+                            <br/> 
+                            <span>{'                <path d={eyebrow(leftEyeBrow)} style={{stroke:"black",strokeWidth:"5"}} />'} </span>
+                            <br/> 
+                            <span>{'                <path d={eyebrow(rightEyeBrow)} style={{stroke:"black",strokeWidth:"5"}} />'} </span>
+                            <br/> 
+                            <span>{'            </>'} </span>
+                            <br/> 
+                            <span>{')}'} </span>                               
+                        </Code>
+                </Pre>
+                </Explanation>
+
             </Wrapper>
-
-
 
             <Wrapper>
                 <Container>
@@ -340,37 +432,13 @@ export const SVG = () => {
                         eyeRadius={5 + Math.random() * 10}
                         mouthWidth={7 + Math.random() * 9}
                         mouthRadius={30 + Math.random() * 10}
-                        type={"smile"}
+                        type={"random"}
                         />
                     ))}
                 </Container>
                 <Explanation>
-                        <h3>Building a olympic flag by d3 and React</h3>
-                        <Pre>
-                        <Code>
-                            <span>{'useEffect(() => {'}</span>
-                                <br/>
-                            <span>{'    var olympicFlag = d3.select("#olympic_flag").attr("width","55vw").attr("height","250px")'}</span>
-                                <br/>
-                            <span>{'     olympicFlag.append("circle")'}</span>   
-                                <br/>
-                            <span>{`        .attr("cx", 500).attr("cy", 100).attr("r", 40).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                                <br/>
-                            <span>{`        .attr("cx", 600).attr("cy", 100).attr("r", 40).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                                <br/>
-                            <span>{`        .attr("cx", 700).attr("cy", 100).attr("r", 40).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                                <br/>
-                            <span>{`        .attr("cx", 550).attr("cy", 150).attr("r", 20).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                                <br/>
-                            <span>{`        .attr("cx",650).attr("cy", 150).attr("r", 20).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                                <br/>
-                            <span>{'}, [])'}</span>
-                                <br/>
-                                <br/>
-                            <span>{'<svg id="olympic_flag"/>'}</span>
-                        </Code>
-                        </Pre>
-                        <h4>stroke-width: width of stroke on svg</h4>
+                        <h3>This exmaple shows an 16 random designed emoji. All emojis that appear here are generated randomly without specific rules. 
+                        Therefore, all 16 emojis have different designs. </h3>
                 </Explanation>
             </Wrapper>
 
