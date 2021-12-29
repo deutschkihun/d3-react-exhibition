@@ -1,16 +1,25 @@
 const express = require("express");
 const app = express();
-const cors = require('cors')
+//const cors = require('cors')
 const {connectDB} = require('./db/connect');
 const bodyParser = require("body-parser");
 const products = require('./routes/products');
+const path = require('path')
 require('dotenv').config();
 
+const staticRoot = path.join(__dirname, '..', 'public')
+const buildPath = path.join(__dirname, '..', 'build');
+app.use(express.static(buildPath));
 app.use(bodyParser.json());
-app.use(cors())
-
+//app.use(cors())
 
 app.use('/api/v1/products',products)
+
+app.route('/*').get(function (req, res) {
+  res.sendFile(staticRoot,'index.html')
+});
+
+
 
 const port = process.env.PORT || 5000
 
