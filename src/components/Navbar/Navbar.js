@@ -4,7 +4,7 @@ import {LeftMenu} from './LeftMenu';
 import {RightMenu} from './RightMenu';
 import styled from "styled-components"
 import {Icon} from 'antd';
-import 'antd/dist/antd.css';
+import './navbar.css';
 
 
 const Menu = styled.nav`
@@ -28,19 +28,7 @@ const HomeLogo = styled.div`
   }
 `;
 
-const MenuContainer = styled.div`
-  .ant-menu-item {
-    padding: 0px 5px;
-  }
-
-  .ant-menu-submenu-title {
-    padding: 10px 20px;
-  }
-
-  .ant-menu-item a, .ant-menu-submenu-title a {
-  padding: 10px 15px;
-  }
-`;
+const MenuContainer = styled.div``;
 
 const Left = styled.div`
   float:left;
