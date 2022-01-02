@@ -1,6 +1,6 @@
 ## D3 & React & GSAP Data Visualization Exhibition
 
-> Data visualization exhibition using various JavaScript libraries like d3, react and GSAP. 
+> Data visualization exhibition using various JavaScript libraries like d3, react and GSAP. For reference, d3 is the JavaScript visualization library and GSAP is the javaScript animation library.
 
 #### Demonstration 
 
