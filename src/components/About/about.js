@@ -25,17 +25,14 @@ export const About = () => {
     return (
         <>
         <AboutWrapper>
-            <AboutTitle>About "D3 & GSAP & React Exhibition"</AboutTitle>
+            <AboutTitle>About "D3 & React Exhibition"</AboutTitle>
             <AboutMessage>This page shows beautiful data visualization in various forms in web browsers using javascript and React, HTML, CSS, and D3.
             D3.js is a JavaScript library for manipulating documents based on data. D3 helps developers bring data to life using HTML, SVG, and CSS. 
             D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining 
             powerful visualization components and a data-driven approach to DOM manipulation.
                 <Icon type="smile" /></AboutMessage>
-
-            <AboutMessage>The GreenSock Animation Platform (GSAP) animates anything JavaScript can touch (CSS properties, SVG, React, canvas, generic objects, whatever) 
-            and solves countless browser inconsistencies, all with blazing speed (up to 20x faster than jQuery).</AboutMessage>     
-                            
-            <AboutMessage>If you want to get a source code of this entire exhibition project, click following button.</AboutMessage>     
+    
+         <AboutMessage>If you want to get a source code of this entire exhibition project, click following button.</AboutMessage>     
             <Button onClick={() => window.location.assign("https://github.com/deutschkihun/D3-React-Exhibition")}>Source Code</Button>
         </AboutWrapper>
         
@@ -47,7 +44,6 @@ export const About = () => {
           powerful visualization components and a data-driven approach to DOM manipulation.
               <Icon type="smile" /></AboutMessage>     
               <ReferenceButton onClick={() => window.location.assign("https://www.d3-graph-gallery.com/")}>D3</ReferenceButton>
-              <ReferenceButton onClick={() => window.location.assign("https://greensock.com/")}>GSAP</ReferenceButton>
       </AboutWrapper>
       </>
     )

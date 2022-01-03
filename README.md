@@ -1,1 +1,1 @@
-## D3 & React & GSAP Data Visualization Exhibition
+## D3 & React & Data Visualization Exhibition

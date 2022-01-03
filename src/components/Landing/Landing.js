@@ -91,7 +91,7 @@ export const Landing = () => {
     return (
         <Container>
             <TitleContainer>
-                <Title> Welcome to D3 & GSAP & React Exhibition <Icon type="car" /> </Title>
+                <Title> Welcome to D3 & React Exhibition <Icon type="car" /> </Title>
             </TitleContainer>
 
             <Row gutter={[16, 16]}>

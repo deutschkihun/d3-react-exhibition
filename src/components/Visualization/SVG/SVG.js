@@ -458,7 +458,7 @@ export const SVG = () => {
 
             <Wrapper>
                 <Container>
-                <Title>Ex.4) SVG Animation with gsap: Tweens</Title>
+                <Title>Ex.4) SVG with GSAP</Title>
                 <p>GSAP is one of the most powerful javascript library for web animation. With this library, we can make a svg animation, such as transform or morph</p>
                 </Container>
             </Wrapper>
