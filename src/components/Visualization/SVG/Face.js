@@ -5,7 +5,7 @@ import { EyeBrow } from './EyeBrow';
 import { SmileMouth,BadMouth, CryingMouth, AngryMouth } from './Mouth'
 import { Tears } from './Tears';
 
-const getRandomColor = () => {
+export const getRandomColor = () => {
   var letters = '0123456789ABCDEF';
   var color = '#';
   for (var i = 0; i < 6; i++) {

@@ -1,8 +1,16 @@
-import React, { useEffect } from 'react'
-import * as d3 from 'd3'
+import React from 'react'
 import { range } from 'd3';
 import styled from 'styled-components'
 import { Face } from './Face';
+import {SVGWithoutD3} from './SVGWithoutD3/SVGWithoutD3';
+import { SVGWithoutD3Description } from './SVGWithoutD3/SVGWithoutD3Description';
+import {SVGWithD3Description} from './SVGWithD3/SVGWithD3Description'
+import { SVGWithD3 } from './SVGWithD3/SVGWithD3';
+import { SVGCircleAdvance } from './SVGCircleAdvance/SVGCircleAdvance';
+import {SVGRectangle} from './SVGRectangle/SVGRectangle'
+import {SVGRectangleDescription} from './SVGRectangle/SVGRectangleDescription'
+import { OlympicFlagDescription } from './OlympicFlag/OlympicFlagDescription';
+import {OlympicFlag} from './OlympicFlag/OlympicFlag'
 
 export const Wrapper = styled.div`
   margin: auto;
@@ -56,238 +64,113 @@ export const SVG = () => {
     const width = 160;
     const height = 160;
     const array = range(6 * 3);
-    
-    useEffect(() => {
-        var svg = d3.select("#ex_rect1").attr('width','55vw')
-        svg.append("circle")
-            .attr("cx", 6).attr("cy", 6).attr("r", 70).style("fill", "blue").attr('fill-opacity','0.6');
-        svg.append("circle")
-            .attr("cx", 10).attr("cy", 10).attr("r", 80).style("fill", "black").attr('fill-opacity','0.6');
-        svg.append("circle")
-            .attr("cx", 10).attr("cy", 10).attr("r", 90).style("fill", "yello").attr('fill-opacity','0.6');
-        svg.append("circle")
-            .attr("cx", 10).attr("cy", 10).attr("r", 100).style("fill", "grey").attr('fill-opacity','0.6');
-        svg.append("circle")
-            .attr("cx", 200).attr("cy", 70).attr("r", 40).style("fill", "red");
-        svg.append("circle")
-            .attr("cx", 300).attr("cy", 100).attr("r", 40).style("fill", "blue");
-        svg.append("circle")
-            .attr("cx", 400).attr("cy", 70).attr("r", 40).style("fill", "black");
-        svg.append("circle")
-            .attr("cx", 500).attr("cy", 100).attr("r", 40).style("fill", "green");
-        svg.append("circle")
-            .attr("cx", 600).attr("cy", 70).attr("r", 40).style("fill", "yellow");
-        svg.append("circle")
-            .attr("cx", 700).attr("cy", 100).attr("r", 40).style("fill", "pink");
-        svg.append("circle")
-            .attr("cx", 800).attr("cy", 70).attr("r", 40).style("fill", "yellow");
-        svg.append("circle")
-            .attr("cx", 900).attr("cy", 100).attr("r", 40).style("fill", "pink");
-
-        var olympicFlag = d3.select('#olympic_flag').attr('width','55vw').attr('height',"250px")
-        olympicFlag.append('circle')
-            .attr("cx", 110).attr("cy", 100).attr("r", 60).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 240).attr("cy", 100).attr("r", 60).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 370).attr("cy", 100).attr("r", 60).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 175).attr("cy", 175).attr("r", 60).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 305).attr("cy", 175).attr("r", 60).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")
-        
-        olympicFlag.append('circle')
-            .attr("cx", 500).attr("cy", 100).attr("r", 40).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 600).attr("cy", 100).attr("r", 40).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 700).attr("cy", 100).attr("r", 40).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 550).attr("cy", 150).attr("r", 40).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 650).attr("cy", 150).attr("r", 40).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")
-         
-        olympicFlag.append('circle')
-            .attr("cx", 500).attr("cy", 100).attr("r", 20).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 600).attr("cy", 100).attr("r", 20).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 700).attr("cy", 100).attr("r", 20).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 550).attr("cy", 150).attr("r", 20).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")
-        olympicFlag.append('circle')
-            .attr("cx", 650).attr("cy", 150).attr("r", 20).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")
-      
-
-        var rect = d3.select("#rect").attr("width", '55vw')
-        rect.append('rect')
-            .attr('x', 10)
-            .attr('y', 100)
-            .attr('width', 600)
-            .attr('height', 40)
-            .attr('stroke', 'black')
-            .attr('fill', '#69a3b2');
-
-        rect.append('rect')
-            .attr('x', 10)
-            .attr('y', 50)
-            .attr('width', 400)
-            .attr('height', 40)
-            .attr('stroke', 'yellow')
-            .attr('stroke-width',5)
-            .attr('fill', 'blue');
-
-        rect.append('rect')
-            .attr('x', 10)
-            .attr('y', 10)
-            .attr('width', 200)
-            .attr('height', 40)
-            .attr('stroke', 'red')
-            .attr('stroke-width',2)
-            .attr('fill', 'green');
-    }, [])
+    const stroke = "black"
 
     return (
         <>
             <Wrapper>
-                    <Content>
-                        <Title>Welcome to SVG exhibition</Title>
-                            <p>Scalable Vector Graphics (SVG) are an XML-based markup language for describing two-dimensional based vector graphics.SVG is open Web standard 
-                            for describing images that can be rendered cleanly at any size and are designed specifically to work well with other web standards including CSS, 
-                            DOM, JavaScript, and SMIL. SVG is, essentially, to graphics what HTML is to text. SVG images and their related behaviors are defined in XML text 
-                            files, which means they can be searched, indexed, scripted, and compressed. Additionally, this means they can be created and edited with any text 
-                            editor or with drawing software. Compared to classic bitmapped image formats such as JPEG or PNG, SVG-format vector images can be rendered at any 
-                            size without loss of quality and can be easily localized by updating the text within them, without the need of a graphical editor to do so.</p>
-                    </Content>
-            </Wrapper>
-            
-            <Wrapper>
-                <Container>
-                <Title>SVG without D3: Circle</Title>
-                <svg style={{width:'55vw'}}> 
-                    <circle style={{fill:"#69b3a2"}} stroke="black" cx="50" cy="100" r="5"></circle>
-                    <circle style={{fill:"#5EBD3E"}} stroke="black" cx="100" cy="100" r="10"></circle>
-                    <circle style={{fill:"#FFB900"}} stroke="black" cx="200" cy="100" r="15"></circle>
-                    <circle style={{fill:"#F78200"}} stroke="black" cx="300" cy="100" r="20"></circle>
-                    <circle style={{fill:"#E23838"}} stroke="black" cx="400" cy="100" r="25"></circle>
-                    <circle style={{fill:"#973999"}} stroke="black" cx="500" cy="100" r="30"></circle>
-                    <circle style={{fill:"#009CDF"}} stroke="black" cx="600" cy="100" r="35"></circle>
-                    <circle style={{fill:"#69b3a2"}} stroke="black" cx="700" cy="100" r="40"></circle>
-                    <circle style={{fill:"#5EBD3E"}} stroke="black" cx="800" cy="100" r="45"></circle>
-                    <circle style={{fill:"#FFB900"}} stroke="black" cx="900" cy="100" r="48"></circle>
-                </svg>
-                </Container>
-                <Explanation>
-                    <h3>Creat a {"<svg> tag"} and wrap circle with {"<circle> tag"} </h3>
-                    <Pre>
-                    <Code>
-                        <span>{'<svg>'}</span>
-                        <br/>
-                        <span>{'    <circle style={{fill:"#FFB900"}} stroke="black" cx="900" cy="100" r="48"></circle>'}</span>
-                        <br/>
-                        <span>{'<svg>'}</span>
-                    </Code>
-                    </Pre>
-                    <h4>fill: Color of shape</h4>
-                    <h4>stroke: Outline color of the shape</h4>
-                    <h4>cx / cy / r: X-axis coordination / y-axis coordination / radius of circle</h4>
-                </Explanation>
-            </Wrapper>
+                <Content>
+                    <Title>Welcome to SVG exhibition</Title>
+                        <p>Scalable Vector Graphics (SVG) are an XML-based markup language for describing two-dimensional based vector graphics.SVG is open Web standard 
+                        for describing images that can be rendered cleanly at any size and are designed specifically to work well with other web standards including CSS, 
+                        DOM, JavaScript, and SMIL. SVG is, essentially, to graphics what HTML is to text. SVG images and their related behaviors are defined in XML text 
+                        files, which means they can be searched, indexed, scripted, and compressed. Additionally, this means they can be created and edited with any text 
+                        editor or with drawing software. Compared to classic bitmapped image formats such as JPEG or PNG, SVG-format vector images can be rendered at any 
+                        size without loss of quality and can be easily localized by updating the text within them, without the need of a graphical editor to do so.</p>
+                </Content>
 
-            <Wrapper>
-                <Container>
-                    <Title>SVG with D3: circle</Title>
-                    <svg id="ex_rect1"/>
-                </Container>
-                <Explanation>
-                    <h3>Creat a {"<svg> tag"} and wrap circle with {"<circle> tag"}. This should be selectd by d3.select</h3>
-                    <Pre>
-                    <Code>
-                     
-                        <span>{'    var svg = d3.select("#ex_rect1").attr("width","55vw")'}</span>
-                            <br/>
-                        <span>{'    svg.append("circle")'}</span>
-                            <br/>
-                        <span>{`        .attr("cx", 6).attr("cy", 6).attr("r", 70).style("fill", "blue").attr('fill-opacity','0.6')`}</span>
-                            <br/>
-                        <span>{'    svg.append("circle")'}</span>
-                            <br/>
-                        <span>{`        .attr("cx", 200).attr("cy", 70).attr("r", 40).style("fill", "red")`}</span>
-                            <br/>
-                        <span>{'}, [])'}</span>
-                            <br/>
-                            <br/>
-                        <span>{'<svg id="ex_rect1"/>'}</span>
-                    </Code>
-                    </Pre>
-                    <h4>style: CSS styling</h4>
-                    <h4>attr: Abbrevitation for attribute. With this keyword, we can add new attribute in svg</h4>
-                    <h4>cx / cy / r: X-axis coordination / y-axis coordination / radius of circle</h4>
-                </Explanation>
-            </Wrapper>
+                {/* SVG without D3: Circle */}
+                <>
+                    <Container>
+                        <Title>SVG without D3: Circle</Title>
+                        {array.map((i) => (
+                            <SVGWithoutD3
+                            width={width / 4}
+                            height={height / 4}
+                            centerX={width / 8}
+                            centerY={width / 8}
+                            stroke={stroke}
+                            radius={i*1.15}
+                            />
+                        ))}
+                    </Container>
+                    <SVGWithoutD3Description/>
+                </>
 
-            <Wrapper>
-                <Container>
-                    <Title>SVG with D3: Rectangle </Title>
-                    <svg id="rect"/>
-                </Container>
-                <Explanation>
-                    <Pre>
-                    <Code>
-                        <span>{'rect.append("rect")'}</span>
-                        <br/>
-                        <span>{'    .attr("y", 100)'}</span>
-                        <br/>
-                        <span>{'    .attr("width", 600)'}</span>
-                        <br/>
-                        <span>{'    .attr("height", 40)'}</span>
-                        <br/>
-                        <span>{'    .attr("stroke", "black")'}</span>
-                        <br/>
-                        <span>{'    .attr("fill", "#69a3b2")'}</span>
-                        <br/>
-                        <span>{'<svg id="rect"/>'}</span>
-                    </Code>
-                    </Pre>
-                </Explanation>
-            </Wrapper>
+                {/* SVG with D3: Circle */}
+                <>
+                    <Container>
+                        <Title>SVG with D3: circle</Title>
+                        {array.map((i) => (
+                            <SVGWithD3
+                            width={width / 4}
+                            height={height / 4}
+                            centerX={width / 8}
+                            centerY={width / 8}
+                            radius={20}
+                            index={i}
+                            opacity={0.6}
+                            />
+                        ))}
+                    </Container>
+                    <SVGWithD3Description/>
+                </>
 
-            <Wrapper>
-                <Container>
-                    <Title>Ex.1) Olympic flag</Title>
-                    <svg id="olympic_flag"/>
-                </Container>
-                <Explanation>
-                    <h3>Building a olympic flag by d3 and React</h3>
-                    <Pre>
-                    <Code>
-                        <span>{'useEffect(() => {'}</span>
-                            <br/>
-                        <span>{'    var olympicFlag = d3.select("#olympic_flag").attr("width","55vw").attr("height","250px")'}</span>
-                            <br/>
-                        <span>{'     olympicFlag.append("circle")'}</span>   
-                            <br/>
-                        <span>{`        .attr("cx", 500).attr("cy", 100).attr("r", 40).attr('stroke',"blue").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                            <br/>
-                        <span>{`        .attr("cx", 600).attr("cy", 100).attr("r", 40).attr('stroke',"black").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                            <br/>
-                        <span>{`        .attr("cx", 700).attr("cy", 100).attr("r", 40).attr('stroke',"red").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                            <br/>
-                        <span>{`        .attr("cx", 550).attr("cy", 150).attr("r", 20).attr('stroke',"yellow").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                            <br/>
-                        <span>{`        .attr("cx",650).attr("cy", 150).attr("r", 20).attr('stroke',"green").style("stroke-width", 4).style("fill-opacity","0")`}</span>
-                            <br/>
-                        <span>{'}, [])'}</span>
-                            <br/>
-                            <br/>
-                        <span>{'<svg id="olympic_flag"/>'}</span>
-                    </Code>
-                    </Pre>
-                    <h4>stroke-width: width of stroke on svg</h4>
-                </Explanation>
-            </Wrapper>
+                  {/* SVG with D3: Circle-Advance */}
+                  <>
+                    <Container>
+                        <Title>SVG with D3: Circle-Advance</Title>
+                        {array.map(() => (
+                            <SVGCircleAdvance
+                                width={width / 2}
+                                height={height / 2} 
+                                centerX={width / 32}
+                                centerY={width / 32}
+                                radius={40}
+                                index={0}
+                                opacity={0.6}
+                            />
+                        ))}
+                    </Container>
+                    <SVGWithD3Description/>
+                </>
+              
+                {/* SVG with D3: Rectangle (Descending order) */}
+                <>
+                    <Container>
+                        <Title>SVG with D3: Rectangle (Descending order)</Title>
+                        {array.reverse().map((i) => (
+                            <SVGRectangle
+                                width={width}
+                                height={height}
+                                centerX={0}
+                                centerY={0}
+                                stroke={stroke}    
+                                strokeWidth={10}
+                                index={i}                              
+                            />
+                        ))}
+                    </Container>
+                    <SVGRectangleDescription/>
+                </>
 
-            <Wrapper>
+                <>
+                    <Container>
+                            <Title>Ex.1) Olympic flag</Title>
+                            <OlympicFlag
+                                width={400}
+                                height={230} 
+                                centerX={-35}
+                                centerY={-35}
+                                radius={60}
+                                strokeWidth={4}
+                                stroke={stroke}
+                            />
+                    </Container>
+                    <OlympicFlagDescription/>
+                </>
+
+        
                 <Container>
                     <Title>Ex.2) Emoji Basic: Smile,Bad,Crying,Angry</Title>
                         <Face
@@ -428,40 +311,43 @@ export const SVG = () => {
                         </Code>
                 </Pre>
                 </Explanation>
+            
+                {/* Ex.3) Random Emoji */}
+                <>
+                    <Container>
+                        <Title>Ex.3) Random Emoji</Title>
+                        {array.map(() => (
+                            <Face
+                            width={width}
+                            height={height}
+                            centerX={width / 2}
+                            centerY={height / 2}
+                            strokeWidth={6 + Math.random() * 3}
+                            eyeOffsetX={20 + Math.random() * 9}
+                            eyeOffsetY={20 + Math.random() * 15}
+                            eyeRadius={5 + Math.random() * 10}
+                            mouthWidth={7 + Math.random() * 9}
+                            mouthRadius={30 + Math.random() * 10}
+                            type={"random"}
+                            />
+                        ))}
+                    </Container>
+                    <Explanation>
+                            <h3>This exmaple shows an 16 random designed emoji. All emojis that appear here are generated randomly without specific rules. 
+                            Therefore, all 16 emojis have different designs. </h3>
+                    </Explanation>
+                </>
 
+                {/* Ex.4) SVG with GSAP */}
+                <>
+                    <Container>
+                        <Title>Ex.4) SVG with GSAP</Title>
+                        <p>GSAP is one of the most powerful javascript library for web animation. With this library, we can make a svg animation, such as transform or morph</p>
+                    </Container>
+                </>
+              
             </Wrapper>
 
-            <Wrapper>
-                <Container>
-                    <Title>Ex.2) Random Emoji</Title>
-                    {array.map(() => (
-                        <Face
-                        width={width}
-                        height={height}
-                        centerX={width / 2}
-                        centerY={height / 2}
-                        strokeWidth={6 + Math.random() * 3}
-                        eyeOffsetX={20 + Math.random() * 9}
-                        eyeOffsetY={20 + Math.random() * 15}
-                        eyeRadius={5 + Math.random() * 10}
-                        mouthWidth={7 + Math.random() * 9}
-                        mouthRadius={30 + Math.random() * 10}
-                        type={"random"}
-                        />
-                    ))}
-                </Container>
-                <Explanation>
-                        <h3>This exmaple shows an 16 random designed emoji. All emojis that appear here are generated randomly without specific rules. 
-                        Therefore, all 16 emojis have different designs. </h3>
-                </Explanation>
-            </Wrapper>
-
-            <Wrapper>
-                <Container>
-                <Title>Ex.4) SVG with GSAP</Title>
-                <p>GSAP is one of the most powerful javascript library for web animation. With this library, we can make a svg animation, such as transform or morph</p>
-                </Container>
-            </Wrapper>
         </>
     )
 }
