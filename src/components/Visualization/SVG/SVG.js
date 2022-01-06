@@ -1,7 +1,7 @@
 import React from 'react'
 import { range } from 'd3';
 import styled from 'styled-components'
-import { Face } from './Face';
+import { Face } from './Face/Face';
 import {SVGWithoutD3} from './SVGWithoutD3/SVGWithoutD3';
 import { SVGWithoutD3Description } from './SVGWithoutD3/SVGWithoutD3Description';
 import {SVGWithD3Description} from './SVGWithD3/SVGWithD3Description'
@@ -11,6 +11,7 @@ import {SVGRectangle} from './SVGRectangle/SVGRectangle'
 import {SVGRectangleDescription} from './SVGRectangle/SVGRectangleDescription'
 import { OlympicFlagDescription } from './OlympicFlag/OlympicFlagDescription';
 import {OlympicFlag} from './OlympicFlag/OlympicFlag'
+import {FaceDescription} from './Face/FaceDescription'
 
 export const Wrapper = styled.div`
   margin: auto;
@@ -65,6 +66,8 @@ export const SVG = () => {
     const height = 160;
     const array = range(6 * 3);
     const stroke = "black"
+    const faceRange = range(4)
+    const type = ['smile','bad','crying','angry']
 
     return (
         <>
@@ -154,6 +157,7 @@ export const SVG = () => {
                     <SVGRectangleDescription/>
                 </>
 
+                {/* Ex.1) Olympic flag */}
                 <>
                     <Container>
                             <Title>Ex.1) Olympic flag</Title>
@@ -170,152 +174,34 @@ export const SVG = () => {
                     <OlympicFlagDescription/>
                 </>
 
-        
-                <Container>
-                    <Title>Ex.2) Emoji Basic: Smile,Bad,Crying,Angry</Title>
-                        <Face
-                            width={width}
-                            height={height}
-                            centerX={width / 2}
-                            centerY={height / 2}
-                            strokeWidth={9}
-                            eyeOffsetX={29}
-                            eyeOffsetY={35}
-                            eyeRadius={10}
-                            mouthWidth={10}
-                            mouthRadius={35}
-                            type={"smile"}
-                        />
-                        <Face
-                            width={width}
-                            height={height}
-                            centerX={width / 2}
-                            centerY={height / 2}
-                            strokeWidth={9}
-                            eyeOffsetX={29}
-                            eyeOffsetY={35}
-                            eyeRadius={10}
-                            mouthWidth={10}
-                            mouthRadius={35}
-                            type={"bad"}
-                        />
-                         <Face
-                            width={width}
-                            height={height}
-                            centerX={width / 2}
-                            centerY={height / 2}
-                            strokeWidth={9}
-                            eyeOffsetX={29}
-                            eyeOffsetY={35}
-                            eyeRadius={10}
-                            mouthWidth={10}
-                            mouthRadius={35}
-                            type={"crying"}
-                        />
-                         <Face
-                            width={width}
-                            height={height}
-                            centerX={width / 2}
-                            centerY={height / 2}
-                            strokeWidth={9}
-                            eyeOffsetX={29}
-                            eyeOffsetY={35}
-                            eyeRadius={10}
-                            mouthWidth={10}
-                            mouthRadius={35}
-                            type={"angry"}
-                        />
-                </Container>
-                <Explanation>
-                <Pre>
-                        <Code>
-                            <span>{' <Face '} </span>
-                            <br/>
-                            <span>{'    width={width} '} </span>
-                            <br/>
-                            <span>{'    height={height}'} </span>
-                            <br/>
-                            <span>{'    centerX={width / 2} '} </span>
-                            <br/>
-                            <span>{'    strokeWidth={9} '} </span>
-                            <br/>
-                            <span>{'    eyeOffsetX={29} '} </span>
-                            <br/>
-                            <span>{'    eyeOffsetY={35} '} </span>
-                            <br/>
-                            <span>{'    eyeRadius={10} '} </span>
-                            <br/>
-                            <span>{'    mouthRadius={35} '} </span>
-                            <br/>
-                            <span>{'    type={"angry"} '} </span>     
-                            <br/> 
-                            <span>{' />'} </span>                                                     
-                        </Code>
-                </Pre>
-                        <h4>Face is a functional component that takes width,height,centerX,strokeWidth,eyeOffSetX,eyeOffSetY,mouthRadius,type as a properties to make a different emoji.</h4>
-                        <h4>The face component is composed of several child components for example, Mouth, FaceContainer, Eye, Tear, EyeBrow. </h4>
-                <Pre>
-                        <Code>
-                            <span>**Eyes component**</span>
-                            <br/> 
-                            <br/> 
-                            <span>{'export const Eyes = ({eyeOffsetX, eyeOffsetY, eyeRadius}) => ('} </span>
-                            <br/> 
-                            <span>{'<>'} </span>
-                            <br/> 
-                            <span>{'    <circle'} </span>
-                            <br/> 
-                            <span>{'        cx={-eyeOffsetX}'} </span>
-                            <br/> 
-                            <span>{'        cy={-eyeOffsetY}'} </span>
-                            <br/> 
-                            <span>{'        r={eyeRadius}'} </span>
-                            <br/> 
-                            <span>{'    <circle'} </span>
-                            <br/> 
-                            <span>{'        cx={eyeOffsetX}'} </span>
-                            <br/> 
-                            <span>{'        cy={-eyeOffsetY}'} </span>
-                            <br/> 
-                            <span>{'        r={eyeRadius}'} </span>
-                            <br/> 
-                            <span>{'    />'} </span>
-                            <br/> 
-                            <span>{'</>'} </span>                               
-                        </Code>
-                </Pre>
-                <Pre>
-                        <Code>
-                            <span>**Tears component**</span>
-                            <br/> 
-                            <br/> 
-                            <span>{'export const EyeBrow = () => {'} </span>
-                            <br/> 
-                            <span>{'    const leftEyeBrow = [{x: -20, y: -20}, {x: -45, y: -45}]'} </span>
-                            <br/> 
-                            <span>{'    const rightEyeBrow = [{x: 20, y: -20}, {x: 45, y: -45}]'} </span>
-                            <br/> 
-                            <span>{'    const eyebrow =  d3.line().x(function(d) {return d.x}).y(function(d) {return d.y})'} </span>
-                            <br/> 
-                            <span>{'        return ('} </span>
-                            <br/> 
-                            <span>{'            <>'} </span>
-                            <br/> 
-                            <span>{'                <path d={eyebrow(leftEyeBrow)} style={{stroke:"black",strokeWidth:"5"}} />'} </span>
-                            <br/> 
-                            <span>{'                <path d={eyebrow(rightEyeBrow)} style={{stroke:"black",strokeWidth:"5"}} />'} </span>
-                            <br/> 
-                            <span>{'            </>'} </span>
-                            <br/> 
-                            <span>{')}'} </span>                               
-                        </Code>
-                </Pre>
-                </Explanation>
-            
-                {/* Ex.3) Random Emoji */}
+                {/* Ex.2) Emoji Basic: Smile,Bad,Crying,Angry */}
                 <>
                     <Container>
-                        <Title>Ex.3) Random Emoji</Title>
+                        <Title>Ex.2) Emoji Basic: Smile,Bad,Crying,Angry</Title>
+                        {faceRange.map((i) => (
+                            <Face
+                                width={width}
+                                height={height}
+                                centerX={width / 2}
+                                centerY={height / 2}
+                                strokeWidth={9}
+                                eyeOffsetX={29}
+                                eyeOffsetY={35}
+                                eyeRadius={10}
+                                mouthWidth={10}
+                                mouthRadius={35}
+                                type={type[i]}
+                            />
+                        ))}
+                    </Container>
+                    <FaceDescription/>
+                </>
+            
+            
+                {/* Ex.3) 16 Randomly generated smile Emojis */}
+                <>
+                    <Container>
+                        <Title>Ex.3) 16 Randomly generated smile Emojis</Title>
                         {array.map(() => (
                             <Face
                             width={width}
@@ -332,10 +218,6 @@ export const SVG = () => {
                             />
                         ))}
                     </Container>
-                    <Explanation>
-                            <h3>This exmaple shows an 16 random designed emoji. All emojis that appear here are generated randomly without specific rules. 
-                            Therefore, all 16 emojis have different designs. </h3>
-                    </Explanation>
                 </>
 
                 {/* Ex.4) SVG with GSAP */}

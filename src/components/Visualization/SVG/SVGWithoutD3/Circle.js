@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRandomColor } from '../Face'
+import { getRandomColor } from '../Face/Face'
 
 export const Circle = ({width,height,centerX,centerY,stroke,radius}) => {
     return (

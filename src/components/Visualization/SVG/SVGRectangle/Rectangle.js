@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import * as d3 from 'd3'
-import { getRandomColor } from '../Face'
+import { getRandomColor } from '../Face/Face'
 
 
 export const Rectangle = ({width,height,centerX,centerY,index,stroke,strokeWidth}) => {
