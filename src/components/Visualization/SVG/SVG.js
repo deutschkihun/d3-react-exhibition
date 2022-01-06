@@ -12,6 +12,8 @@ import {SVGRectangleDescription} from './SVGRectangle/SVGRectangleDescription'
 import { OlympicFlagDescription } from './OlympicFlag/OlympicFlagDescription';
 import {OlympicFlag} from './OlympicFlag/OlympicFlag'
 import {FaceDescription} from './Face/FaceDescription'
+import {SVGScale} from './SVGScale/SVGScale'
+import { SVGScaleDescription } from './SVGScale/SVGScaleDescription';
 
 export const Wrapper = styled.div`
   margin: auto;
@@ -220,10 +222,31 @@ export const SVG = () => {
                     </Container>
                 </>
 
-                {/* Ex.4) SVG with GSAP */}
+                  {/* Ex.4) SVG with Scale */}
+                  <>
+                    <Container>
+                        <Title>Ex.4) SVG with Scale </Title>
+                        <p> In SVG, the position of element is with pixel set. But when we use a input data to set a svg position, 
+                            we need a function that convert numeric variable to a svg position in pixel unit. This is what we called 
+                            a scale function in d3. Scale has 2 important properties. Domain represents the interval of min and max for the data 
+                            percentage. Range represent a interval of pixel.
+                        </p>
+                        <SVGScale
+                                width={width}
+                                height={height}
+                                centerX={width / 2}
+                                centerY={height / 2}
+                                stroke={stroke}
+                                radius={10}
+                        />
+                    </Container>
+                    <SVGScaleDescription/>
+                </>
+
+                {/* Ex.5) SVG with GSAP */}
                 <>
                     <Container>
-                        <Title>Ex.4) SVG with GSAP</Title>
+                        <Title>Ex.5) SVG with GSAP</Title>
                         <p>GSAP is one of the most powerful javascript library for web animation. With this library, we can make a svg animation, such as transform or morph</p>
                     </Container>
                 </>
