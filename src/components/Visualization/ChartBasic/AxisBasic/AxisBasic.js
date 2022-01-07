@@ -2,7 +2,7 @@ import React from 'react'
 import { Axis } from './Axis'
 
 
-export const LineAxis = ({
+export const AxisBasic = ({
     width,
     height,
     margin

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Wrapper,Title } from '../SVG/SVG'
-import { LineAxis } from './LineAxis/LineAxis'
-import { LineAxisDescription } from './LineAxis/LineAxisDescription'
+import { AxisBasic } from './AxisBasic/AxisBasic'
+import { AxisBasicDescription } from './AxisBasic/AxisBasicDescription'
 import {CustomAxis} from './CustomAxis/CustomAxis'
 export const ChartBasic = () => {
 
@@ -21,14 +21,14 @@ export const ChartBasic = () => {
                     <Container>
                         <Title>Chart basic: Random Axis range</Title>
                         <p>The first thing to do to draw a chart is to build a coordinate system. The coordinate system is divided into x-axis and y-axis based on two dimensions. If it is three dimensions, we need the z-axis, but we will only deal with two dimensions in this time. In the following example, a coordinate system was drawn using various scale ranges.</p>
-                            <LineAxis
+                            <AxisBasic
                                 width={width}
                                 height={height}
                                 margin={margin}
                             />
                         <p>The most basic scale expression method is scale-linar. That is, the scale in the form of a linear function is applied to the axis coordinates.</p>
                     </Container>
-                    <LineAxisDescription/>
+                    <AxisBasicDescription/>
                 </>
 
                 <>

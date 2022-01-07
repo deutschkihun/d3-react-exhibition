@@ -2,7 +2,7 @@
 import React from 'react'
 import { Explanation,Pre,Code } from '../../SVG/SVG'
 
-export const LineAxisDescription = () => {
+export const AxisBasicDescription = () => {
     return (
         <Explanation>
                 <Pre>
