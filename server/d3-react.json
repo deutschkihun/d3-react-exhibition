@@ -3,24 +3,30 @@
         "name": "SVG",
         "level": 1,
         "categories":1,
-        "description":"SVG gallery thumbnail"
+        "description":"SVG gallery"
     },
     {
-        "name": "Pie Chart",
-        "level": 2,
+        "name": "Chart Basic",
+        "level": 1,
         "categories":2,
-        "description":"Pie Chart gallery thumbnail"
+        "description":"Chart Basic gallery"
     },
     {
         "name": "Line Chart",
-        "level": 3,
+        "level": 2,
         "categories":3,
-        "description":"Line Chart gallery thumbnail"
+        "description":"Line Chart gallery"
     },
     {
         "name": "Bar Chart",
-        "level": 4,
+        "level": 3,
         "categories":4,
-        "description":"Bar Chart gallery thumbnail"
+        "description":"Bar Chart gallery"
+    },
+    {
+        "name": "Heat Map",
+        "level": 4,
+        "categories":5,
+        "description":"Heat Map gallery"
     }
 ]

@@ -8,6 +8,6 @@
     padding: 10px 20px;
   }
 
-.ant-menu-item a, .ant-menu-submenu-title a {
+.ant-menu-item a, .ant-menu-submenu-title > a {
     padding: 10px 15px;
 }

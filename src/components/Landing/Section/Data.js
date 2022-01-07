@@ -5,7 +5,7 @@ const categories = [
     },
     {
         "_id": 2,
-        "name": "Pie Chart"
+        "name": "Chart Basic"
     },
     {
         "_id": 3,
@@ -14,6 +14,10 @@ const categories = [
     {
         "_id": 4,
         "name": "Bar Chart"
+    },
+    {
+        "_id": 5,
+        "name": "Heat Map"
     }
 ]
 

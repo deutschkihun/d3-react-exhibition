@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React from 'react'
 import { range } from 'd3';
 import styled from 'styled-components'
@@ -250,7 +251,7 @@ export const SVG = () => {
                         <p>GSAP is one of the most powerful javascript library for web animation. With this library, we can make a svg animation, such as transform or morph</p>
                     </Container>
                 </>
-              
+
             </Wrapper>
 
         </>
