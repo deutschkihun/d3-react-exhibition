@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React,{useEffect,useRef}   from 'react'
+import React,{ useRef }   from 'react'
 import ReactDOM from 'react-dom';
 import { range } from 'd3';
-import {Button} from 'antd'
+import {Button} from 'antd';
 import styled from 'styled-components'
 import { Face } from './Face/Face';
 import {SVGWithoutD3} from './SVGWithoutD3/SVGWithoutD3';
@@ -64,6 +64,7 @@ export const Content = styled.div`
 
 
 export const Code = styled.code``;
+export const Element = styled.div``;
 
 export const SVG = () => {
 
@@ -75,21 +76,19 @@ export const SVG = () => {
     const type = ['smile','bad','crying','angry']
 
     const refContainer = useRef(null)
+    const svgWithoutD3 = array.map((i) => (
+        <SVGWithoutD3
+        width={width / 4}
+        height={height / 4}
+        centerX={width / 8}
+        centerY={width / 8}
+        stroke={stroke}
+        radius={i*1.15}
+        />
+    ))
 
-    const refreshHandler = () => {
-        ReactDOM.render(
-            // Try changing to isLoggedIn={true}:
-            array.map((i) => (
-                <SVGWithoutD3
-                width={width / 4}
-                height={height / 4}
-                centerX={width / 8}
-                centerY={width / 8}
-                stroke={stroke}
-                radius={i*1.15}
-                />
-            )) ,refContainer.current
-            )
+    const refreshHandler = (jsxElement) => {
+        ReactDOM.render(jsxElement,refContainer.current)
     }
 
     return (
@@ -108,21 +107,10 @@ export const SVG = () => {
                 {/* SVG without D3: Circle */}
                 <>
                     <Container>
-                        <>
-                        <Title>SVG without D3: Circle</Title><Button onClick={refreshHandler}>Refresh</Button>
-                        </>
-                        <div ref={refContainer}>
-                        {array.map((i) => (
-                            <SVGWithoutD3
-                            width={width / 4}
-                            height={height / 4}
-                            centerX={width / 8}
-                            centerY={width / 8}
-                            stroke={stroke}
-                            radius={i*1.15}
-                            />
-                        ))}
-                        </div>
+                        <Title>SVG without D3: Circle<Button onClick={() => refreshHandler(svgWithoutD3)}>Click Me</Button></Title>
+                        <Element ref={refContainer}>
+                            {svgWithoutD3}
+                        </Element>
                     </Container>
                     <SVGWithoutD3Description/>
                 </>
