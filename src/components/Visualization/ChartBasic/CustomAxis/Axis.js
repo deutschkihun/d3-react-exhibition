@@ -23,6 +23,24 @@ export const Axis = ({width,height,margin,pointer,band}) => {
             let x_scale_band = d3.scaleBand().domain(band).range([0,width])
             let y_scale_band = d3.scaleBand().domain(band).range([height,0])
 
+            /*
+            // Create the scale
+                var x = d3.scaleBand()
+                    .domain(["Long name", "Another One", "Here", "And this is", "The end", "ouuuu", "not yet"])         // This is what is written on the Axis: from 0 to 100
+                    .range([0, 800]);         // Note it is reversed
+
+                // Draw the axis
+                svg
+                .append("g")
+                .attr("transform", "translate(100,100)")      // This controls the rotate position of the Axis
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                    .attr("transform", "translate(-10,10)rotate(-45)")
+                    .style("text-anchor", "end")
+                    .style("font-size", 20)
+                    .style("fill", "#69a3b2")
+            */
+
 
             let axisTemplate = d3.select('#chart_scaler'+String(i))
             .attr('width',width + margin.left + margin.right)

@@ -3,9 +3,10 @@ import { Container, Wrapper,Title } from '../SVG/SVG'
 import { AxisBasic } from './AxisBasic/AxisBasic'
 import { AxisBasicDescription } from './AxisBasic/AxisBasicDescription'
 import {CustomAxis} from './CustomAxis/CustomAxis'
+import { DataCoordinate } from './DataCoordinate/DataCoordinate'
 export const ChartBasic = () => {
 
-    let margin = {top: 10, right: 40, bottom: 30, left: 30}
+    let margin = {top: 10, right: 40, bottom: 30, left: 40}
     let width = 450 - margin.left - margin.right;
     let height = 400 - margin.top - margin.bottom;
     const pointer = ["Apple","Grape","Banana","StrawBerry","Watermelon"]
@@ -47,7 +48,12 @@ export const ChartBasic = () => {
 
                 <>
                     <Container>
-                        <Title>Linear line with d3.line()</Title>
+                        <Title>Chart basic: Displaying random data on the random coordinates</Title>
+                        <DataCoordinate
+                           width={width}
+                           height={height}
+                           margin={margin}
+                        />
                     </Container>
                 </>
 

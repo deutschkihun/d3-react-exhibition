@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React from 'react'
+import React,{useEffect,useRef}   from 'react'
+import ReactDOM from 'react-dom';
 import { range } from 'd3';
+import {Button} from 'antd'
 import styled from 'styled-components'
 import { Face } from './Face/Face';
 import {SVGWithoutD3} from './SVGWithoutD3/SVGWithoutD3';
@@ -72,6 +74,24 @@ export const SVG = () => {
     const faceRange = range(4)
     const type = ['smile','bad','crying','angry']
 
+    const refContainer = useRef(null)
+
+    const refreshHandler = () => {
+        ReactDOM.render(
+            // Try changing to isLoggedIn={true}:
+            array.map((i) => (
+                <SVGWithoutD3
+                width={width / 4}
+                height={height / 4}
+                centerX={width / 8}
+                centerY={width / 8}
+                stroke={stroke}
+                radius={i*1.15}
+                />
+            )) ,refContainer.current
+            )
+    }
+
     return (
         <>
             <Wrapper>
@@ -88,7 +108,10 @@ export const SVG = () => {
                 {/* SVG without D3: Circle */}
                 <>
                     <Container>
-                        <Title>SVG without D3: Circle</Title>
+                        <>
+                        <Title>SVG without D3: Circle</Title><Button onClick={refreshHandler}>Refresh</Button>
+                        </>
+                        <div ref={refContainer}>
                         {array.map((i) => (
                             <SVGWithoutD3
                             width={width / 4}
@@ -99,6 +122,7 @@ export const SVG = () => {
                             radius={i*1.15}
                             />
                         ))}
+                        </div>
                     </Container>
                     <SVGWithoutD3Description/>
                 </>
