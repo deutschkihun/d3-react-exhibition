@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React,{ useRef }   from 'react'
-import ReactDOM from 'react-dom';
 import { range } from 'd3';
 import {Button} from 'antd';
 import styled from 'styled-components'
@@ -17,6 +16,8 @@ import {OlympicFlag} from './OlympicFlag/OlympicFlag'
 import {FaceDescription} from './Face/FaceDescription'
 import {SVGScale} from './SVGScale/SVGScale'
 import { SVGScaleDescription } from './SVGScale/SVGScaleDescription';
+import {refreshHandler} from '../../../helper/refreshHandler'
+import { Emoji } from './Emoji/Emoji';
 
 export const Wrapper = styled.div`
   margin: auto;
@@ -62,6 +63,13 @@ export const Content = styled.div`
     justify-content:flex-end;
 `;
 
+export const ButtonContainer = styled.div`
+    font-family: var(--headingFont);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: var(--letterSpacing);
+`;
+
 
 export const Code = styled.code``;
 export const Element = styled.div``;
@@ -70,27 +78,15 @@ export const SVG = () => {
 
     const width = 160;
     const height = 160;
-    const array = range(6 * 3);
     const stroke = "black"
     const faceRange = range(4)
     const type = ['smile','bad','crying','angry']
 
-    const refContainer = useRef(null)
-    const svgWithoutD3 = array.map((i) => (
-        <SVGWithoutD3
-        width={width / 4}
-        height={height / 4}
-        centerX={width / 8}
-        centerY={width / 8}
-        stroke={stroke}
-        radius={i*1.15}
-        />
-    ))
-
-    const refreshHandler = (jsxElement) => {
-        ReactDOM.render(jsxElement,refContainer.current)
-    }
-
+    const SVGWithoutD3Ref = useRef(null)
+    const SVGWithD3Ref = useRef(null)
+    const SVGCircleAdvanceRef = useRef(null)
+    const SVGRectangleRef = useRef(null)
+    const FaceRef = useRef(null)
     return (
         <>
             <Wrapper>
@@ -107,9 +103,27 @@ export const SVG = () => {
                 {/* SVG without D3: Circle */}
                 <>
                     <Container>
-                        <Title>SVG without D3: Circle<Button onClick={() => refreshHandler(svgWithoutD3)}>Click Me</Button></Title>
-                        <Element ref={refContainer}>
-                            {svgWithoutD3}
+                        <Title>SVG without D3: Circle                        
+                            <ButtonContainer>
+                                <Button onClick={() => refreshHandler(<SVGWithoutD3
+                                                                        width={width / 4}
+                                                                        height={height / 4}
+                                                                        centerX={width / 8}
+                                                                        centerY={width / 8}
+                                                                        stroke={stroke}
+                                                                        radius={1.15}
+                                                                      />,SVGWithoutD3Ref)}>Click Me</Button>
+                            </ButtonContainer>
+                        </Title>
+                        <Element ref={SVGWithoutD3Ref}>
+                        <SVGWithoutD3
+                            width={width / 4}
+                            height={height / 4}
+                            centerX={width / 8}
+                            centerY={width / 8}
+                            stroke={stroke}
+                            radius={1.15}
+                            />
                         </Element>
                     </Container>
                     <SVGWithoutD3Description/>
@@ -118,18 +132,30 @@ export const SVG = () => {
                 {/* SVG with D3: Circle */}
                 <>
                     <Container>
-                        <Title>SVG with D3: circle</Title>
-                        {array.map((i) => (
+                        <Title>SVG with D3: circle
+                            <ButtonContainer>
+                                <Button onClick={() => refreshHandler(<SVGWithD3
+                                                                        width={width / 4}
+                                                                        height={height / 4}
+                                                                        centerX={width / 8}
+                                                                        centerY={width / 8}
+                                                                        radius={20}
+                                                                        opacity={0.6}
+                                                                        refresh={true}
+                                                                    />,SVGWithD3Ref)}>Click Me</Button>
+                            </ButtonContainer>
+                        </Title>
+                        <Element ref={SVGWithD3Ref}>
                             <SVGWithD3
-                            width={width / 4}
-                            height={height / 4}
-                            centerX={width / 8}
-                            centerY={width / 8}
-                            radius={20}
-                            index={i}
-                            opacity={0.6}
+                                width={width / 4}
+                                height={height / 4}
+                                centerX={width / 8}
+                                centerY={width / 8}
+                                radius={20}
+                                opacity={0.6}
+                                refresh={false}
                             />
-                        ))}
+                        </Element>
                     </Container>
                     <SVGWithD3Description/>
                 </>
@@ -137,8 +163,22 @@ export const SVG = () => {
                   {/* SVG with D3: Circle-Advance */}
                   <>
                     <Container>
-                        <Title>SVG with D3: Circle-Advance</Title>
-                        {array.map(() => (
+                        <Title>
+                            SVG with D3: Circle-Advance
+                        <ButtonContainer>
+                            <Button onClick={() => refreshHandler(<SVGCircleAdvance
+                                                                        width={width / 2}
+                                                                        height={height / 2} 
+                                                                        centerX={width / 32}
+                                                                        centerY={width / 32}
+                                                                        radius={40}
+                                                                        index={0}
+                                                                        opacity={0.6}
+                                                                    />,SVGCircleAdvanceRef
+                                                                    )}>Click Me</Button>
+                        </ButtonContainer>
+                        </Title>
+                        <Element ref={SVGCircleAdvanceRef}>
                             <SVGCircleAdvance
                                 width={width / 2}
                                 height={height / 2} 
@@ -148,7 +188,7 @@ export const SVG = () => {
                                 index={0}
                                 opacity={0.6}
                             />
-                        ))}
+                        </Element>
                     </Container>
                     <SVGWithD3Description/>
                 </>
@@ -156,18 +196,30 @@ export const SVG = () => {
                 {/* SVG with D3: Rectangle (Descending order) */}
                 <>
                     <Container>
-                        <Title>SVG with D3: Rectangle (Descending order)</Title>
-                        {array.reverse().map((i) => (
-                            <SVGRectangle
-                                width={width}
-                                height={height}
-                                centerX={0}
-                                centerY={0}
-                                stroke={stroke}    
-                                strokeWidth={10}
-                                index={i}                              
-                            />
-                        ))}
+                        <Title>SVG with D3: Rectangle (Descending order)
+                            <ButtonContainer>
+                                <Button onClick={() => refreshHandler(<SVGRectangle
+                                                                            width={width}
+                                                                            height={height}
+                                                                            centerX={0}
+                                                                            centerY={0}
+                                                                            stroke={stroke}    
+                                                                            strokeWidth={10}
+                                                                            refresh={true}
+                                                                        />,SVGRectangleRef)}>Click Me</Button>
+                            </ButtonContainer>
+                            </Title>
+                            <Element ref={SVGRectangleRef}>
+                                <SVGRectangle
+                                    width={width}
+                                    height={height}
+                                    centerX={0}
+                                    centerY={0}
+                                    stroke={stroke}    
+                                    strokeWidth={10}
+                                    refresh={false}
+                                />
+                            </Element>
                     </Container>
                     <SVGRectangleDescription/>
                 </>
@@ -194,17 +246,12 @@ export const SVG = () => {
                     <Container>
                         <Title>Ex.2) Emoji Basic: Smile,Bad,Crying,Angry</Title>
                         {faceRange.map((i) => (
-                            <Face
+                            <Emoji
                                 width={width}
                                 height={height}
                                 centerX={width / 2}
                                 centerY={height / 2}
-                                strokeWidth={9}
-                                eyeOffsetX={29}
-                                eyeOffsetY={35}
-                                eyeRadius={10}
-                                mouthWidth={10}
-                                mouthRadius={35}
+                                random={false}
                                 type={type[i]}
                             />
                         ))}
@@ -216,22 +263,25 @@ export const SVG = () => {
                 {/* Ex.3) 16 Randomly generated smile Emojis */}
                 <>
                     <Container>
-                        <Title>Ex.3) 16 Randomly generated smile Emojis</Title>
-                        {array.map(() => (
+                        <Title>Ex.3) 16 Randomly generated smile Emojis
+                        <ButtonContainer>
+                                <Button onClick={() => refreshHandler(<Face
+                                                                        width={width}
+                                                                        height={height}
+                                                                        centerX={width / 2}
+                                                                        centerY={height / 2}
+                                                                        type={"random"}/>,FaceRef)}>Click Me</Button>
+                            </ButtonContainer>
+                        </Title>
+                        <Element ref={FaceRef}>
                             <Face
-                            width={width}
-                            height={height}
-                            centerX={width / 2}
-                            centerY={height / 2}
-                            strokeWidth={6 + Math.random() * 3}
-                            eyeOffsetX={20 + Math.random() * 9}
-                            eyeOffsetY={20 + Math.random() * 15}
-                            eyeRadius={5 + Math.random() * 10}
-                            mouthWidth={7 + Math.random() * 9}
-                            mouthRadius={30 + Math.random() * 10}
-                            type={"random"}
+                                width={width}
+                                height={height}
+                                centerX={width / 2}
+                                centerY={height / 2}
+                                type={"random"}
                             />
-                        ))}
+                        </Element>
                     </Container>
                 </>
 

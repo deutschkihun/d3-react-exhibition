@@ -8,7 +8,7 @@ export const SVGWithoutD3 = ({
     centerY,
     stroke,
     radius
-}) => (
+}) => ( 
     <Circle
         width={width}
         height={height}

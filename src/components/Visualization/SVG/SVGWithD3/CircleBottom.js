@@ -1,20 +1,19 @@
 import React, {useEffect} from 'react'
 import * as d3 from 'd3'
-import { getRandomColor } from '../Face/Face'
+import { randomColorGenerator } from '../../../../helper/randomColorGenerator'
 
-
-export const CircleBottom = ({width,height,centerX,centerY,radius,index,opacity}) => {
+export const CircleBottom = ({width,height,centerX,centerY,index,refresh,radius,opacity}) => {
     useEffect(() => {
-            d3.select('#Bottom'+String(index))
-            .attr('width',width)
-            .attr('height',height)
-            .append('g')
+        const circlebottomSVG = d3.select('#Bottom'+String(index)).attr('width',width).attr('height',height)
+        refresh && circlebottomSVG.select('g').remove()
+        circlebottomSVG.append('g')
             .attr('transform',`translate(${centerX},${centerY})`)
-            .append('circle').attr("r",radius).style("fill",getRandomColor()).attr('fill-opacity',opacity)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+            .append('circle').attr("r",radius).style("fill",randomColorGenerator()).attr('fill-opacity',opacity)
+        })
 
     return (
-        <svg id={"Bottom"+String(index)}/>
+        <>
+            <svg id={"Bottom"+String(index)}/>
+        </>
     )
 }

@@ -17,7 +17,6 @@ export const ChartBasic = () => {
             <Wrapper>
 
                 {/* Chart basic: axis */}
-
                 <>
                     <Container>
                         <Title>Chart basic: Random Axis range</Title>
