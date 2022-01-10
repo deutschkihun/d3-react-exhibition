@@ -15,7 +15,6 @@ export const Axis = ({width,height,margin,pointer,band}) => {
 
             let x_scale_log = d3.scaleLog().domain([1,100]).range([0,width]) // default is 10 
             let y_scale_log = d3.scaleLog().domain([1,100]).range([height,0]).base(10) // default is 10 
-            console.log(x_scale_log)
 
             let x_scale_point = d3.scalePoint().domain(pointer).range([0,width])
             let y_scale_point = d3.scalePoint().domain(pointer).range([height,0])

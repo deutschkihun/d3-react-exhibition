@@ -18,14 +18,13 @@ export const Axis = ({width,height,margin}) => {
             .attr('height', height + margin.top + margin.bottom)
             .append('g')
             .attr('transform',`translate(${margin.left},${margin.top})`)
+
         
         axisTemplate.append('g').append('g').attr('transform',`translate(0,${height})`).call(d3.axisBottom(x_scale_axis));
         axisTemplate.append('g').call(d3.axisLeft(y_scale_axis));
-        
-        
         })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    },[])
 
     return (
         <>

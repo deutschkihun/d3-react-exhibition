@@ -1,15 +1,23 @@
 import React from 'react'
 import { Coordinate } from './Coordinate'
+import {range} from 'd3'
 
 export const DataCoordinate = ({
     width,
     height,
-    margin
+    margin,
+    refresh
 }) => (
-    <Coordinate
-        width={width}
-        height={height}
-        margin={margin}
-    />
+    <>
+        {range(4).map((k) => (
+            <Coordinate
+                width={width}
+                height={height}
+                margin={margin}
+                refresh={refresh}
+                index={k}
+            />
+        ))}
+    </>
 )
 

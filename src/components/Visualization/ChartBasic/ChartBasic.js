@@ -1,9 +1,12 @@
-import React from 'react'
-import { Container, Wrapper,Title } from '../SVG/SVG'
+import React, {useRef} from 'react'
+import { Container, Wrapper,Title,ButtonContainer,Element } from '../SVG/SVG'
+import {Button} from 'antd'
 import { AxisBasic } from './AxisBasic/AxisBasic'
 import { AxisBasicDescription } from './AxisBasic/AxisBasicDescription'
 import {CustomAxis} from './CustomAxis/CustomAxis'
 import { DataCoordinate } from './DataCoordinate/DataCoordinate'
+import { refreshHandler } from '../../../helper/refreshHandler'
+
 export const ChartBasic = () => {
 
     let margin = {top: 10, right: 40, bottom: 30, left: 40}
@@ -11,6 +14,7 @@ export const ChartBasic = () => {
     let height = 400 - margin.top - margin.bottom;
     const pointer = ["Apple","Grape","Banana","StrawBerry","Watermelon"]
     const band = ["A++","A+","A","B+","B","C"]
+    const DataCoordinateRef = useRef(null)
 
     return (
         <>
@@ -47,27 +51,26 @@ export const ChartBasic = () => {
 
                 <>
                     <Container>
-                        <Title>Chart basic: Displaying random data on the random coordinates</Title>
-                        <DataCoordinate
-                           width={width}
-                           height={height}
-                           margin={margin}
-                        />
+                        <Title>Chart basic: Displaying random data on the random coordinates
+                        <ButtonContainer>
+                                <Button onClick={() => refreshHandler(<DataCoordinate
+                                                                        width={width}
+                                                                        height={height}
+                                                                        margin={margin}
+                                                                        refresh={true}
+                                                                    />,DataCoordinateRef)}>Click Me</Button>
+                            </ButtonContainer>
+                        </Title>
+                        <Element ref={DataCoordinateRef}>
+                            <DataCoordinate
+                                width={width}
+                                height={height}
+                                margin={margin}
+                                refresh={false}
+                            />
+                       </Element>
                     </Container>
                 </>
-
-                <>
-                    <Container>
-                        <Title>Curve line with d3.line() </Title>
-                    </Container>
-                </>
-
-                <>
-                    <Container>
-                        <Title>Function's area with d3.area()</Title>
-                    </Container>
-                </>
-          
         </Wrapper>
     </>
     )
