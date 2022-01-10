@@ -15,6 +15,7 @@ export const ChartBasic = () => {
     const pointer = ["Apple","Grape","Banana","StrawBerry","Watermelon"]
     const band = ["A++","A+","A","B+","B","C"]
     const DataCoordinateRef = useRef(null)
+    const AxisBasicRef = useRef(null)
 
     return (
         <>
@@ -23,13 +24,25 @@ export const ChartBasic = () => {
                 {/* Chart basic: axis */}
                 <>
                     <Container>
-                        <Title>Chart basic: Random Axis range</Title>
+                        <Title>Chart basic: Random Axis range
+                            <ButtonContainer>
+                                    <Button onClick={() => refreshHandler( <AxisBasic
+                                                                                width={width}
+                                                                                height={height}
+                                                                                margin={margin}
+                                                                                refresh={true}
+                                                                            />,DataCoordinateRef)}>Click Me</Button>
+                            </ButtonContainer>
+                        </Title>
                         <p>The first thing to do to draw a chart is to build a coordinate system. The coordinate system is divided into x-axis and y-axis based on two dimensions. If it is three dimensions, we need the z-axis, but we will only deal with two dimensions in this time. In the following example, a coordinate system was drawn using various scale ranges.</p>
-                            <AxisBasic
-                                width={width}
-                                height={height}
-                                margin={margin}
-                            />
+                        <Element ref={AxisBasicRef}>
+                        <AxisBasic
+                            width={width}
+                            height={height}
+                            margin={margin}
+                            refresh={false}
+                        />
+                        </Element>
                         <p>The most basic scale expression method is scale-linar. That is, the scale in the form of a linear function is applied to the axis coordinates.</p>
                     </Container>
                     <AxisBasicDescription/>
@@ -52,13 +65,13 @@ export const ChartBasic = () => {
                 <>
                     <Container>
                         <Title>Chart basic: Displaying random data on the random coordinates
-                        <ButtonContainer>
-                                <Button onClick={() => refreshHandler(<DataCoordinate
-                                                                        width={width}
-                                                                        height={height}
-                                                                        margin={margin}
-                                                                        refresh={true}
-                                                                    />,DataCoordinateRef)}>Click Me</Button>
+                            <ButtonContainer>
+                                    <Button onClick={() => refreshHandler(<DataCoordinate
+                                                                            width={width}
+                                                                            height={height}
+                                                                            margin={margin}
+                                                                            refresh={true}
+                                                                        />,DataCoordinateRef)}>Click Me</Button>
                             </ButtonContainer>
                         </Title>
                         <Element ref={DataCoordinateRef}>
