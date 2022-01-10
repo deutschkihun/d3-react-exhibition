@@ -28,21 +28,21 @@ export const Axis = ({width,height,margin,index,refresh}) => {
             .attr("y", height + margin.top + 20)
             .text("X axis");
 
-// Y axis label:
-axisTemplateElement.append("text")
-            .attr("text-anchor", "end")
-            .attr("transform", "rotate(-90)")
-            .attr("y", -margin.left+10)
-            .attr("x", -margin.top)
-            .text("Y axis")
+            // Y axis label:
+            axisTemplateElement.append("text")
+                        .attr("text-anchor", "end")
+                        .attr("transform", "rotate(-90)")
+                        .attr("y", -margin.left+10)
+                        .attr("x", -margin.top)
+                        .text("Y axis")
 
-axisTemplateElement.append("text")
-            .attr("x", (width / 2))             
-            .attr("y", (margin.top /2))
-            .attr("text-anchor", "middle")  
-            .style("font-size", "16px") 
-            .style("text-decoration", "underline")  
-            .text(`Coordinate Sample ${index+1}`);
+            axisTemplateElement.append("text")
+                        .attr("x", (width / 2))             
+                        .attr("y", (margin.top /2))
+                        .attr("text-anchor", "middle")  
+                        .style("font-size", "16px") 
+                        .style("text-decoration", "underline")  
+                        .text(`Coordinate Sample ${index+1}`);
     })
 
     return (

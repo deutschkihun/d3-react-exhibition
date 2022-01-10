@@ -16,10 +16,27 @@ export const ChartBasic = () => {
     const band = ["A++","A+","A","B+","B","C"]
     const DataCoordinateRef = useRef(null)
     const AxisBasicRef = useRef(null)
+    const CustomAxisRef = useRef(null)
 
     return (
         <>
             <Wrapper>
+                {/* Chart basic: Random Axis scaler */}
+                <>
+                    <Container>
+                        <Title>Chart basic: linear scaler, log scaler, band scaler, and point scaler</Title>
+                        <p>Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.</p>
+                        <Element ref={CustomAxisRef}>          
+                            <CustomAxis
+                                width={width}
+                                height={height}
+                                margin={margin}
+                                pointer={pointer}
+                                band={band}
+                            />
+                        </Element>
+                    </Container>
+                </>
 
                 {/* Chart basic: axis */}
                 <>
@@ -31,7 +48,7 @@ export const ChartBasic = () => {
                                                                                 height={height}
                                                                                 margin={margin}
                                                                                 refresh={true}
-                                                                            />,DataCoordinateRef)}>Click Me</Button>
+                                                                            />,AxisBasicRef)}>Click Me</Button>
                             </ButtonContainer>
                         </Title>
                         <p>The first thing to do to draw a chart is to build a coordinate system. The coordinate system is divided into x-axis and y-axis based on two dimensions. If it is three dimensions, we need the z-axis, but we will only deal with two dimensions in this time. In the following example, a coordinate system was drawn using various scale ranges.</p>
@@ -47,21 +64,8 @@ export const ChartBasic = () => {
                     </Container>
                     <AxisBasicDescription/>
                 </>
-
-                <>
-                    <Container>
-                        <Title>Chart basic: Random Axis scaler</Title>
-                        <p>Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.</p>
-                        <CustomAxis
-                           width={width}
-                           height={height}
-                           margin={margin}
-                           pointer={pointer}
-                           band={band}
-                        />
-                    </Container>
-                </>
-
+    
+                {/* Chart basic: Displaying random data on the random coordinates */}
                 <>
                     <Container>
                         <Title>Chart basic: Displaying random data on the random coordinates
