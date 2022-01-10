@@ -1,28 +1,26 @@
 import React from 'react'
-import {LinearScaler} from './Scaler/LinearScaler'
-import {LogScaler} from './Scaler/LogScaler'
+import {AxisLabel} from './AxisLabel'
+import {AxisLabelAdvance} from './AxisLabelAdvance'
 
-export const CustomAxis = ({
+export const CustomAxisLabel = ({
     width,
     height,
     margin,
     pointer,
     band,
-    refresh
 }) => (
     <>
-        <LinearScaler
+        <AxisLabel
             width={width}
             height={height}
             margin={margin}
+            band={band}
         />
-        <LogScaler
+        <AxisLabelAdvance
             width={width}
             height={height}
             margin={margin}
             pointer={pointer}
-            band={band}
-            refresh={refresh}
         />
     </>
 )

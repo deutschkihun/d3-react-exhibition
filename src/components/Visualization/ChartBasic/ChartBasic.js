@@ -4,6 +4,7 @@ import {Button} from 'antd'
 import { AxisBasic } from './AxisBasic/AxisBasic'
 import { AxisBasicDescription } from './AxisBasic/AxisBasicDescription'
 import {CustomAxis} from './CustomAxis/CustomAxis'
+import { CustomAxisLabel } from './CustomAxisLabel/CustomAxisLabel'
 import { DataCoordinate } from './DataCoordinate/DataCoordinate'
 import { refreshHandler } from '../../../helper/refreshHandler'
 
@@ -13,7 +14,7 @@ export const ChartBasic = () => {
     let width = 450 - margin.left - margin.right;
     let height = 400 - margin.top - margin.bottom;
     const pointer = ["Apple","Grape","Banana","StrawBerry","Watermelon"]
-    const band = ["A++","A+","A","B+","B","C"]
+    const band = ["C","B","B+","A","A+","A++"]
     const DataCoordinateRef = useRef(null)
     const AxisBasicRef = useRef(null)
     const CustomAxisRef = useRef(null)
@@ -24,10 +25,27 @@ export const ChartBasic = () => {
                 {/* Chart basic: Random Axis scaler */}
                 <>
                     <Container>
-                        <Title>Chart basic: linear scaler, log scaler, band scaler, and point scaler</Title>
+                        <Title>Chart basic: Linear scaler, Log scaler</Title>
                         <p>Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.</p>
                         <Element ref={CustomAxisRef}>          
                             <CustomAxis
+                                width={width}
+                                height={height}
+                                margin={margin}
+                                pointer={pointer}
+                                band={band}
+                            />
+                        </Element>
+                    </Container>
+                </>
+
+                 {/* Chart basic: Custom axis label */}
+                 <>
+                    <Container>
+                        <Title>Chart basic: Custom axis label</Title>
+                        <p>Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.</p>
+                        <Element ref={CustomAxisRef}>          
+                            <CustomAxisLabel
                                 width={width}
                                 height={height}
                                 margin={margin}

@@ -34,7 +34,7 @@ export const LogScaler = ({width,height,margin,index}) => {
             .attr("text-anchor", "middle")  
             .style("font-size", "16px") 
             .style("text-decoration", "underline")  
-            .text(`Log Scaler`);
+            .text(`Log Scaler with base 2`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 

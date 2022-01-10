@@ -4,9 +4,8 @@ import * as d3 from 'd3'
 export const LinearScaler = ({width,height,margin}) => {
 
     useEffect(() => {
-            const random = Math.random().toFixed(1)
-            let x_scale_linear = d3.scaleLinear().domain([0,100*random]).range([0,width])
-            let y_scale_linear = d3.scaleLinear().domain([0,100*random]).range([height,0])            
+            let x_scale_linear = d3.scaleLinear().domain([0,100]).range([0,width])
+            let y_scale_linear = d3.scaleLinear().domain([0,100]).range([height,0])            
             let axisTemplate = d3.select('#linearScaler')
                                 .attr('width',width + margin.left + margin.right)
                                 .attr('height', height + margin.top + margin.bottom)
