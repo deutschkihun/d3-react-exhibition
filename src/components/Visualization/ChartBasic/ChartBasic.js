@@ -3,11 +3,13 @@ import { Container, Wrapper,Title,ButtonContainer,Element } from '../SVG/SVG'
 import {Button} from 'antd'
 import { AxisBasic } from './AxisBasic/AxisBasic'
 import { AxisBasicDescription } from './AxisBasic/AxisBasicDescription'
-import {CustomAxis} from './CustomAxis/CustomAxis'
+import { BasicAxisScalerDescription } from './BasicAxisScaler/BasicAxisScalerDescription'
+import {BasicAxisScaler} from './BasicAxisScaler/BasicAxisScaler'
 import { CustomAxisLabel } from './CustomAxisLabel/CustomAxisLabel'
 import { DataCoordinate } from './DataCoordinate/DataCoordinate'
 import { refreshHandler } from '../../../helper/refreshHandler'
-
+import { CustomAxisLabelDescription } from './CustomAxisLabel/CustomAxisLabelDescription'
+import {DataCoordinateDescription} from './DataCoordinate/DataCoordinateDescription'
 export const ChartBasic = () => {
 
     let margin = {top: 10, right: 40, bottom: 30, left: 40}
@@ -22,13 +24,13 @@ export const ChartBasic = () => {
     return (
         <>
             <Wrapper>
-                {/* Chart basic: Random Axis scaler */}
+                {/* Chart basic: Basic Axis scaler */}
                 <>
                     <Container>
-                        <Title>Chart basic: Linear scaler, Log scaler</Title>
+                        <Title>Chart basic: Basic Axis scaler</Title>
                         <p>Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.</p>
                         <Element ref={CustomAxisRef}>          
-                            <CustomAxis
+                            <BasicAxisScaler
                                 width={width}
                                 height={height}
                                 margin={margin}
@@ -37,6 +39,7 @@ export const ChartBasic = () => {
                             />
                         </Element>
                     </Container>
+                    <BasicAxisScalerDescription/>
                 </>
 
                  {/* Chart basic: Custom axis label */}
@@ -54,9 +57,10 @@ export const ChartBasic = () => {
                             />
                         </Element>
                     </Container>
+                    <CustomAxisLabelDescription/>
                 </>
 
-                {/* Chart basic: axis */}
+                {/* Chart basic: Random Axis range */}
                 <>
                     <Container>
                         <Title>Chart basic: Random Axis range
@@ -105,6 +109,7 @@ export const ChartBasic = () => {
                             />
                        </Element>
                     </Container>
+                    <DataCoordinateDescription/>
                 </>
         </Wrapper>
     </>

@@ -2,7 +2,7 @@ import React from 'react'
 import {LinearScaler} from './Scaler/LinearScaler'
 import {LogScaler} from './Scaler/LogScaler'
 
-export const CustomAxis = ({
+export const BasicAxisScaler = ({
     width,
     height,
     margin,
