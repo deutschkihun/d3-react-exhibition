@@ -7,4 +7,4 @@
 https://d3-gsap-react-exhibition.herokuapp.com/
 
 
-Currently, this application is in progress and will be updated periodically.
+Currently, this application is in progress and will be updated bi-weekly.
