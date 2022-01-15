@@ -15,6 +15,7 @@ const AboutWrapper = styled.div`
 const AboutTitle = styled.h4``;
 const AboutMessage = styled.p`
   font-size:1rem;
+  text-align: center;
 `;
 
 const ReferenceButton = styled(Button)`

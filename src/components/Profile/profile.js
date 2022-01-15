@@ -17,6 +17,7 @@ const ProfileWrapper = styled.div`
 const ProfileTitle = styled.h4``;
 const ProfileMessage = styled.p`
   font-size:1rem;
+  text-align:center;
 `;
 
 const LogoWrapper = styled.div`
