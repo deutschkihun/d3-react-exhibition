@@ -8,15 +8,17 @@ const path = require('path')
 require('dotenv').config();
 
 const buildPath = path.join(__dirname, '..', 'build');
+const clientBuildPath = path.join(__dirname, '..', '/build/index.html')
 app.use(express.static(buildPath));
 app.use(bodyParser.json());
 //app.use(cors())
 
 app.use('/api/v1/products',products)
 
-app.route('*').get( async () => {
-  await app.use(express.static(buildPath));
+app.route('/*').get(async (req,res) => {
+  res.sendFile(path.resolve(clientBuildPath))
 });
+
 
 
 const port = process.env.PORT || 5000
