@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
-import {range} from 'd3'
 
 export const Axis = ({width,height,margin,index,refresh}) => {
-    const array = range(4);
 
     useEffect(() => {
 

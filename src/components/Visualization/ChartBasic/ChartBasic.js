@@ -10,6 +10,9 @@ import { DataCoordinate } from './DataCoordinate/DataCoordinate'
 import { refreshHandler } from '../../../helper/refreshHandler'
 import { CustomAxisLabelDescription } from './CustomAxisLabel/CustomAxisLabelDescription'
 import {DataCoordinateDescription} from './DataCoordinate/DataCoordinateDescription'
+import { ChartBackground } from './ChartBackground/ChartBackground'
+import {ChartBackgroundDescription} from './ChartBackground/ChartBackgroundDescription'
+
 export const ChartBasic = () => {
 
     let margin = {top: 10, right: 40, bottom: 30, left: 40}
@@ -110,6 +113,21 @@ export const ChartBasic = () => {
                        </Element>
                     </Container>
                     <DataCoordinateDescription/>
+                </>
+
+                {/* Chart basic: Displaying random data on the random coordinates */}
+                <>
+                    <Container>
+                        <Title>Chart Background</Title>
+                        <Element>
+                        <ChartBackground
+                                width={width}
+                                height={height}
+                                margin={margin}
+                            />
+                        </Element>
+                    </Container>
+                    <ChartBackgroundDescription/>
                 </>
         </Wrapper>
     </>
