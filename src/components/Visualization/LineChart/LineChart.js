@@ -6,6 +6,7 @@ import {ConfidenceIntervalDescription} from './ConfidenceInterval/ConfidenceInte
 import { LineChartBasicDescription } from './LineChartBasic/LineChartBasicDesscription';
 import {AreaChartBasic} from './AreaChartBasic/AreaChartBasic'
 import {AreaChartBasicDescription} from './AreaChartBasic/AreaChartBasicDescription'
+import { InteractiveLineChartBasic } from './InteractiveLineChart/InteractiveLineChartBasic';
 
 export const LineChart = () => {
 
@@ -61,9 +62,16 @@ export const LineChart = () => {
                         <AreaChartBasicDescription/>
                 </>
                 <>
-                    {/* Multiple line chart*/}
+                    {/* Line Chart interactive */}
                         <Container>
-                            <Title>Multiple line chart</Title>
+                            <Title>Interactive line chart</Title>
+                            <Element>
+                                <InteractiveLineChartBasic
+                                            width={width}
+                                            height={height}
+                                            margin={margin}
+                                />
+                            </Element>
                         </Container>
                 </>
                 <>
