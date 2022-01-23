@@ -4,6 +4,8 @@ import { LineChartBasic } from './LineChartBasic/LineChartBasic';
 import {ConfidenceIntervalBasic} from './ConfidenceInterval/ConfidenceIntervalBasic'
 import {ConfidenceIntervalDescription} from './ConfidenceInterval/ConfidenceIntervalDescription'
 import { LineChartBasicDescription } from './LineChartBasic/LineChartBasicDesscription';
+import {AreaChartBasic} from './AreaChartBasic/AreaChartBasic'
+import {AreaChartBasicDescription} from './AreaChartBasic/AreaChartBasicDescription'
 
 export const LineChart = () => {
 
@@ -14,7 +16,7 @@ export const LineChart = () => {
     return (
         <>
             <Wrapper>
-               <>
+                <>
                     {/* Line Chart Basic: importing data and demonstrating */}
                     <Container>
                         <Title>Line Chart Basic: importing data and demonstrating</Title>
@@ -43,6 +45,26 @@ export const LineChart = () => {
                             </Element>
                         </Container>
                         <ConfidenceIntervalDescription/>
+                </>
+                <>
+                    {/* Line Chart advance: area chart*/}
+                        <Container>
+                            <Title>Line Chart advance: Area Chart</Title>
+                            <Element>
+                                <AreaChartBasic
+                                            width={width}
+                                            height={height}
+                                            margin={margin}
+                                />
+                            </Element>
+                        </Container>
+                        <AreaChartBasicDescription/>
+                </>
+                <>
+                    {/* Multiple line chart*/}
+                        <Container>
+                            <Title>Multiple line chart</Title>
+                        </Container>
                 </>
                 <>
                     {/* Multiple line chart*/}
