@@ -10,32 +10,23 @@ export const KO = ({width,height,margin}) => {
             .append('g')
               .attr('transform',`translate(${margin.left},${margin.top * 4})`)
                          
-            d3.csv('https://raw.githubusercontent.com/deutschkihun/vizDataRepo/main/csv/KO.csv',
-
-            function(d){
+            d3.csv('https://raw.githubusercontent.com/deutschkihun/vizDataRepo/main/csv/KO.csv',(d) => {
               return { date : d3.timeParse("%Y-%m-%d")(d.date), value : d.value }
-            }).then(
-          
-            // Now I can use this dataset:
-            function(data) {
-          
+            }).then((data) => {
               const x = d3.scaleTime()
                 .domain(d3.extent(data, function(d) { return d.date }))
                 .range([ 0, width ]);
-
                 
-                appleChart.append("g")
+              appleChart.append("g")
                 .attr("transform", `translate(0, ${height})`)
                 .call(d3.axisBottom(x));
           
-              // Add Y axis
               const y = d3.scaleLinear()
                 .domain([d3.min(data, function(d) { return d.value; })-3, d3.max(data, function(d) { return d.value; })])
                   .range([ height, 0 ]);
                 appleChart.append("g")
                 .call(d3.axisLeft(y));
           
-              // Add the line
               appleChart.append("path")
                 .datum(data)
                 .attr("fill", "none")
@@ -52,7 +43,6 @@ export const KO = ({width,height,margin}) => {
                 .attr("y", height + margin.top + 20)
                 .text("Year");
 
-              // Y axis label:
               appleChart.append("text")
                 .attr("text-anchor", "end")
                 .attr("transform", "rotate(-90)")
@@ -67,7 +57,6 @@ export const KO = ({width,height,margin}) => {
                 .style("font-size", "16px") 
                 .style("text-decoration", "underline")  
                 .text(`Coca cola stock evolution`);
-          
           })
             
     // eslint-disable-next-line react-hooks/exhaustive-deps
