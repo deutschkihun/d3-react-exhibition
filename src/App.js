@@ -12,6 +12,7 @@ import { ChartBasic } from './components/Visualization/ChartBasic/ChartBasic';
 import { LineChart } from './components/Visualization/LineChart/LineChart';
 import { HeatMap } from './components/Visualization/HeatMap/HeatMap'
 import { BarChart } from './components/Visualization/BarChart/BarChart'
+import { InteractiveChart } from './components/Visualization/InteractiveChart/InteractiveChart';
 
 const Seperator = styled.div`
   padding-top:69px;
@@ -33,6 +34,7 @@ function App() {
             <Router exact path="/LineChart" component={LineChart} />
             <Router exact path="/BarChart" component={BarChart} />
             <Router exact path="/HeatMap" component={HeatMap} />
+            <Router exact path="/InteractiveChart" component={InteractiveChart} />
             <Router exact path="/about" component={About} />
             <Router exact path="/profile" component={Profile} />
             <Router path="*" component={Error} />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Explanation,Pre,Code } from '../SVG'
+import { Explanation,Pre,Code } from '../../../../helper/helperComponents'
 
 export const OlympicFlagDescription = () => {
     return (

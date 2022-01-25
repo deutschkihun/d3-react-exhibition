@@ -1,6 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import {Code,Pre,Explanation} from '../../SVG/SVG';
+import {Code,Pre,Explanation} from '../../../../helper/helperComponents';
 
 export const AreaChartBasicDescription = () => {
     return (

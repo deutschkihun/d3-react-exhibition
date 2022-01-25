@@ -1,12 +1,11 @@
 import React from 'react'
-import { Wrapper,Container,Title,Element } from '../SVG/SVG';
+import { Wrapper,Container,Title,Element } from '../../../helper/helperComponents';
 import { LineChartBasic } from './LineChartBasic/LineChartBasic';
 import {ConfidenceIntervalBasic} from './ConfidenceInterval/ConfidenceIntervalBasic'
 import {ConfidenceIntervalDescription} from './ConfidenceInterval/ConfidenceIntervalDescription'
 import { LineChartBasicDescription } from './LineChartBasic/LineChartBasicDesscription';
 import {AreaChartBasic} from './AreaChartBasic/AreaChartBasic'
 import {AreaChartBasicDescription} from './AreaChartBasic/AreaChartBasicDescription'
-import { InteractiveLineChartBasic } from './InteractiveLineChart/InteractiveLineChartBasic';
 
 export const LineChart = () => {
 
@@ -60,19 +59,6 @@ export const LineChart = () => {
                             </Element>
                         </Container>
                         <AreaChartBasicDescription/>
-                </>
-                <>
-                    {/* Line Chart interactive */}
-                        <Container>
-                            <Title>Interactive line chart</Title>
-                            <Element>
-                                <InteractiveLineChartBasic
-                                            width={width}
-                                            height={height}
-                                            margin={margin}
-                                />
-                            </Element>
-                        </Container>
                 </>
                 <>
                     {/* Multiple line chart*/}

@@ -12,6 +12,7 @@ export const LeftMenu = (props) => {
         <Menu.Item key="setting:3"><Link to="/LineChart">Line Chart</Link></Menu.Item>
         <Menu.Item key="setting:4"><Link to="/BarChart">Bar Chart</Link></Menu.Item>
         <Menu.Item key="setting:5"><Link to="/HeatMap">Heat Map</Link></Menu.Item>
+        <Menu.Item key="setting:6"><Link to="/InteractiveChart">Interactive Chart</Link></Menu.Item>
     </SubMenu>
   </Menu>
   )

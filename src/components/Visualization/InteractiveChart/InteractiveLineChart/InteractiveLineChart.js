@@ -1,7 +1,10 @@
 import React from 'react'
 import { KOInteractive } from './KOInteractive'
+import {PEPSIInteractive} from './PEPSIInteractive'
+import {APPLInteractive} from './APPLInteractive'
+import {PGInteractive} from './PGInteractive'
 
-export const InteractiveLineChartBasic = ({
+export const InteractiveLineChart = ({
     width,
     height,
     margin,
@@ -12,22 +15,21 @@ export const InteractiveLineChartBasic = ({
             height={height}
             margin={margin}
         />
-        {/*}
-        <PEPSI
+        <PEPSIInteractive
             width={width}
             height={height}
             margin={margin}
         />
-        <APPL
+        <APPLInteractive
             width={width}
             height={height}
             margin={margin}
         />
-        <PG
+        <PGInteractive
             width={width}
             height={height}
             margin={margin}
-/>*/}
+        />
     </>
 )
 

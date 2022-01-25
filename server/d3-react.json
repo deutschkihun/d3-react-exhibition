@@ -28,5 +28,11 @@
         "level": 4,
         "categories":5,
         "description":"Heat Map gallery"
+    },
+    {
+        "name": "Interactive Chart",
+        "level": 3,
+        "categories":6,
+        "description":"Interactive Chart gallery"
     }
 ]

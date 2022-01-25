@@ -18,6 +18,10 @@ const categories = [
     {
         "_id": 5,
         "name": "Heat Map"
+    },
+    {
+        "_id": 6,
+        "name": "Interactive Chart"
     }
 ]
 

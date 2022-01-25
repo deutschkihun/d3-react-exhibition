@@ -1,5 +1,5 @@
 import React from 'react'
-import {Code,Pre,Explanation} from '../SVG';
+import {Code,Pre,Explanation} from '../../../../helper/helperComponents'
 
 export const SVGWithoutD3Description = () => {
     return (

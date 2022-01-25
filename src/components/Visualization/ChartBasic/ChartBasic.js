@@ -1,5 +1,4 @@
 import React, {useRef} from 'react'
-import { Container, Wrapper,Title,ButtonContainer,Element } from '../SVG/SVG'
 import {Button} from 'antd'
 import { AxisBasic } from './AxisBasic/AxisBasic'
 import { AxisBasicDescription } from './AxisBasic/AxisBasicDescription'
@@ -12,6 +11,7 @@ import { CustomAxisLabelDescription } from './CustomAxisLabel/CustomAxisLabelDes
 import {DataCoordinateDescription} from './DataCoordinate/DataCoordinateDescription'
 import { ChartBackground } from './ChartBackground/ChartBackground'
 import {ChartBackgroundDescription} from './ChartBackground/ChartBackgroundDescription'
+import {Title,Container,ButtonContainer,Element,Wrapper} from '../../../helper/helperComponents'
 
 export const ChartBasic = () => {
 

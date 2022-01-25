@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper,Container,Title } from '../SVG/SVG';
+import { Wrapper,Container,Title } from '../../../helper/helperComponents';
 
 export const HeatMap = () => {
 

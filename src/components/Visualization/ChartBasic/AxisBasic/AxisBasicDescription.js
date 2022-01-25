@@ -1,6 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import { Explanation,Pre,Code } from '../../SVG/SVG'
+import { Explanation,Pre,Code } from '../../../../helper/helperComponents'
 
 export const AxisBasicDescription = () => {
     return (
