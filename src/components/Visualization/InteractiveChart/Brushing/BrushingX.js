@@ -14,13 +14,14 @@ export const BrushingX = ({margin,width,height}) => {
                   .attr("cx", 200)
                   .attr("cy", 200)
                   .attr("r", 40)
-                  .attr("fill", "#69a3b2")
+                  .attr('stroke','red')
+                  .attr('stroke-width','10')
+                  .attr("fill", "black") 
     brushingBoth.call( d3.brushX()                     
                 .extent([ [0,0], [width,height] ]))
    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
- 
+
       
   return (
     <>
