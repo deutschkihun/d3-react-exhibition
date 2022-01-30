@@ -13,6 +13,7 @@ import { LineChart } from './components/Visualization/LineChart/LineChart';
 import { HeatMap } from './components/Visualization/HeatMap/HeatMap'
 import { BarChart } from './components/Visualization/BarChart/BarChart'
 import { InteractiveChart } from './components/Visualization/InteractiveChart/InteractiveChart';
+import { SVGAnimation } from './components/Visualization/SVGAnimation/SVGAnimation'
 
 const Seperator = styled.div`
   padding-top:69px;
@@ -30,6 +31,7 @@ function App() {
           <Switch>
             <Router exact path="/" component={Landing} />
             <Router exact path="/SVG" component={SVG} />
+            <Router exact path="/SVGAnimation" component={SVGAnimation} />
             <Router exact path="/ChartBasic" component={ChartBasic} />
             <Router exact path="/LineChart" component={LineChart} />
             <Router exact path="/BarChart" component={BarChart} />

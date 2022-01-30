@@ -8,6 +8,7 @@ export const LeftMenu = (props) => {
     <Menu mode={props.mode}>
     <SubMenu title={<span>Quick</span>}>
         <Menu.Item key="setting:1"><Link to="/SVG">SVG</Link></Menu.Item>
+        <Menu.Item key="setting:2"><Link to="/SVGAnimation">SVG Animation</Link></Menu.Item>
         <Menu.Item key="setting:3"><Link to="/ChartBasic">Chart Basic</Link></Menu.Item>
         <Menu.Item key="setting:3"><Link to="/LineChart">Line Chart</Link></Menu.Item>
         <Menu.Item key="setting:4"><Link to="/BarChart">Bar Chart</Link></Menu.Item>
