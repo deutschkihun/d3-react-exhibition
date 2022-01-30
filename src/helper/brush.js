@@ -1,7 +1,4 @@
 import * as d3 from 'd3'
-
-export let brush = (width,height,updateChart) => d3.brushX()                   
-    // Add the brush feature using the d3.brush function
-    // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
-    .extent( [ [0,0], [width,height] ] )  
-    .on("end", updateChart) 
+export let brushBoth = (width,height) => d3.brush().extent( [ [0,0], [width,height] ] )  
+export let brushX = (width,height) => d3.brushX().extent( [ [0,0], [width,height] ] )  
+export let brushY = (width,height) => d3.brushY().extent( [ [0,0], [width,height] ] )  

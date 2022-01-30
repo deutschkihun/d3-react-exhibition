@@ -1,10 +1,10 @@
 import React from 'react'
 import { Wrapper,Container,Title,Element } from '../../../helper/helperComponents';
-import { InteractiveLineChart } from './InteractiveLineChart/InteractiveLineChart';
 import { margin,width,height } from '../../../helper/positionData';
 import { BrushingBoth } from './Brushing/BrushingBoth';
 import { BrushingX } from './Brushing/BrushingX';
 import { BrushingY } from './Brushing/BrushingY';
+import { HighlightingBrushedElement } from './Brushing/HighlightingBrushedElement';
 
 
 export const InteractiveChart = () => {
@@ -51,40 +51,16 @@ export const InteractiveChart = () => {
                 <>
                 {/* D3 interactive : brushing event triggering */}
                     <Container>
-                        <Title>D3 interactive : Brushing event triggering </Title>
-                            <p>Trigger a change with on or classed</p>
-                        <Element>
-                        
-                        </Element>
+                        <Title>D3 interactive : Highlighting brushed element</Title>
+                            <p>If you highlight the elements included in the brush box, it can help users who look at the data, recognize and understand data more intuitively and conveniently.</p>
+                            <Element>
+                                <HighlightingBrushedElement
+                                    width={width}
+                                    height={height}
+                                    margin={margin}
+                                />
+                            </Element>
                     </Container> 
-                </>
-
-                <>
-                    {/* D3 interactive : Brushing line chart */}
-                    <Container>
-                        <Title>D3 interactive : brushing line chart</Title>
-                        <Element>
-                            <InteractiveLineChart
-                                width={width}
-                                height={height}
-                                margin={margin}
-                            />
-                        </Element>
-                    </Container>   
-                </>
-
-                <>
-                    {/* D3 interactive : Brushing scatter plot */}
-                    <Container>
-                        <Title>D3 interactive : Brushing scatter plot</Title>
-                        <Element>
-                            <InteractiveLineChart
-                                width={width}
-                                height={height}
-                                margin={margin}
-                            />
-                        </Element>
-                    </Container>   
                 </>
 
                 <>

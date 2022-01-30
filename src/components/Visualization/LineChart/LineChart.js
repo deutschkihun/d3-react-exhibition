@@ -7,6 +7,7 @@ import { LineChartBasicDescription } from './LineChartBasic/LineChartBasicDesscr
 import {AreaChartBasic} from './AreaChartBasic/AreaChartBasic'
 import {AreaChartBasicDescription} from './AreaChartBasic/AreaChartBasicDescription'
 import { MultipleChartBasic } from './MultipleChart/MultipleChartBasic';
+import {InteractiveLineChart} from './InteractiveLineChart/InteractiveLineChart'
 
 export const LineChart = () => {
 
@@ -73,6 +74,20 @@ export const LineChart = () => {
                                 />
                             </Element>
                         </Container>
+                </>
+
+                <>
+                    {/* D3 interactive : Brushing line chart */}
+                    <Container>
+                        <Title>D3 interactive : Brushing line chart</Title>
+                        <Element>
+                            <InteractiveLineChart
+                                width={width}
+                                height={height}
+                                margin={margin}
+                            />
+                        </Element>
+                    </Container>   
                 </>
             </Wrapper>
         </>

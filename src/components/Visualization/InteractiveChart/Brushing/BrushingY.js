@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import * as d3 from 'd3'
+import {brushY} from '../../../../helper/brush'
 
 export const BrushingY = ({margin,width,height}) => {
   useEffect(() => {
@@ -17,8 +18,7 @@ export const BrushingY = ({margin,width,height}) => {
                   .attr('stroke','red')
                   .attr('stroke-width','10')
                   .attr("fill", "black") 
-    brushingBoth.call( d3.brushY()                     
-                .extent([ [0,0], [width,height] ]))
+    brushingBoth.call(brushY(width,height))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
