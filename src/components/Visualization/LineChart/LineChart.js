@@ -8,6 +8,7 @@ import {AreaChartBasic} from './AreaChartBasic/AreaChartBasic'
 import {AreaChartBasicDescription} from './AreaChartBasic/AreaChartBasicDescription'
 import { MultipleChartBasic } from './MultipleChart/MultipleChartBasic';
 import {InteractiveLineChart} from './InteractiveLineChart/InteractiveLineChart'
+import {MultipleChartBasicDescription} from './MultipleChart/MultipleChartBasicDescription'
 
 export const LineChart = () => {
 
@@ -65,7 +66,7 @@ export const LineChart = () => {
                 <>
                     {/* Multiple line chart*/}
                         <Container>
-                            <Title>Multiple line chart in single element</Title>
+                            <Title>Multiple line chart in single component</Title>
                             <Element>
                                 <MultipleChartBasic
                                             width={width}
@@ -74,6 +75,7 @@ export const LineChart = () => {
                                 />
                             </Element>
                         </Container>
+                        <MultipleChartBasicDescription />
                 </>
 
                 <>
