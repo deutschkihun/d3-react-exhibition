@@ -7,15 +7,11 @@ export const MultipleChart = ({width,height,margin}) => {
               d3.csv('https://raw.githubusercontent.com/deutschkihun/vizDataRepo/main/csv/mock-data.csv').then((data) => {
               const group = d3.group(data, d => d.state)
               const svg = d3.select("#multiplechart")
-                .selectAll("uniqueChart")
-                .data(group)
-                .enter()
+                .selectAll("uniqueChart").data(group).enter()
                 .append("svg")
                   .attr("width", width + margin.left + margin.right)
                   .attr("height", height + margin.top + margin.bottom)
-                .append("g")
-                  .attr("transform", 
-                        `translate(${margin.left},${margin.top})`);
+                .append("g").attr("transform", `translate(${margin.left},${margin.top})`);
                 
               const x = d3.scaleLinear()
                 .domain(d3.extent(data, function(d) { return d.year; }))
