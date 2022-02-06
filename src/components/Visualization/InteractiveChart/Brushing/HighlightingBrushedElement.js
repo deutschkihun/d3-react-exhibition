@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import * as d3 from 'd3'
 import {brushBoth} from '../../../../helper/brush'
+import {updateChart} from '../../../../helper/chartUpdate'
 
 export const HighlightingBrushedElement = ({margin,width,height}) => {
   useEffect(() => {
@@ -18,8 +19,9 @@ export const HighlightingBrushedElement = ({margin,width,height}) => {
                   .attr('stroke','black')
                   .attr('stroke-width','1')
                   .attr("fill", "skyblue") 
-
     brushingBoth.call(brushBoth(width,height))
+                .on("start brush",(element,event,d) => updateChart(element,event)) // Each time the brush selection changes, trigger the 'updateChart' function 
+                // ??? 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
