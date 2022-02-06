@@ -9,6 +9,7 @@ import {AreaChartBasicDescription} from './AreaChartBasic/AreaChartBasicDescript
 import { MultipleChartBasic } from './MultipleChart/MultipleChartBasic';
 import {InteractiveLineChart} from './InteractiveLineChart/InteractiveLineChart'
 import {MultipleChartBasicDescription} from './MultipleChart/MultipleChartBasicDescription'
+import {MultipleChartDropdownBasic} from './MultipleChartDropdown/MultipleChartDropdownBasic'
 
 export const LineChart = () => {
 
@@ -72,6 +73,21 @@ export const LineChart = () => {
                                             width={width}
                                             height={height}
                                             margin={margin}
+                                />
+                            </Element>
+                        </Container>
+                        <MultipleChartBasicDescription />
+                </>
+
+                <>
+                    {/* Multiple line chart with dropwdown filtering */}
+                        <Container>
+                            <Title>Multiple line chart with dropwdown filtering</Title>
+                            <Element>
+                                <MultipleChartDropdownBasic
+                                        width={width}
+                                        height={height}
+                                        margin={margin}
                                 />
                             </Element>
                         </Container>

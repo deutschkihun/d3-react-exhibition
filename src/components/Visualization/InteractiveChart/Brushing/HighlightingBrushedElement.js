@@ -21,7 +21,6 @@ export const HighlightingBrushedElement = ({margin,width,height}) => {
                   .attr("fill", "skyblue") 
     brushingBoth.call(brushBoth(width,height))
                 .on("start brush",(element,event,d) => updateChart(element,event)) // Each time the brush selection changes, trigger the 'updateChart' function 
-                // ??? 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   

@@ -65,11 +65,12 @@ export const InteractiveChart = () => {
 
                 <>
                 {/* D3 interactive : Switching */}
-                    <Container>
-                        <Title>D3 interactive : Switching </Title>
-                        <p>Switching</p>
-                    </Container> 
+                        <Container>
+                            <Title>D3 interactive : Hover </Title>
+                            <p>Hover</p>
+                        </Container> 
                 </>
+
             </Wrapper>
         </>
     )

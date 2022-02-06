@@ -26,7 +26,6 @@ export const KOArea = ({width,height,margin}) => {
                   .range([ height, 0 ]);
                   koAreaChart.append("g")
                 .call(d3.axisLeft(y));
-            console.log("y",y(100))
             koAreaChart.append("path")
                 .datum(data)
                 .attr("fill", "#cce5df")
