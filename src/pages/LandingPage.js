@@ -5,10 +5,9 @@ import Meta from 'antd/lib/card/Meta';
 import { CheckBox } from '../components/CheckBox';
 import { RadioBox } from '../components/RadioBox';
 import { SearchEngine } from '../components/SearchEngine';
-import { categories, level } from '../components/Data';
+import { categories, level } from '../data';
 import { ImageShowCase } from '../components/ImageShowCase';
 import { Container, LandingTitle, SearchContainer } from '../ui-lib/lib';
-
 
 export const LandingPage = () => {
     const [items, setItems] = useState([])

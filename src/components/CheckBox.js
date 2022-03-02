@@ -1,15 +1,10 @@
 import React, { useState } from 'react'
 import { Collapse, Checkbox } from 'antd';
-import styled from "styled-components";
-
-const CheckList = styled.span``;
-
+import { CheckList } from '../ui-lib/lib'
 const { Panel } = Collapse;
 
 export const CheckBox = (props) => {
-
     const [Checked, setChecked] = useState([])
-
     const handleToggle = (value) => {
         const currentIndex = Checked.indexOf(value)
         const newChecked = [...Checked]
@@ -31,12 +26,10 @@ export const CheckBox = (props) => {
     ))
 
     return (
-        <div>
-            <Collapse defaultActiveKey={['0']} >
-                <Panel header="Categories" key="1">
-                    {renderCheckboxLists()}
-                </Panel>
-            </Collapse>
-        </div>
+        <Collapse defaultActiveKey={['0']} >
+            <Panel header="Categories" key="1">
+                {renderCheckboxLists()}
+            </Panel>
+        </Collapse>
     )
 }

@@ -1,15 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
 import { useHistory } from 'react-router-dom';
-
-const ImageContainer = styled.div`
-    img {
-        width: 100%;
-        max-height: 150px;
-        padding: 1em;
-    }
-` 
-
+import { ImageContainer } from '../ui-lib/lib'
+ 
 export const ImageShowCase = (props) => {
     const history = useHistory();
     const image = require(`../uploads/${props.name}.svg`)

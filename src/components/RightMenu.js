@@ -1,15 +1,7 @@
 import React from 'react';
-import { Menu, Icon, Badge } from 'antd';
+import { Menu, Badge } from 'antd';
 import {Link} from 'react-router-dom'
-import styled from 'styled-components'
-
-const Profile = styled(Link)`
-  margin-right: -22px;
-`;
-
-const ProfileIcon = styled(Icon)`
-  font-size: 30px !important;
-`;
+import {Profile, ProfileIcon} from '../ui-lib/lib'
 
 export const RightMenu = (props) => {
     return (

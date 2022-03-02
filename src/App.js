@@ -4,7 +4,7 @@ import { LandingPage } from './pages/LandingPage';
 import { ErrorPage } from './pages/ErrorPage';
 import { AboutPage } from './pages/AboutPage'
 import { ProfilePage } from './pages/ProfilePage'
-import { Navbar } from './components/Navbar/Navbar';
+import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { SVG } from './pages/Visualization/SVG/SVG'
 import { ChartBasic } from './pages/Visualization/ChartBasic/ChartBasic';
