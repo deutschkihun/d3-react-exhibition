@@ -3,42 +3,42 @@
         "name": "SVG",
         "level": 1,
         "categories":1,
-        "description":"SVG gallery"
+        "description":"SVG exibition"
     },
     {
         "name": "SVG Animation",
         "level": 4,
         "categories":1,
-        "description":"SVG Animation gallery"
+        "description":"SVG Animation exibition"
     },
     {
         "name": "Chart Basic",
         "level": 1,
         "categories":2,
-        "description":"Chart Basic gallery"
+        "description":"Chart Basic exibition"
     },
     {
         "name": "Line Chart",
         "level": 2,
         "categories":3,
-        "description":"Line Chart gallery"
+        "description":"Line Chart exibition"
     },
     {
         "name": "Bar Chart",
         "level": 3,
         "categories":4,
-        "description":"Bar Chart gallery"
+        "description":"Bar Chart exibition"
     },
     {
         "name": "Heat Map",
         "level": 4,
         "categories":5,
-        "description":"Heat Map gallery"
+        "description":"Heat Map exibition"
     },
     {
         "name": "Interactive Chart",
         "level": 3,
         "categories":6,
-        "description":"Interactive Chart gallery"
+        "description":"Interactive Chart exibition"
     }
 ]

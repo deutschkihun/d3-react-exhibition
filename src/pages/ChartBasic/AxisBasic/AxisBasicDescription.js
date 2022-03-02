@@ -28,7 +28,7 @@ export const AxisBasicDescription = () => {
                             <span>{'axisTemplateElement.append("g").call(d3.axisLeft(y_scale_axis))'} </span>                                                                                                     
                         </Code>
                 </Pre>
-                </Explanation>
+        </Explanation>
     )
 }
 

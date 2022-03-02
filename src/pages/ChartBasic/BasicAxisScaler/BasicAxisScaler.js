@@ -1,6 +1,6 @@
 import React from 'react'
-import {LinearScaler} from './Scaler/LinearScaler'
-import {LogScaler} from './Scaler/LogScaler'
+import {LinearScaler} from './LinearScaler'
+import {LogScaler} from './LogScaler'
 
 export const BasicAxisScaler = ({
     width,

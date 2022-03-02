@@ -27,7 +27,7 @@ export const Message = styled.p`
 `;
 
 export const SmallMessage = styled.p`
-  text-align:center;
+  text-align:justify;
 `;
 
 export const LogoWrapper = styled.div`
