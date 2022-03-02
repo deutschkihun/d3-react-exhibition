@@ -10,9 +10,9 @@ const ImageContainer = styled.div`
     }
 ` 
 
-export const ImageSlider = (props) => {
+export const ImageShowCase = (props) => {
     const history = useHistory();
-    const image = require(`../../uploads/${props.name}.svg`)
+    const image = require(`../uploads/${props.name}.svg`)
     return (
             <ImageContainer key={props.name}>
                 <img src={image} alt={props.name}  onClick={() => history.push(`${props.name.replace(/\s/g, '')}`)}/>

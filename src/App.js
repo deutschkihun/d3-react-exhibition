@@ -1,25 +1,19 @@
 import React, { Suspense } from 'react' 
-import styled from "styled-components";
 import { Switch, Route as Router, BrowserRouter } from "react-router-dom";
-import { Landing } from './components/Landing/Landing';
-import { Error } from './components/Error/Error';
+import { LandingPage } from './pages/LandingPage';
+import { ErrorPage } from './pages/ErrorPage';
+import { AboutPage } from './pages/AboutPage'
+import { ProfilePage } from './pages/ProfilePage'
 import { Navbar } from './components/Navbar/Navbar';
-import { Footer } from './components/Footer/Footer';
-import { SVG } from './components/Visualization/SVG/SVG'
-import { About } from './components/About/about';
-import { Profile } from './components/Profile/profile';
-import { ChartBasic } from './components/Visualization/ChartBasic/ChartBasic';
-import { LineChart } from './components/Visualization/LineChart/LineChart';
-import { HeatMap } from './components/Visualization/HeatMap/HeatMap'
-import { BarChart } from './components/Visualization/BarChart/BarChart'
-import { InteractiveChart } from './components/Visualization/InteractiveChart/InteractiveChart';
-import { SVGAnimation } from './components/Visualization/SVGAnimation/SVGAnimation'
-
-const Seperator = styled.div`
-  padding-top:69px;
-  min-height:calc(100vh - 80px);
-`
-
+import { Footer } from './components/Footer';
+import { SVG } from './pages/Visualization/SVG/SVG'
+import { ChartBasic } from './pages/Visualization/ChartBasic/ChartBasic';
+import { LineChart } from './pages/Visualization/LineChart/LineChart';
+import { HeatMap } from './pages/Visualization/HeatMap/HeatMap'
+import { BarChart } from './pages/Visualization/BarChart/BarChart'
+import { InteractiveChart } from './pages/Visualization/InteractiveChart/InteractiveChart';
+import { SVGAnimation } from './pages/Visualization/SVGAnimation/SVGAnimation'
+import { Seperator } from './ui-lib/lib'
 
 function App() {
   return (
@@ -29,7 +23,7 @@ function App() {
       <Navbar/>
         <Seperator>
           <Switch>
-            <Router exact path="/" component={Landing} />
+            <Router exact path="/" component={LandingPage} />
             <Router exact path="/SVG" component={SVG} />
             <Router exact path="/SVGAnimation" component={SVGAnimation} />
             <Router exact path="/ChartBasic" component={ChartBasic} />
@@ -37,9 +31,9 @@ function App() {
             <Router exact path="/BarChart" component={BarChart} />
             <Router exact path="/HeatMap" component={HeatMap} />
             <Router exact path="/InteractiveChart" component={InteractiveChart} />
-            <Router exact path="/about" component={About} />
-            <Router exact path="/profile" component={Profile} />
-            <Router path="*" component={Error} />
+            <Router exact path="/about" component={AboutPage} />
+            <Router exact path="/profile" component={ProfilePage} />
+            <Router path="*" component={ErrorPage} />
           </Switch>
         </Seperator>
       <Footer />

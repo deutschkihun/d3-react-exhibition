@@ -2,31 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { Icon, Col, Card, Row } from 'antd';
 import axios from "axios";
 import Meta from 'antd/lib/card/Meta';
-import { CheckBox } from './Section/CheckBox';
-import { RadioBox } from './Section/RadioBox';
-import { SearchEngine } from './Section/SearchEngine';
-import { categories, level } from './Section/Data';
-import { ImageSlider } from '../utils/ImageSilder';
-import styled from "styled-components"
+import { CheckBox } from '../components/CheckBox';
+import { RadioBox } from '../components/RadioBox';
+import { SearchEngine } from '../components/SearchEngine';
+import { categories, level } from '../components/Data';
+import { ImageShowCase } from '../components/ImageShowCase';
+import { Container, LandingTitle, SearchContainer } from '../ui-lib/lib';
 
-const Container = styled.div`
-    width: 75%;
-    margin: 3rem auto;
-`;
 
-const TitleContainer = styled.div`
-    text-align:center;
-`;
-
-const SearchContainer = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    margin: 1rem auto;
-`;
-
-const Title = styled.h2``;
-
-export const Landing = () => {
+export const LandingPage = () => {
     const [items, setItems] = useState([])
     // eslint-disable-next-line no-unused-vars
     const [SearchTerm, setSearchTerm] = useState("")
@@ -61,7 +45,7 @@ export const Landing = () => {
 
     const renderCards = items.map((item, index) => {
         return <Col lg={6} md={8} xs={24} key={index}>
-            <Card cover={<ImageSlider name={item.name} />    }>
+            <Card cover={<ImageShowCase name={item.name} />    }>
                 <Meta
                     title={item.name}
                     description={`${item.description}`}
@@ -76,7 +60,6 @@ export const Landing = () => {
             filters: Filters,
             searchTerm: newSearchTerm
         })
-
     }
 
     const handleFilters = (filters, field) => {
@@ -90,10 +73,10 @@ export const Landing = () => {
 
     return (
         <Container>
-            <TitleContainer>
-                <Title> Welcome to D3 & React Exhibition <Icon type="car" /> </Title>
-            </TitleContainer>
-
+            <LandingTitle>
+                Welcome to D3 & React Exhibition <Icon type="car" /> 
+            </LandingTitle>
+            
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24}>
                     <CheckBox list={categories} handleFilters={filters => handleFilters(filters, "categories")} />
@@ -110,7 +93,6 @@ export const Landing = () => {
             <Row gutter={[16, 16]} >
                 {renderCards}
             </Row>
-            <br />
         </Container>
     )
 }
