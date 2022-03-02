@@ -16,9 +16,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h4``;
-export const LandingTitle = styled.h2`
+export const MainTitle = styled.h1`
     text-align: center;
 `;
+
+
 export const Message = styled.p`
   font-size:1rem;
   text-align:center;
@@ -44,6 +46,15 @@ export const CommonButton = styled(Button)`
     margin: 0.5em;
 `;
 
+export const ContainerButton = styled.div`
+    font-family: var(--headingFont);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: var(--letterSpacing);
+`;
+
+export const ContainerRef = styled.div``;
+
 export const FooterWrapper = styled.div`
     height:80px;
     display: flex;
@@ -58,6 +69,14 @@ export const Seperator = styled.div`
     min-height:calc(100vh - 80px);
 `
 
+export const VizContainer = styled.form`
+  width: 60vw;
+  min-width: 400px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 6rem;
+`;
+
 export const Container = styled.div`
     width: 75%;
     margin: 3rem auto;
@@ -69,9 +88,7 @@ export const SearchContainer = styled.div`
     margin: 1rem auto;
 `;
 
-export const SearchBox = styled(Search)`
-    width: 200px;
-`
+export const SearchBox = styled(Search)``
 
 export const ImageContainer = styled.div`
     img {
@@ -117,4 +134,39 @@ export const Profile = styled(Link)`
 
 export const ProfileIcon = styled(Icon)`
   font-size: 30px !important;
+`;
+
+export const VizWrapper = styled.div`
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-row-gap: 0px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+`;
+
+export const Content = styled.div`
+    margin: 0 auto;
+    box-shadow: none;
+    margin-top: 3rem;
+    width: 60vw;
+    min-width: 400px;
+    max-width: 1200px;
+    justify-content:flex-end;
+`;
+
+export const Code = styled.code``;
+
+export const Pre = styled.pre`
+    background-color:#eee;
+    padding: 0.5em 1em 0.5em 1em;
+`
+
+export const Explanation = styled.form`
+    margin: 0 auto;
+    box-shadow: none;
+    margin-top: 3rem;
+    width: 60vw;
+    min-width: 400px;
+    max-width: 1200px;
 `;

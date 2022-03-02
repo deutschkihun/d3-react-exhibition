@@ -7,7 +7,7 @@ import { RadioBox } from '../components/RadioBox';
 import { SearchEngine } from '../components/SearchEngine';
 import { categories, level } from '../data';
 import { ImageShowCase } from '../components/ImageShowCase';
-import { Container, LandingTitle, SearchContainer } from '../ui-lib/lib';
+import { Container, MainTitle, SearchContainer } from '../ui-lib/lib';
 
 export const LandingPage = () => {
     const [items, setItems] = useState([])
@@ -72,9 +72,9 @@ export const LandingPage = () => {
 
     return (
         <Container>
-            <LandingTitle>
+            <MainTitle>
                 Welcome to D3 & React Exhibition <Icon type="car" /> 
-            </LandingTitle>
+            </MainTitle>
             
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24}>

@@ -6,13 +6,13 @@ import { AboutPage } from './pages/AboutPage'
 import { ProfilePage } from './pages/ProfilePage'
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { SVG } from './pages/Visualization/SVG/SVG'
-import { ChartBasic } from './pages/Visualization/ChartBasic/ChartBasic';
-import { LineChart } from './pages/Visualization/LineChart/LineChart';
-import { HeatMap } from './pages/Visualization/HeatMap/HeatMap'
-import { BarChart } from './pages/Visualization/BarChart/BarChart'
-import { InteractiveChart } from './pages/Visualization/InteractiveChart/InteractiveChart';
-import { SVGAnimation } from './pages/Visualization/SVGAnimation/SVGAnimation'
+import { SVG } from './pages/SVG/SVG'
+import { ChartBasic } from './pages/ChartBasic/ChartBasic';
+import { LineChart } from './pages/LineChart/LineChart';
+import { HeatMap } from './pages/HeatMap/HeatMap'
+import { BarChart } from './pages/BarChart/BarChart'
+import { InteractiveChart } from './pages/InteractiveChart/InteractiveChart';
+import { SVGAnimation } from './pages/SVGAnimation/SVGAnimation'
 import { Seperator } from './ui-lib/lib'
 
 function App() {
