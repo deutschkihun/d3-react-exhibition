@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaceContainer } from '../Face/FaceContainer'
+import { FaceContainer } from './FaceContainer'
 
 export const Emoji = ({
     width,

@@ -2,19 +2,9 @@ import React from 'react'
 import * as d3 from 'd3'
 
 export const Scale = ({width,height,centerX,centerY,stroke,radius}) => {
-
-    /*
-        let x_scaler1 = d3.scaleLinear().domain([0,100]).range([0,300]); console.log(x_scaler1(20)) // 60
-        let x_scaler2 = d3.scaleLinear().domain([0,100]).range([0,100]); console.log(x_scaler2(20)) // 20
-        let x_scaler3 = d3.scaleLinear().domain([0,100]).range([50,100]); console.log(x_scaler3(20)) // 60
-        let x_scaler4 = d3.scaleLinear().domain([0,100]).range([75,100]); console.log(x_scaler4(20)) // 80
-    */
-     
+  
     let scaler = d3.scaleLinear().domain([0,100]).range([0,100]); // 20
     let scaler_modified = d3.scaleLinear().domain([0,50]).range([0,300]); // 120 (x2,x3)
-
-
-
 
     return (
         <>

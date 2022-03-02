@@ -24,9 +24,6 @@ export const SVGWithD3Description = () => {
             <span>{'<svg id="ex_rect1"/>'}</span>
         </Code>
         </Pre>
-        <h4>style: CSS styling</h4>
-        <h4>attr: Abbrevitation for attribute. With this keyword, we can add new attribute in svg</h4>
-        <h4>cx / cy / r: X-axis coordination / y-axis coordination / radius of circle</h4>
     </Explanation>
     )
 }

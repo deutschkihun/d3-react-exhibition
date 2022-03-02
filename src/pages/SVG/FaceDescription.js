@@ -1,5 +1,5 @@
 import React from 'react'
-import { Explanation,Pre,Code } from '../../../ui-lib/lib'
+import { Explanation,Pre,Code } from '../../ui-lib/lib'
 
 export const FaceDescription = () => {
     return (
@@ -29,8 +29,6 @@ export const FaceDescription = () => {
                             <span>{' />'} </span>                                                     
                         </Code>
                 </Pre>
-                        <h4>Face is a functional component that takes width,height,centerX,strokeWidth,eyeOffSetX,eyeOffSetY,mouthRadius,type as a properties to make a different emoji.</h4>
-                        <h4>The face component is composed of several child components for example, Mouth, FaceContainer, Eye, Tear, EyeBrow. </h4>
                 <Pre>
                         <Code>
                             <span>**Eyes component**</span>

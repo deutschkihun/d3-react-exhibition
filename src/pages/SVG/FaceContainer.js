@@ -2,7 +2,7 @@ import { Eyes } from './Eyes';
 import { EyeBrow } from './EyeBrow';
 import { SmileMouth,BadMouth, CryingMouth, AngryMouth } from './Mouth'
 import { Tears } from './Tears';
-import { randomColorGenerator } from '../../../helper/randomColorGenerator';
+import { randomColorGenerator } from '../../helper/randomColorGenerator';
 
 
 export const FaceContainer = ({width, height, centerX, centerY,type,strokeWidth,eyeOffsetX,eyeOffsetY,eyeRadius,mouthWidth,mouthRadius}) => {

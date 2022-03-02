@@ -9,7 +9,7 @@ import { MultipleChartBasic } from './MultipleChart/MultipleChartBasic';
 import {InteractiveLineChart} from './InteractiveLineChart/InteractiveLineChart'
 import {MultipleChartBasicDescription} from './MultipleChart/MultipleChartBasicDescription'
 import {MultipleChartDropdownBasic} from './MultipleChartDropdown/MultipleChartDropdownBasic'
-import { VizWrapper, VizContainer, MainTitle, ContainerRef } from '../../ui-lib/lib';
+import { VizWrapper, VizContainer, MainTitle, ContainerRef, SmallMessage } from '../../ui-lib/lib';
 
 export const LineChart = () => {
 
@@ -18,25 +18,23 @@ export const LineChart = () => {
     let height = 400 - margin.top - margin.bottom;
 
     return (
-        <>
             <VizWrapper>
-                <>
                     {/* Line Chart Basic: importing data and demonstrating */}
-                    <VizContainer>
-                        <MainTitle>Line Chart Basic: importing data and demonstrating</MainTitle>
-                        <p>Follwoing data shows the evolution of Coca cola, PepsiCo, Apple, and P&G stock price since 2017</p>
-                        <ContainerRef>
-                            <LineChartBasic
-                                        width={width}
-                                        height={height}
-                                        margin={margin}
-                            />
-                        </ContainerRef>
-                    </VizContainer>
-                    <LineChartBasicDescription/>
-                </>
+                        <VizContainer>
+                            <MainTitle>Line Chart Basic: importing data and demonstrating</MainTitle>
+                            <SmallMessage>
+                                Follwoing data shows the evolution of Coca cola, PepsiCo, Apple, and P&G stock price since 2017
+                            </SmallMessage>
+                            <ContainerRef>
+                                <LineChartBasic
+                                            width={width}
+                                            height={height}
+                                            margin={margin}
+                                />
+                            </ContainerRef>
+                        </VizContainer>
+                        <LineChartBasicDescription/>
 
-                <>
                     {/* Line Chart with Confidence interval*/}
                         <VizContainer>
                             <MainTitle>Line Chart with Confidence interval</MainTitle>
@@ -49,8 +47,7 @@ export const LineChart = () => {
                             </ContainerRef>
                         </VizContainer>
                         <ConfidenceIntervalDescription/>
-                </>
-                <>
+
                     {/* Line Chart advance: area chart*/}
                         <VizContainer>
                             <MainTitle>Line Chart advance: Area Chart</MainTitle>
@@ -63,8 +60,7 @@ export const LineChart = () => {
                             </ContainerRef>
                         </VizContainer>
                         <AreaChartBasicDescription/>
-                </>
-                <>
+
                     {/* Multiple line chart*/}
                         <VizContainer>
                             <MainTitle>Multiple line chart in single component</MainTitle>
@@ -77,9 +73,7 @@ export const LineChart = () => {
                             </ContainerRef>
                         </VizContainer>
                         <MultipleChartBasicDescription />
-                </>
 
-                <>
                     {/* Multiple line chart with dropwdown filtering */}
                         <VizContainer>
                             <MainTitle>Multiple line chart with dropwdown filtering</MainTitle>
@@ -92,23 +86,19 @@ export const LineChart = () => {
                             </ContainerRef>
                         </VizContainer>
                         <MultipleChartBasicDescription />
-                </>
 
-                <>
                     {/* D3 interactive : Brushing line chart */}
-                    <VizContainer>
-                        <MainTitle>D3 interactive : Brushing line chart</MainTitle>
-                        <ContainerRef>
-                            <InteractiveLineChart
-                                width={width}
-                                height={height}
-                                margin={margin}
-                            />
-                        </ContainerRef>
-                    </VizContainer>   
-                </>
+                        <VizContainer>
+                            <MainTitle>D3 interactive : Brushing line chart</MainTitle>
+                            <ContainerRef>
+                                <InteractiveLineChart
+                                    width={width}
+                                    height={height}
+                                    margin={margin}
+                                />
+                            </ContainerRef>
+                        </VizContainer>   
             </VizWrapper>
-        </>
     )
 }
 

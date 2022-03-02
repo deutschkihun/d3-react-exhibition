@@ -7,9 +7,6 @@ export const EyeBrow = () => {
 
     const eyebrow =  d3.line().x(function(d) {return d.x}).y(function(d) {return d.y})
 
-
-
-
     return (
     <>
         <path d={eyebrow(leftEyeBrow)} style={{stroke:"black",strokeWidth:"5"}} />
