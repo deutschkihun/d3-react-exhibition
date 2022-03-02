@@ -51,11 +51,15 @@ const level = [
 const margin = {top: 10, right: 40, bottom: 30, left: 40}
 const width = 450 - margin.left - margin.right;
 const height = 400 - margin.top - margin.bottom;
+const pointer = ["Apple","Grape","Banana","StrawBerry","Watermelon"]
+const band = ["C","B","B+","A","A+","A++"]
 
 export {
     categories,
     level,
     margin,
     width,
-    height
+    height,
+    pointer,
+    band
 }

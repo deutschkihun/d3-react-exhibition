@@ -11,27 +11,24 @@ import { CustomAxisLabelDescription } from './CustomAxisLabel/CustomAxisLabelDes
 import {DataCoordinateDescription} from './DataCoordinate/DataCoordinateDescription'
 import { ChartBackground } from './ChartBackground/ChartBackground'
 import {ChartBackgroundDescription} from './ChartBackground/ChartBackgroundDescription'
-import { MainTitle, VizContainer, VizWrapper, ContainerRef, ContainerButton} from '../../ui-lib/lib'
+import { MainTitle, VizContainer, VizWrapper, ContainerRef, ContainerButton, SmallMessage} from '../../ui-lib/lib'
+import {margin, width, height, pointer, band} from '../../data'
 
 export const ChartBasic = () => {
 
-    let margin = {top: 10, right: 40, bottom: 30, left: 40}
-    let width = 450 - margin.left - margin.right;
-    let height = 400 - margin.top - margin.bottom;
-    const pointer = ["Apple","Grape","Banana","StrawBerry","Watermelon"]
-    const band = ["C","B","B+","A","A+","A++"]
     const DataCoordinateRef = useRef(null)
     const AxisBasicRef = useRef(null)
     const CustomAxisRef = useRef(null)
 
     return (
-        <>
             <VizWrapper>
+
                 {/* Chart basic: Basic Axis scaler */}
-                <>
                     <VizContainer>
                         <MainTitle>Chart basic: Basic Axis scaler</MainTitle>
-                        <p>Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.</p>
+                        <SmallMessage>
+                            Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.
+                        </SmallMessage>
                         <ContainerRef ref={CustomAxisRef}>          
                             <BasicAxisScaler
                                 width={width}
@@ -43,13 +40,10 @@ export const ChartBasic = () => {
                         </ContainerRef>
                     </VizContainer>
                     <BasicAxisScalerDescription/>
-                </>
-
-                 {/* Chart basic: Custom axis label */}
-                 <>
+                
+                {/* Chart basic: Custom axis label */}
                     <VizContainer>
                         <MainTitle>Chart basic: Custom axis label</MainTitle>
-                        <p>Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.</p>
                         <ContainerRef ref={CustomAxisRef}>          
                             <CustomAxisLabel
                                 width={width}
@@ -61,10 +55,8 @@ export const ChartBasic = () => {
                         </ContainerRef>
                     </VizContainer>
                     <CustomAxisLabelDescription/>
-                </>
 
                 {/* Chart basic: Random Axis range */}
-                <>
                     <VizContainer>
                         <MainTitle>Chart basic: Random Axis range
                             <ContainerButton>
@@ -76,7 +68,11 @@ export const ChartBasic = () => {
                                                                             />,AxisBasicRef)}>Click Me</Button>
                             </ContainerButton>
                         </MainTitle>
-                        <p>The first thing to do to draw a chart is to build a coordinate system. The coordinate system is divided into x-axis and y-axis based on two dimensions. If it is three dimensions, we need the z-axis, but we will only deal with two dimensions in this time. In the following example, a coordinate system was drawn using various scale ranges.</p>
+                        <SmallMessage>
+                            The first thing for drawing a chart is to build a coordinate system. The coordinate system is divided into x-axis and y-axis 
+                            based on two dimensions. If it is three dimensions, we need the z-axis, but we will only deal with two dimensions in this time. 
+                            In the following example, a coordinate system was drawn using various scale ranges.
+                        </SmallMessage>
                         <ContainerRef ref={AxisBasicRef}>
                         <AxisBasic
                             width={width}
@@ -85,13 +81,10 @@ export const ChartBasic = () => {
                             refresh={false}
                         />
                         </ContainerRef>
-                        <p>The most basic scale expression method is scale-linar. That is, the scale in the form of a linear function is applied to the axis coordinates.</p>
                     </VizContainer>
                     <AxisBasicDescription/>
-                </>
-    
+
                 {/* Chart basic: Displaying random data on the random coordinates */}
-                <>
                     <VizContainer>
                         <MainTitle>Chart basic: Displaying random data on the random coordinates
                             <ContainerButton>
@@ -110,13 +103,11 @@ export const ChartBasic = () => {
                                 margin={margin}
                                 refresh={false}
                             />
-                       </ContainerRef>
+                        </ContainerRef>
                     </VizContainer>
                     <DataCoordinateDescription/>
-                </>
 
                 {/* Chart basic: Displaying random data on the random coordinates */}
-                <>
                     <VizContainer>
                         <MainTitle>Chart Background</MainTitle>
                         <ContainerRef>
@@ -128,9 +119,7 @@ export const ChartBasic = () => {
                         </ContainerRef>
                     </VizContainer>
                     <ChartBackgroundDescription/>
-                </>
         </VizWrapper>
-    </>
     )
 }
 

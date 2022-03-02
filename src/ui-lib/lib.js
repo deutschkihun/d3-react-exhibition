@@ -26,6 +26,10 @@ export const Message = styled.p`
   text-align:center;
 `;
 
+export const SmallMessage = styled.p`
+  text-align:center;
+`;
+
 export const LogoWrapper = styled.div`
     flex-wrap:wrap;
 `;
