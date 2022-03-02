@@ -5,9 +5,9 @@ import { randomColorGenerator } from '../../../../helper/randomColorGenerator'
 
 export const Rectangle = ({width,height,centerX,centerY,index,stroke,strokeWidth,refresh}) => {
     useEffect(() => {
-        const circletopSVG = d3.select('#rectangle'+String(index)).attr('width',width).attr('height',height)
-        refresh && circletopSVG.select('g').remove()
-        circletopSVG.append('g')
+        const rectangle = d3.select('#rectangle'+String(index)).attr('width',width).attr('height',height)
+        refresh && rectangle.select('g').remove()
+        rectangle.append('g')
                     .append('rect')
                     .attr('width',width)
                     .attr('height',height)

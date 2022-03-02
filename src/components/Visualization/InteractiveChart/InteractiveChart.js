@@ -5,6 +5,7 @@ import { BrushingBoth } from './Brushing/BrushingBoth';
 import { BrushingX } from './Brushing/BrushingX';
 import { BrushingY } from './Brushing/BrushingY';
 import { HighlightingBrushedElement } from './Brushing/HighlightingBrushedElement';
+import {HoverBasic} from './Hover/HoverBasic'
 
 
 export const InteractiveChart = () => {
@@ -67,10 +68,16 @@ export const InteractiveChart = () => {
                 {/* D3 interactive : Switching */}
                         <Container>
                             <Title>D3 interactive : Hover </Title>
-                            <p>Hover</p>
+                            <p>Hover is used to select elements that users hover their cursor or mouse over.</p>
+                            <Element>
+                                <HoverBasic
+                                    width={width}
+                                    height={height}
+                                    margin={margin}
+                                />
+                            </Element>
                         </Container> 
                 </>
-
             </Wrapper>
         </>
     )
