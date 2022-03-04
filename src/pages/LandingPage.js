@@ -73,7 +73,7 @@ export const LandingPage = () => {
     return (
         <Container>
             <MainTitle>
-                Welcome to D3 & React Exhibition <Icon type="car" /> 
+                Welcome to D3 & React Exhibition <Icon type="smile" /> 
             </MainTitle>
             
             <Row gutter={[16, 16]}>
