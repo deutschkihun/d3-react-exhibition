@@ -23,7 +23,7 @@ export const ProfilePage = () => {
             <Wrapper>
                 <Title>His other projects</Title>
                 <Message>
-                    In addition to D3 & React Exhibition, he has other great projects that he has worked on on on his own. 
+                    In addition to D3 & React Exhibition, he has other great projects that he has worked on his own. 
                 </Message>
                 <CommonButton onClick={() => window.location.assign('')}>LuxeSchmuck: Coming Soon</CommonButton>
                 <CommonButton onClick={() => window.location.assign('https://sportdbapp-deutschkihun.herokuapp.com/')}>Sport DB Application</CommonButton>
