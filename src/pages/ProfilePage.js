@@ -25,7 +25,7 @@ export const ProfilePage = () => {
                 <Message>
                     In addition to D3 & React Exhibition, he has other great projects that he has worked on his own. 
                 </Message>
-                <CommonButton onClick={() => window.location.assign('')}>LuxeSchmuck: Coming Soon</CommonButton>
+                <CommonButton onClick={() => window.location.assign('https://luxeschmuck.herokuapp.com')}>LuxeSchmuck</CommonButton>
                 <CommonButton onClick={() => window.location.assign('https://sportdbapp-deutschkihun.herokuapp.com/')}>Sport DB Application</CommonButton>
                 <CommonButton onClick={() => window.location.assign('https://login-boilerplate-deutschkihun.herokuapp.com/')}>Login system boilerplate</CommonButton>
             </Wrapper>
