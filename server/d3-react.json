@@ -6,12 +6,6 @@
         "description":"SVG exibition"
     },
     {
-        "name": "SVG Animation",
-        "level": 4,
-        "categories":1,
-        "description":"SVG Animation exibition"
-    },
-    {
         "name": "Chart Basic",
         "level": 1,
         "categories":2,
