@@ -1,3 +1,4 @@
+import * as d3 from 'd3'
 const categories = [
     {
         "_id": 1,
@@ -53,6 +54,7 @@ const width = 450 - margin.left - margin.right;
 const height = 400 - margin.top - margin.bottom;
 const pointer = ["Apple","Grape","Banana","StrawBerry","Watermelon"]
 const band = ["C","B","B+","A","A+","A++"]
+const color = d3.scaleOrdinal().range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
 
 export {
     categories,
@@ -61,5 +63,6 @@ export {
     width,
     height,
     pointer,
-    band
+    band,
+    color
 }

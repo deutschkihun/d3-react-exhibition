@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
+import { color } from '../../../data';
 
 export const MultipleChart = ({width,height,margin}) => {
 
@@ -29,9 +30,6 @@ export const MultipleChart = ({width,height,margin}) => {
               svg.append("g")
                 .call(d3.axisLeft(y).ticks(5));
                 
-              const color = d3.scaleOrdinal()
-                .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
-
               svg.append("path")
                  .attr("fill", "none")
                  .attr("stroke", function(d){ return color(d[0]) })
@@ -42,6 +40,7 @@ export const MultipleChart = ({width,height,margin}) => {
                     .y(function(d) { return y(d.pop); })
                     (d[1])
                   })
+
 
               svg.append("text")
                  .attr("x", (width / 2))             
