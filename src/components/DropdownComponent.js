@@ -6,22 +6,25 @@ export const DropdownComponent = () => {
   return (
     <Dropdown>
       <li className="dropdown">
-        Dropdown
+        Menu
         <ul className="dropdown_menu">
           <li>
-            <a href="#">Item 1</a>
+            <a href="/SVG">SVG</a>
           </li>
           <li>
-            <a href="#">Item 2</a>
+            <a href="/ChartBasic">ChartBasic</a>
           </li>
           <li>
-            <a href="#">Item 3</a>
+            <a href="/LineChart">LineChart</a>
           </li>
           <li>
-            <a href="#">Item 4</a>
+            <a href="/BarChart">BarChart</a>
           </li>
           <li>
-            <a href="#">Item 5</a>
+            <a href="/HeatMap">HeatMap</a>
+          </li>
+          <li>
+            <a href="/InteractiveChart">InteractiveChart</a>
           </li>
         </ul>
       </li>

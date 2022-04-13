@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Title, Message, LogoWrapper } from '../ui-lib/lib'
+import { Wrapper, Title, Message } from '../ui-lib/lib'
 import github from '../assets/github.svg';
 import linkedin from '../assets/linkedin.svg';
 import mail from '../assets/mail.svg'
@@ -7,7 +7,6 @@ import person from '../assets/person.svg'
 
 export const ProfilePage = () => {
     return (
-        <>
             <Wrapper>
                     <Title>Kihun Kim</Title>
                     <Message>
@@ -16,14 +15,11 @@ export const ProfilePage = () => {
                         that contains all the functions necessary for refueling such as handling enter fueling process with smartphone, Mobile payment 
                         real-time fuel price comparision, gas station search, and friend referral discount system.
                     </Message>
-                    <LogoWrapper>
                         <img className="mail" src={person} alt="person" onClick={() => window.location.assign('https://deutschkihun.com')} />
                         <img className="mail" src={mail} alt="mail" onClick={() => window.location.assign('mailto:deutschkihun@gmail.com')} />
                         <img className="linkedin" src={linkedin} alt="linkedin" onClick={() => window.location.assign('https://www.linkedin.com/in/kihun-kim-b35b73174/')} />
                         <img className="github" src={github} alt="github" onClick={() => window.location.assign('https://github.com/deutschkihun')}/>
-                    </LogoWrapper>
             </Wrapper>
-        </>
     )
 }
 

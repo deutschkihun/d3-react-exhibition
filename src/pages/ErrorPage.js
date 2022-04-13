@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router';
-import { Wrapper, Title, Message, Btn } from '../ui-lib/lib';
+import { Wrapper, Message, Btn, Title } from '../ui-lib/lib';
 
 
 export const ErrorPage = () => {

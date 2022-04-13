@@ -7,7 +7,7 @@ import { RadioBox } from '../components/RadioBox';
 import { SearchEngine } from '../components/SearchEngine';
 import { categories, level } from '../data';
 import { ImageShowCase } from '../components/ImageShowCase';
-import { Container, MainTitle } from '../ui-lib/lib';
+import { Container, Title } from '../ui-lib/lib';
 
 export const LandingPage = () => {
     const [items, setItems] = useState([])
@@ -72,7 +72,7 @@ export const LandingPage = () => {
 
     return (
         <Container>
-            <MainTitle>Welcome to D3 & React Exhibition</MainTitle>
+            <Title>Welcome to D3 & React Exhibition</Title>
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24}>
                     <CheckBox list={categories} handleFilters={filters => handleFilters(filters, "categories")} />

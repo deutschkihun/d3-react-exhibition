@@ -14,34 +14,18 @@ export const Wrapper = styled.div`
     padding-right:10vw;
 `;
 
-export const Title = styled.h4``;
-export const MainTitle = styled.h1`
+export const Title = styled.h1`
     text-align: center;
 `;
 
-
 export const Message = styled.p`
-  font-size:1rem;
-  text-align:center;
-`;
-
-export const SmallMessage = styled.p`
-  text-align:justify;
-`;
-
-export const LogoWrapper = styled.div`
-    flex-wrap:wrap;
+  font-size: 17px;
 `;
 
 export const Btn = styled(Button)`
-    margin: 0.5em;
-`;
-
-export const ContainerButton = styled.div`
-    font-family: var(--headingFont);
-    font-weight: 400;
-    line-height: 1.3;
-    letter-spacing: var(--letterSpacing);
+    margin: 0.5em auto;
+    font-size: 15px;
+    display: block;
 `;
 
 export const ContainerRef = styled.div``;

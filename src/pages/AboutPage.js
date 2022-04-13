@@ -6,7 +6,7 @@ export const AboutPage = () => {
     return (
         <>
             <Wrapper>
-                <Title>About "D3 & React Exhibition"</Title>
+                <Title>About This App</Title>
                 <Message>
                     This page shows beautiful data visualization in various forms in web browsers using javascript and React, HTML, CSS, and D3.
                     D3 is a JavaScript library for manipulating documents based on data. D3’s emphasis on web standards gives you the full capabilities of modern 
@@ -17,7 +17,6 @@ export const AboutPage = () => {
             
             <Wrapper>
             <Title>References</Title> 
-            <Message>The references that helped me a lot in working on this projects</Message>
                 <Btn onClick={() => window.location.assign("https://www.d3-graph-gallery.com/")}>D3-graph-gallery by Yan Holtz</Btn>
                 <Btn onClick={() => window.location.assign("https://github.com/d3/d3/wiki")}>D3 official docs</Btn>
                 <Btn onClick={() => window.location.assign("https://wattenberger.com/blog/react-and-d3")}>D3-react by Wattenberger</Btn>

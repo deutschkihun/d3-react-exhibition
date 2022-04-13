@@ -1,5 +1,5 @@
 import React from 'react'
-import { VizContainer,VizWrapper,MainTitle } from '../../ui-lib/lib';
+import { VizContainer,VizWrapper,Title } from '../../ui-lib/lib';
 
 export const HeatMap = () => {
 
@@ -7,7 +7,7 @@ export const HeatMap = () => {
         <>
             <VizWrapper>
                 <VizContainer>
-                    <MainTitle>Comming soon HeatMap</MainTitle>
+                    <Title>Comming soon HeatMap</Title>
                 </VizContainer>   
             </VizWrapper>
 

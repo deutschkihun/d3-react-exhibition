@@ -1,12 +1,12 @@
 import React from 'react'
-import { VizContainer,MainTitle,VizWrapper } from '../../ui-lib/lib';
+import { VizContainer,Title,VizWrapper } from '../../ui-lib/lib';
 
 export const BarChart = () => {
 
     return (
             <VizWrapper>
                 <VizContainer>
-                    <MainTitle>Comming soon BarChart</MainTitle>
+                    <Title>Comming soon BarChart</Title>
                 </VizContainer>   
             </VizWrapper>
     )
