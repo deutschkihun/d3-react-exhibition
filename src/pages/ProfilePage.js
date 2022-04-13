@@ -1,5 +1,8 @@
 import React from 'react'
-import { Wrapper, Title, Message, CommonButton, LogoWrapper, Mail, LinkedIn, Github } from '../ui-lib/lib'
+import { Wrapper, Title, Message, CommonButton, LogoWrapper } from '../ui-lib/lib'
+import github from '../assets/github.svg';
+import linkedin from '../assets/linkedin.svg';
+import mail from '../assets/mail.svg'
 
 export const ProfilePage = () => {
     return (
@@ -14,9 +17,9 @@ export const ProfilePage = () => {
                     </Message>
                     <CommonButton onClick={() => window.location.assign('https://www.deutschkihun.com')}>Kihun's portfolio webpage</CommonButton>
                     <LogoWrapper>
-                        <Mail onClick={() => window.location.assign('mailto:deutschkihun@gmail.com')}/>
-                        <LinkedIn onClick={() => window.location.assign('https://www.linkedin.com/in/kihun-kim-b35b73174/')} />
-                        <Github onClick={() => window.location.assign('https://github.com/deutschkihun')} />
+                        <img src={mail} alt="mail" onClick={() => window.location.assign('mailto:deutschkihun@gmail.com')} />
+                        <img src={linkedin} alt="linkedin" onClick={() => window.location.assign('https://www.linkedin.com/in/kihun-kim-b35b73174/')} />
+                        <img src={github} alt="github" onClick={() => window.location.assign('https://github.com/deutschkihun')}/>
                     </LogoWrapper>
             </Wrapper>
 

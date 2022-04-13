@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { LeftMenu } from './LeftMenu';
 import { RightMenu } from './RightMenu';
 import { HomeLogo, Menu, Left, Right } from '../ui-lib/lib';
-import { Icon } from 'antd';
+import home from "../assets/home.svg"
 import './navbar.css';
 
 export const Navbar = () => {
@@ -12,7 +12,7 @@ export const Navbar = () => {
   return (
     <Menu>
       <HomeLogo>
-        <Icon className="home" type="home" onClick={() => history.push('/')} />
+        <img src={home} alt="home" onClick={() => history.push('/')} />
       </HomeLogo>
       <Left>
         <LeftMenu mode="horizontal"/>

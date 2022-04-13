@@ -236,6 +236,15 @@ export const SVG = () => {
                         />
                     </VizContainer>
                     <SVGScaleDescription/>
+
+                    <VizContainer>
+                        <MainTitle>Ex.4) SVG Circle that follows the mouse cursor</MainTitle>
+                        <SmallMessage> 
+                            Svg circle and reaction on mouse event can be used to create interactions that follow the cursor.
+                        </SmallMessage>
+                       
+                    </VizContainer>
+                    <SVGScaleDescription/>
             </VizWrapper>
     )
 }

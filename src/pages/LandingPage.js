@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Icon, Col, Card, Row } from 'antd';
+import { Col, Card, Row } from 'antd';
 import axios from "axios";
 import Meta from 'antd/lib/card/Meta';
 import { CheckBox } from '../components/CheckBox';
@@ -8,6 +8,7 @@ import { SearchEngine } from '../components/SearchEngine';
 import { categories, level } from '../data';
 import { ImageShowCase } from '../components/ImageShowCase';
 import { Container, MainTitle, SearchContainer } from '../ui-lib/lib';
+import smile from "../assets/smile.svg"
 
 export const LandingPage = () => {
     const [items, setItems] = useState([])
@@ -73,7 +74,7 @@ export const LandingPage = () => {
     return (
         <Container>
             <MainTitle>
-                Welcome to D3 & React Exhibition <Icon type="smile" /> 
+                Welcome to D3 & React Exhibition <img src={smile} alt="smile"/>
             </MainTitle>
             
             <Row gutter={[16, 16]}>

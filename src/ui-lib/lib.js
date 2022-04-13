@@ -1,8 +1,6 @@
 
-import { Button, Input, Icon} from 'antd';
+import { Button, Input } from 'antd';
 import styled from "styled-components"
-import { MailOutlined,LinkedinOutlined,GithubOutlined } from "@ant-design/icons"
-import { Link } from 'react-router-dom'
 
 const { Search } = Input;
 export const Wrapper = styled.div`
@@ -33,18 +31,6 @@ export const SmallMessage = styled.p`
 export const LogoWrapper = styled.div`
     flex-wrap:wrap;
 `;
-
-export const Mail = styled(MailOutlined)`
-    padding: 0.5rem;
-`
-
-export const LinkedIn = styled(LinkedinOutlined)`
-    padding: 0.5rem;
-`
-
-export const Github = styled(GithubOutlined)`
-    padding: 0.5rem;
-`
 
 export const CommonButton = styled(Button)`
     margin: 0.5em;
@@ -131,14 +117,6 @@ export const Left = styled.div`
 export const Right = styled.div`
   float:right;
 `
-
-export const Profile = styled(Link)`
-  margin-right: -22px;
-`;
-
-export const ProfileIcon = styled(Icon)`
-  font-size: 30px !important;
-`;
 
 export const VizWrapper = styled.div`
   margin: auto;

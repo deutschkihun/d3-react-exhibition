@@ -1,9 +1,11 @@
 import React from 'react';
 import { Menu, Badge } from 'antd';
+import {useHistory} from 'react-router'
 import {Link} from 'react-router-dom'
-import {Profile, ProfileIcon} from '../ui-lib/lib'
+import profile from '../assets/profile.svg'
 
 export const RightMenu = (props) => {
+  const history = useHistory()
     return (
       <Menu mode={props.mode}>
         <Menu.Item>
@@ -12,9 +14,7 @@ export const RightMenu = (props) => {
 
         <Menu.Item style={{ paddingBottom: 3 }}>
           <Badge>
-            <Profile to="/profile">
-              <ProfileIcon type="profile"/>
-            </Profile>
+            <img src={profile} alt="profile" onClick={() => history.push('/profile')}/>
           </Badge>
         </Menu.Item>
       </Menu>
