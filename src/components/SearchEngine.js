@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { SearchBox } from '../ui-lib/lib'
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
 
 export const SearchEngine = (props) =>  {
     const [SearchTerm, setSearchTerm] = useState("")
@@ -9,10 +10,13 @@ export const SearchEngine = (props) =>  {
     }
 
     return (
-            <SearchBox
-                onChange={searchHandler}
-                value={SearchTerm}
-            />
+        <InputGroup size="sm" className="mb-3" style={{margin:"1rem auto"}}>
+            <FormControl aria-label="Small" 
+                        placeholder="enter your keyword"
+                        aria-describedby="inputGroup-sizing-sm" 
+                        onChange={searchHandler} 
+                        value={SearchTerm}/>
+        </InputGroup>
     )
 }
 

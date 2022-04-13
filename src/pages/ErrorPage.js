@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router';
-import { Wrapper, Title, Message, CommonButton } from '../ui-lib/lib';
+import { Wrapper, Title, Message, Btn } from '../ui-lib/lib';
 
 
 export const ErrorPage = () => {
@@ -9,7 +9,7 @@ export const ErrorPage = () => {
         <Wrapper>
             <Title>Not Found 404</Title>
             <Message>Sorry, This is not the web page you are looking for</Message>
-            <CommonButton onClick={() => history.push('/')}>Back to main page</CommonButton>
+            <Btn onClick={() => history.push('/')}>Back to main page</Btn>
         </Wrapper>
     )
 }

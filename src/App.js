@@ -4,7 +4,7 @@ import { LandingPage } from './pages/LandingPage';
 import { ErrorPage } from './pages/ErrorPage';
 import { AboutPage } from './pages/AboutPage'
 import { ProfilePage } from './pages/ProfilePage'
-import { Navbar } from './components/Navbar';
+import { Headers } from './components/Headers';
 import { Footer } from './components/Footer';
 import { SVG } from './pages/SVG/SVG'
 import { ChartBasic } from './pages/ChartBasic/ChartBasic';
@@ -19,7 +19,7 @@ function App() {
     <>
     <Suspense fallback={(<div>Loading...</div>)}>
     <BrowserRouter>
-      <Navbar/>
+      <Headers />
         <Seperator>
           <Switch>
             <Router exact path="/" component={LandingPage} />
