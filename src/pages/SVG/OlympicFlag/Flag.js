@@ -35,7 +35,7 @@ export const Flag = ({width,height,centerX,centerY,radius,strokeWidth}) => {
     return (
         <>
             {loop.map((k) => (
-                <svg id={"olympicflag"+String(k)}/>
+                <svg id={"olympicflag"+String(k)} key={k}/>
             ))}
         </>
     )

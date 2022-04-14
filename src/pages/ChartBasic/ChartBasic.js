@@ -10,7 +10,7 @@ import { CustomAxisLabelDescription } from './CustomAxisLabel/CustomAxisLabelDes
 import {DataCoordinateDescription} from './DataCoordinate/DataCoordinateDescription'
 import { ChartBackground } from './ChartBackground/ChartBackground'
 import {ChartBackgroundDescription} from './ChartBackground/ChartBackgroundDescription'
-import { Title, VizContainer, VizWrapper, ContainerRef, Message, Btn} from '../../ui-lib/lib'
+import { Title, VizContainer, VizWrapper, Ref, Message, Btn} from '../../ui-lib/lib'
 import {margin, width, height, pointer, band} from '../../data'
 
 export const ChartBasic = () => {
@@ -28,7 +28,7 @@ export const ChartBasic = () => {
                         <Message>
                             Previously, we used only scalelinear for axis expression. In this time we'll use different scaler to customize axis.
                         </Message>
-                        <ContainerRef ref={CustomAxisRef}>          
+                        <Ref ref={CustomAxisRef}>          
                             <BasicAxisScaler
                                 width={width}
                                 height={height}
@@ -36,14 +36,14 @@ export const ChartBasic = () => {
                                 pointer={pointer}
                                 band={band}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
                     <BasicAxisScalerDescription/>
                 
                 {/* Chart basic: Custom axis label */}
                     <VizContainer>
                         <Title>Chart basic: Custom axis label</Title>
-                        <ContainerRef ref={CustomAxisRef}>          
+                        <Ref ref={CustomAxisRef}>          
                             <CustomAxisLabel
                                 width={width}
                                 height={height}
@@ -51,7 +51,7 @@ export const ChartBasic = () => {
                                 pointer={pointer}
                                 band={band}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
                     <CustomAxisLabelDescription/>
 
@@ -70,14 +70,14 @@ export const ChartBasic = () => {
                             based on two dimensions. If it is three dimensions, we need the z-axis, but we will only deal with two dimensions in this time. 
                             In the following example, a coordinate system was drawn using various scale ranges.
                         </Message>
-                        <ContainerRef ref={AxisBasicRef}>
+                        <Ref ref={AxisBasicRef}>
                         <AxisBasic
                             width={width}
                             height={height}
                             margin={margin}
                             refresh={false}
                         />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
                     <AxisBasicDescription/>
 
@@ -91,27 +91,27 @@ export const ChartBasic = () => {
                                                                             refresh={true}
                                                                         />,DataCoordinateRef)}>Click Me</Btn>
                         </Title>
-                        <ContainerRef ref={DataCoordinateRef}>
+                        <Ref ref={DataCoordinateRef}>
                             <DataCoordinate
                                 width={width}
                                 height={height}
                                 margin={margin}
                                 refresh={false}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
                     <DataCoordinateDescription/>
 
                 {/* Chart basic: Displaying random data on the random coordinates */}
                     <VizContainer>
                         <Title>Chart Background</Title>
-                        <ContainerRef>
+                        <Ref>
                         <ChartBackground
                                 width={width}
                                 height={height}
                                 margin={margin}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
                     <ChartBackgroundDescription/>
         </VizWrapper>

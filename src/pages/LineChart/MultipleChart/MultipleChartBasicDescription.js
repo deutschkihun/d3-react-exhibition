@@ -1,12 +1,12 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import {Code,Pre,Explanation} from '../../../ui-lib/lib';
+import {Pre,Explanation} from '../../../ui-lib/lib';
 
 export const MultipleChartBasicDescription = () => {
     return (
         <Explanation>
             <Pre>
-                <Code>
+                <code>
                     <span>{'Use d3.group to clustering different data'}</span>
                     <br/>  
                     <br/>  
@@ -27,7 +27,7 @@ export const MultipleChartBasicDescription = () => {
                     <span>{'              .append("g").attr("transform", `translate(${margin.left},${margin.top})`);'}</span>
                     <br/>
                     <span>{'Other things like axis and label are same as other example'}</span>
-                </Code>
+                </code>
             </Pre>
         </Explanation>
     )

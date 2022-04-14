@@ -1,12 +1,12 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import {Code,Pre,Explanation} from '../../../ui-lib/lib';
+import {Pre,Explanation} from '../../../ui-lib/lib';
 
 export const BasicAxisScalerDescription = () => {
     return (
         <Explanation>
             <Pre>
-                <Code>
+                <code>
                     <span>{'let x_scale_linear = d3.scaleLinear().domain([0,100]).range([0,width])'}</span>
                     <br/>
                     <span>{'let y_scale_linear = d3.scaleLinear().domain([0,100]).range([height,0])'}</span>
@@ -56,7 +56,7 @@ export const BasicAxisScalerDescription = () => {
                     <br/>
                     <span>{'axisTemplate.append("g").call(d3.axisLeft(y_scale_log));'}</span>
                     <br/>
-                </Code>
+                </code>
             </Pre>
         </Explanation>
     )

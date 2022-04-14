@@ -1,12 +1,12 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import {Code,Pre,Explanation} from '../../../ui-lib/lib'
+import {Pre,Explanation} from '../../../ui-lib/lib'
 
 export const DataCoordinateDescription = () => {
     return (
         <Explanation>
             <Pre>
-                <Code>
+                <code>
                     <span>{'const random = Math.random().toFixed(1)'}</span>
                     <br/>
                     <span>{'let x_scale_axis = d3.scaleLinear().domain([0,100*random]).range([0,width])'}</span>
@@ -62,7 +62,7 @@ export const DataCoordinateDescription = () => {
                     <br/>
                     <span>{'}'}</span>
                     <br/>
-                </Code>
+                </code>
             </Pre>
         </Explanation>
     )

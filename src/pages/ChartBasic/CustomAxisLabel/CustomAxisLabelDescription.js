@@ -1,12 +1,12 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import {Code,Pre,Explanation} from '../../../ui-lib/lib';
+import {Pre,Explanation} from '../../../ui-lib/lib';
 
 export const CustomAxisLabelDescription = () => {
     return (
         <Explanation>
             <Pre>
-                <Code>
+                <code>
                     <span>{'const band = ["C","B","B+","A","A+","A++"]'}</span>
                     <br/>
                     <span>{'            let x_scale_pointer = d3.scaleBand().domain(pointer).range([0,width])'}</span>
@@ -40,7 +40,7 @@ export const CustomAxisLabelDescription = () => {
                     <span>{'                                     .style("text-anchor", "end")'}</span>
                     <br/>
                     <span>{'                                     .style("fill", "#69a3b2")'}</span>
-                </Code>
+                </code>
             </Pre>
         </Explanation>
     )

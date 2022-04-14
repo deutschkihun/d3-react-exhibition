@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Collapse, Checkbox } from 'antd';
-import { CheckList } from '../ui-lib/lib'
 const { Panel } = Collapse;
 
 export const CheckBox = (props) => {
@@ -21,7 +20,7 @@ export const CheckBox = (props) => {
         <React.Fragment key={index} >
             <Checkbox onChange={() => handleToggle(value._id)}
                 checked={Checked.indexOf(value._id) === -1 ? false : true} />
-            <CheckList>{"  " + value.name + "  "}</CheckList>
+            <span>{"  " + value.name + "  "}</span>
         </React.Fragment>
     ))
 

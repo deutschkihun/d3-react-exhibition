@@ -16,7 +16,8 @@ import {SVGScale} from './SVGScale/SVGScale'
 import { SVGScaleDescription } from './SVGScale/SVGScaleDescription';
 import {refreshHandler} from '../../helper/refreshHandler'
 import { Emoji } from './Emoji';
-import { VizContainer, VizWrapper, Title, ContainerRef, Message,Btn } from '../../ui-lib/lib'
+import { SVGOnMouse } from './SVGOnMouse/SVGOnMouse'
+import { VizContainer, VizWrapper, Title, Ref, Message,Btn } from '../../ui-lib/lib'
 
 export const SVG = () => {
 
@@ -57,7 +58,7 @@ export const SVG = () => {
                                                                         radius={1.15}
                                                                       />,SVGWithoutD3Ref)}>Click Me</Btn>
                         </Title>
-                        <ContainerRef ref={SVGWithoutD3Ref}>
+                        <Ref ref={SVGWithoutD3Ref}>
                         <SVGWithoutD3
                             width={width / 4}
                             height={height / 4}
@@ -66,7 +67,7 @@ export const SVG = () => {
                             stroke={stroke}
                             radius={1.15}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
                     <SVGWithoutD3Description/>
 
@@ -83,7 +84,7 @@ export const SVG = () => {
                                                                         refresh={true}
                                                                     />,SVGWithD3Ref)}>Click Me</Btn>
                         </Title>
-                        <ContainerRef ref={SVGWithD3Ref}>
+                        <Ref ref={SVGWithD3Ref}>
                             <SVGWithD3
                                 width={width / 4}
                                 height={height / 4}
@@ -93,7 +94,7 @@ export const SVG = () => {
                                 opacity={0.6}
                                 refresh={false}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
                     <SVGWithD3Description/>
 
@@ -111,7 +112,7 @@ export const SVG = () => {
                                                                     />,SVGCircleAdvanceRef
                                                                     )}>Click Me</Btn>
                         </Title>
-                        <ContainerRef ref={SVGCircleAdvanceRef}>
+                        <Ref ref={SVGCircleAdvanceRef}>
                             <SVGCircleAdvance
                                 width={width / 2}
                                 height={height / 2} 
@@ -121,7 +122,7 @@ export const SVG = () => {
                                 index={0}
                                 opacity={0.6}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
                     <SVGWithD3Description/>
               
@@ -138,7 +139,7 @@ export const SVG = () => {
                                                                             refresh={true}
                                                                         />,SVGRectangleRef)}>Click Me</Btn>
                         </Title>
-                            <ContainerRef ref={SVGRectangleRef}>
+                            <Ref ref={SVGRectangleRef}>
                                 <SVGRectangle
                                     width={width}
                                     height={height}
@@ -148,7 +149,7 @@ export const SVG = () => {
                                     strokeWidth={10}
                                     refresh={false}
                                 />
-                            </ContainerRef>
+                            </Ref>
                     </VizContainer>
                     <SVGRectangleDescription/>
 
@@ -172,6 +173,7 @@ export const SVG = () => {
                         <Title>Ex.2) Emoji Basic: Smile,Bad,Crying,Angry</Title>
                         {faceRange.map((i) => (
                             <Emoji
+                                key={i}
                                 width={width}
                                 height={height}
                                 centerX={width / 2}
@@ -194,7 +196,7 @@ export const SVG = () => {
                                                                         centerY={height / 2}
                                                                         type={"random"}/>,FaceRef)}>Click Me</Btn>
                         </Title>
-                        <ContainerRef ref={FaceRef}>
+                        <Ref ref={FaceRef}>
                             <Face
                                 width={width}
                                 height={height}
@@ -202,7 +204,7 @@ export const SVG = () => {
                                 centerY={height / 2}
                                 type={"random"}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer>
 
                   {/* Ex.4) SVG with Scale */}
@@ -226,11 +228,18 @@ export const SVG = () => {
                     <SVGScaleDescription/>
 
                     <VizContainer>
-                        <Title>Ex.4) SVG Circle that follows the mouse cursor</Title>
+                        <Title>Ex.5) SVG Circle that follows the mouse cursor</Title>
                         <Message> 
                             Svg circle and reaction on mouse event can be used to create interactions that follow the cursor.
                         </Message>
-                       
+                        <SVGOnMouse
+                                width={width}
+                                height={height}
+                                centerX={width / 2}
+                                centerY={height / 2}
+                                stroke={stroke}
+                                radius={10}
+                        />
                     </VizContainer>
                     <SVGScaleDescription/>
             </VizWrapper>

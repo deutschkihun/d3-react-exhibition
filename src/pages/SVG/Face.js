@@ -10,8 +10,9 @@ export const Face = ({
     type,
   }) => (
     <>
-    {range(6*3).map(() => (
+    {range(6*3).map((i) => (
       <FaceContainer
+        key={i}
         width={width}
         height={height}
         centerX={centerX}

@@ -1,11 +1,11 @@
 import React from 'react'
-import { Explanation,Pre,Code } from '../../ui-lib/lib'
+import { Explanation,Pre } from '../../ui-lib/lib'
 
 export const FaceDescription = () => {
     return (
         <Explanation>
                 <Pre>
-                        <Code>
+                        <code>
                             <span>{' <Face '} </span>
                             <br/>
                             <span>{'    width={width} '} </span>
@@ -27,10 +27,10 @@ export const FaceDescription = () => {
                             <span>{'    type={"angry"} '} </span>     
                             <br/> 
                             <span>{' />'} </span>                                                     
-                        </Code>
+                        </code>
                 </Pre>
                 <Pre>
-                        <Code>
+                        <code>
                             <span>**Eyes component**</span>
                             <br/> 
                             <br/> 
@@ -57,10 +57,10 @@ export const FaceDescription = () => {
                             <span>{'    />'} </span>
                             <br/> 
                             <span>{'</>'} </span>                               
-                        </Code>
+                        </code>
                 </Pre>
                 <Pre>
-                        <Code>
+                        <code>
                             <span>**Tears component**</span>
                             <br/> 
                             <br/> 
@@ -83,7 +83,7 @@ export const FaceDescription = () => {
                             <span>{'            </>'} </span>
                             <br/> 
                             <span>{')}'} </span>                               
-                        </Code>
+                        </code>
                 </Pre>
                 </Explanation>
     )

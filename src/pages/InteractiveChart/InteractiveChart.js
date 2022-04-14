@@ -5,7 +5,7 @@ import { BrushingX } from './Brushing/BrushingX';
 import { BrushingY } from './Brushing/BrushingY';
 import { HighlightingBrushedElement } from './Brushing/HighlightingBrushedElement';
 import { HoverBasic } from './Hover/HoverBasic'
-import { VizContainer, VizWrapper ,Title, ContainerRef, Message } from '../../ui-lib/lib'
+import { VizContainer, VizWrapper ,Title, Ref, Message } from '../../ui-lib/lib'
 
 
 export const InteractiveChart = () => {
@@ -21,35 +21,35 @@ export const InteractiveChart = () => {
                             It can also be used to zoom-in to a region of interest, or to select continuous regions for cross-filtering data or live histograms.
                             We can control selecting X and Y axis area with brushing box. If you want to remove brusing box, click anywhere outside of brushing box.
                         </Message>
-                        <ContainerRef>
+                        <Ref>
                             <BrushingBoth
                                 width={width}
                                 height={height}
                                 margin={margin}
                             />
-                        </ContainerRef>
+                        </Ref>
 
                         <Message> 
                             In case, we can handle only x axis of brushing box or only y axis of brushing box. Following example can handle only x axis of brusing box.
                         </Message>
-                        <ContainerRef>
+                        <Ref>
                             <BrushingX
                                 width={width}
                                 height={height}
                                 margin={margin}
                             />
-                        </ContainerRef>
+                        </Ref>
 
                         <Message> 
                             Following example, we can handle only y axis of brushing box.
                         </Message>
-                        <ContainerRef>
+                        <Ref>
                             <BrushingY
                                 width={width}
                                 height={height}
                                 margin={margin}
                             />
-                        </ContainerRef>
+                        </Ref>
                     </VizContainer> 
 
                 {/* D3 interactive : brushing event triggering */}
@@ -58,13 +58,13 @@ export const InteractiveChart = () => {
                             <Message>
                                 If you highlight the elements included in the brush box, it can help users who look at the data, recognize and understand data more intuitively and conveniently.
                             </Message>
-                            <ContainerRef>
+                            <Ref>
                                 <HighlightingBrushedElement
                                     width={width}
                                     height={height}
                                     margin={margin}
                                 />
-                            </ContainerRef>
+                            </Ref>
                     </VizContainer> 
 
                 {/* D3 interactive : Switching */}
@@ -73,13 +73,13 @@ export const InteractiveChart = () => {
                             <Message>
                                 Hover is used to select elements that users hover their cursor or mouse over.
                             </Message>
-                            <ContainerRef>
+                            <Ref>
                                 <HoverBasic
                                     width={width}
                                     height={height}
                                     margin={margin}
                                 />
-                            </ContainerRef>
+                            </Ref>
                         </VizContainer> 
             </VizWrapper>
     )

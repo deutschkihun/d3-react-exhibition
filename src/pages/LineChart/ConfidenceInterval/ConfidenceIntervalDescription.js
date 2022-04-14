@@ -1,11 +1,11 @@
 import React from 'react'
-import {Code,Pre,Explanation} from '../../../ui-lib/lib';
+import {Pre,Explanation} from '../../../ui-lib/lib';
 
 export const ConfidenceIntervalDescription = () => {
     return (
         <Explanation>
             <Pre>
-                <Code>
+                <code>
                     <span>{'** Data reference: https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_IC.csv'}</span>
                     <br/>
                     <br/>
@@ -33,7 +33,7 @@ export const ConfidenceIntervalDescription = () => {
                     <br/>
                     <span>{'Confidence intervals measure the degree of uncertainty or certainty in a sampling method.'}</span>
                     <br/>
-                </Code>
+                </code>
             </Pre>
         </Explanation>
     )

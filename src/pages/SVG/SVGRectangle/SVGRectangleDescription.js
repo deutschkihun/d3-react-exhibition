@@ -1,11 +1,11 @@
 import React from 'react'
-import { Explanation,Pre,Code } from '../../../ui-lib/lib'
+import { Explanation,Pre } from '../../../ui-lib/lib'
 
 export const SVGRectangleDescription = () => {
     return (
         <Explanation>
                     <Pre>
-                    <Code>
+                    <code>
                         <span>{'rect.append("rect")'}</span>
                         <br/>
                         <span>{'    .attr("y", 100)'}</span>
@@ -19,7 +19,7 @@ export const SVGRectangleDescription = () => {
                         <span>{'    .attr("fill", "#69a3b2")'}</span>
                         <br/>
                         <span>{'<svg id="rect"/>'}</span>
-                    </Code>
+                    </code>
                     </Pre>
         </Explanation>
     )

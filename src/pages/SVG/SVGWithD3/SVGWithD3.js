@@ -15,7 +15,7 @@ export const SVGWithD3 = ({
 }) => (
     <>
     {range(6*3).map((i) => (
-        <>
+        <div key={i}>
             <CircleTop
             width={width*2}
             height={height*2}
@@ -36,7 +36,7 @@ export const SVGWithD3 = ({
                 opacity={opacity}
                 refresh={refresh}
             />
-        </>
+        </div>
     ))}
        
         

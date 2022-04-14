@@ -8,10 +8,10 @@ export const Circle = ({width,height,centerX,centerY,stroke,radius}) => {
     return (
         <>
             {array.map((i) => (
-                <svg width={width} height={height}> 
-                <g transform={`translate(${centerX},${centerY})`}>
-                    <circle fill={randomColorGenerator()} stroke={stroke} r={radius*i}></circle>
-                </g>
+                <svg key={i} width={width} height={height}> 
+                    <g transform={`translate(${centerX},${centerY})`}>
+                        <circle fill={randomColorGenerator()} stroke={stroke} r={radius*i}></circle>
+                    </g>
                 </svg>
             ))}
         </>

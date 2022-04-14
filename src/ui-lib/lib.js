@@ -19,6 +19,7 @@ export const Title = styled.h1`
 `;
 
 export const Message = styled.p`
+  text-align: justify;
   font-size: 17px;
 `;
 
@@ -28,7 +29,7 @@ export const Btn = styled(Button)`
     display: block;
 `;
 
-export const ContainerRef = styled.div``;
+export const Ref = styled.div``;
 
 export const FooterWrapper = styled.div`
     height:80px;
@@ -61,8 +62,7 @@ export const Images = styled(Image)`
     width: 100%;
     max-height: 150px;
     padding: 1em;
-` 
-export const CheckList = styled.span``;
+`;
 
 export const Menu = styled.nav`
   padding: 0 20px;
@@ -74,7 +74,6 @@ export const Menu = styled.nav`
   z-index:5;
   width:100%;
 `;
-
 
 export const VizWrapper = styled.div`
   margin: auto;
@@ -95,10 +94,8 @@ export const Content = styled.div`
     justify-content:flex-end;
 `;
 
-export const Code = styled.code``;
-
 export const Pre = styled.pre`
-    background-color:#eee;
+    background-color: #eee;
     padding: 0.5em 1em 0.5em 1em;
 `
 
@@ -121,59 +118,21 @@ export const Grid = styled.div`
   grid-gap: 20px;
   justify-items: center;
 
-  .fa-bars {
-    display: none;
-  }
-
-  .fa-times {
-    display: none;
-  }
-
-  .fa-search,
-  .fa-times {
-    padding-top: 5px;
-    font-size: 15px;
-    padding-right: 1rem;
-    display: grid;
-    grid-column: 12 / 13;
-  }
-
-  .inactive {
-    display: none;
-  }
-
   /* pc display min  */
   @media screen and (max-width: 1000px) {
     .fa-bars {
       padding-top: 5px;
-      font-size: 20px;
       display: grid;
       grid-column: 1 / 2;
-    }
-
-    .fa-search {
-      padding-top: 5px;
-      font-size: 20px;
-      padding-right: 1rem;
-      display: grid;
-      grid-column: 12 / 13;
     }
   }
 
   /* tablet pc and mobile device */
   @media screen and (max-width: 768px) {
     .fa-bars {
-      font-size: 20px;
       padding-left: 1rem;
       display: grid;
       grid-column: 1 / 2;
-    }
-
-    .fa-search {
-      font-size: 20px;
-      padding-left: 1rem;
-      display: grid;
-      grid-column: 12 / 13;
     }
   }
 `;
@@ -198,7 +157,6 @@ export const Home = styled(Link)`
 
   /* tablet pc */
   @media screen and (max-width: 768px) {
-    font-size: 18px;
     grid-column: 4 / 11;
   }
 

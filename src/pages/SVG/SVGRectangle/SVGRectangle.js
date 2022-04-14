@@ -14,6 +14,7 @@ export const SVGRectangle = ({
     <>
     {range(6*3).reverse().map((i) => (
         <Rectangle
+            key={i}
             width={width * i*0.2}
             height={height / 4}
             centerX={centerX}

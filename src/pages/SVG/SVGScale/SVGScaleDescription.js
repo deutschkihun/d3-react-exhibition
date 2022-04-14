@@ -1,12 +1,12 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import { Explanation,Pre,Code } from '../../../ui-lib/lib'
+import { Explanation,Pre } from '../../../ui-lib/lib'
 
 export const SVGScaleDescription = () => {
     return (
         <Explanation>
                     <Pre>
-                    <Code>
+                    <code>
                         <span>{'let scaler = d3.scaleLinear().domain([0,100]).range([0,100]) '}</span>
                         <br/>
                         <span>{'let scaler_modified = d3.scaleLinear().domain([0,50]).range([0,300])'}</span>
@@ -26,7 +26,7 @@ export const SVGScaleDescription = () => {
                         <span>{'        </g>'}</span>
                         <br/>
                         <span>{'    </svg>'}</span>
-                    </Code>
+                    </code>
                     </Pre>
         </Explanation>
     )

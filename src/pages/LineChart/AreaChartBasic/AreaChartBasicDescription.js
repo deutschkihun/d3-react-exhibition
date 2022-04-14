@@ -1,12 +1,12 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import {Code,Pre,Explanation} from '../../../ui-lib/lib';
+import {Pre,Explanation} from '../../../ui-lib/lib';
 
 export const AreaChartBasicDescription = () => {
     return (
         <Explanation>
         <Pre>
-            <Code>
+            <code>
                 <span>{'Data reference: https://finance.yahoo.com/'}</span>
                 <br/>
                 <br/>
@@ -59,7 +59,7 @@ export const AreaChartBasicDescription = () => {
                 <br/>
                 <span>{'             .y1(function(d) { return y(d.value) }))'}</span>
                 <br/>
-            </Code>
+            </code>
         </Pre>
     </Explanation>
     )

@@ -1,12 +1,12 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react'
-import {Code,Pre,Explanation} from '../../../ui-lib/lib';
+import {Pre,Explanation} from '../../../ui-lib/lib';
 
 export const ChartBackgroundDescription = () => {
     return (
         <Explanation>
             <Pre>
-                <Code>
+                <code>
                     <span>{'ex.) ggplot2 style'}</span>
                     <br/>
                     <span>{'let x_scale_axis = d3.scaleLinear().domain([0,100*random]).range([0,width])'}</span>
@@ -37,7 +37,7 @@ export const ChartBackgroundDescription = () => {
                     <br/>
                     <span>{'axisTemplate.selectAll(".tick line").attr("stroke", "white")'}</span>
                     <br/>
-                </Code>
+                </code>
             </Pre>
         </Explanation>
     )

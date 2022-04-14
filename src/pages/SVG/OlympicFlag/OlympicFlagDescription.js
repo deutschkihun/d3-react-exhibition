@@ -1,12 +1,12 @@
 import React from 'react'
-import { Explanation,Pre,Code } from '../../../ui-lib/lib'
+import { Explanation,Pre } from '../../../ui-lib/lib'
 
 export const OlympicFlagDescription = () => {
     return (
         <Explanation>
             <h3>Building a olympic flag by d3 and React</h3>
                 <Pre>
-                <Code>
+                <code>
                     <span>{'useEffect(() => {'}</span>
                         <br/>
                     <span>{'    var olympicFlag = d3.select("#olympic_flag").attr("width","55vw").attr("height","250px")'}</span>
@@ -27,7 +27,7 @@ export const OlympicFlagDescription = () => {
                         <br/>
                         <br/>
                     <span>{'<svg id="olympic_flag"/>'}</span>
-                </Code>
+                </code>
                 </Pre>
             <h4>stroke-width: width of stroke on svg</h4>
         </Explanation>
