@@ -235,8 +235,6 @@ export const SVG = () => {
                         <SVGOnMouse
                                 width={width}
                                 height={height}
-                                centerX={width / 2}
-                                centerY={height / 2}
                                 stroke={stroke}
                                 radius={10}
                         />

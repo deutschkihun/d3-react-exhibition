@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export const SVGOnMouse = ({width,height,centerX,centerY,radius}) => {
+export const SVGOnMouse = ({width,height,radius}) => {
     const init = {x: width / 2, y: height / 2} 
     const [mousePosition, setMousePosition] = useState(init)
     const handleMouseMove = (e) => {
@@ -9,14 +9,14 @@ export const SVGOnMouse = ({width,height,centerX,centerY,radius}) => {
         setMousePosition({x: clientX, y:clientY})
     }
 
-    console.log(width,height,centerX,centerY)
+    // proportion calc 
 
   return (
       <>
-        <svg width={width} height={height} onMouseMove={handleMouseMove}> 
-                <circle cx={mousePosition.x} cy={mousePosition.y} r={radius}></circle>
+        <svg width="100%" height={height * 2} onMouseMove={handleMouseMove}> 
+            <circle cx={mousePosition.x} cy={mousePosition.y} r={radius}></circle>
         </svg>
-    </>
+      </>
   )
 }
 

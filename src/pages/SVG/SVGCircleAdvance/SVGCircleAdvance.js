@@ -11,7 +11,7 @@ export const SVGCircleAdvance = ({
 }) => (
     <>
         {range(6*3).map((i) => (
-            <div key={i}>
+            <>
                 <CircleAdvance
                     width={width}
                     height={height}
@@ -33,7 +33,7 @@ export const SVGCircleAdvance = ({
                     centerY={centerY}
                     radius={radius}
                 />
-            </div>
+            </>
         ))}
     </>
 )
