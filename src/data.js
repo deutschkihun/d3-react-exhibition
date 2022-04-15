@@ -23,6 +23,10 @@ const categories = [
     {
         "_id": 6,
         "name": "Interactive Chart"
+    },
+    {
+        "_id": 7,
+        "name": "Data Understanding"
     }
 ]
 

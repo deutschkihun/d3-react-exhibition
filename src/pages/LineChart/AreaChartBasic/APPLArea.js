@@ -1,39 +1,39 @@
 import React, { useEffect } from 'react'
-import * as d3 from 'd3'
+import { csv,timeParse,scaleTime,axisBottom,extent,scaleLinear,axisLeft,area,select } from 'd3';
 
 export const APPLArea = ({width,height,margin}) => {
 
     useEffect(() => {    
-            let appleAreaChart = d3.select('#applArea')
+            let appleAreaChart = select('#applArea')
             .attr('width',width + margin.left + margin.right)
             .attr('height', height + margin.top + margin.bottom * 2)
             .append('g')
               .attr('transform',`translate(${margin.left},${margin.top * 4})`)
                          
-            d3.csv('https://raw.githubusercontent.com/deutschkihun/vizDataRepo/main/csv/APPLE.csv',(d) => {
-              return { date : d3.timeParse("%Y-%m-%d")(d.date), value : d.value }
+            csv('https://raw.githubusercontent.com/deutschkihun/vizDataRepo/main/csv/APPLE.csv',(d) => {
+              return { date : timeParse("%Y-%m-%d")(d.date), value : d.value }
             }).then((data) => {
     
-              const x = d3.scaleTime()
-                .domain(d3.extent(data, function(d) { return d.date }))
+              const x = scaleTime()
+                .domain(extent(data, function(d) { return d.date }))
                 .range([ 0, width ]);
 
               appleAreaChart.append("g")
                 .attr("transform", `translate(0, ${height})`)
-                .call(d3.axisBottom(x));
+                .call(axisBottom(x));
           
-              const y = d3.scaleLinear()
+              const y = scaleLinear()
                 .domain([0, 200])
                   .range([ height, 0 ]);
               appleAreaChart.append("g")
-                .call(d3.axisLeft(y));
+                .call(axisLeft(y));
           
               appleAreaChart.append("path")
                 .datum(data)
                 .attr("fill", "#819993")
                 .attr("stroke", "green")
                 .attr("stroke-width", 1.5)
-                .attr("d", d3.area()
+                .attr("d", area()
                   .x(function(d) { return x(d.date) })
                   .y0(y(0))
                   .y1(function(d) { return y(d.value) })

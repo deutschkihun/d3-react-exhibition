@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
+import Table from 'react-bootstrap/Table'
+
 
 export const Wrapper = styled.div`
     padding-top:50px;
@@ -17,6 +19,11 @@ export const Wrapper = styled.div`
 export const Title = styled.h1`
     text-align: center;
 `;
+
+export const SubTitle = styled.h2`
+    text-align: center;
+`;
+
 
 export const Message = styled.p`
   text-align: justify;
@@ -137,6 +144,7 @@ export const Grid = styled.div`
   }
 `;
 
+
 export const Home = styled(Link)`
   font-size: 15px;
   grid-column: 1 / 4;
@@ -181,28 +189,25 @@ export const Header = styled.header`
 export const Dropdown = styled.ul`
   font-size: 15px;
   grid-column: 9 / 10;
-  color: black;
+  color: #151516;
 
   .dropdown_menu {
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
     display: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border: 1px solid #fff;
     z-index: 1;
   }
 
   .dropdown:hover .dropdown_menu {
-    font-size: 12px;
+    font-size: 15px;
     display: block;
-    width: 100px;
+    width: 100%;
+    max-width: 150px;
     text-align: center;
 
     a {
-      background-color: white;
-      color: white;
+      background-color: #fff;
+      color: #151516;
       padding: 6px 16px;
       text-decoration: none;
       display: block;
@@ -210,8 +215,8 @@ export const Dropdown = styled.ul`
     }
 
     a:hover {
-      background-color: white;
-      color: #151516;
+      background-color: #151516;
+      color: #fff;
     }
   }
   /* pc display min  */
@@ -219,6 +224,7 @@ export const Dropdown = styled.ul`
     display: none;
   }
 `;
+
 
 export const About = styled(Link)`
   font-size: 15px;
@@ -247,5 +253,18 @@ export const Profile = styled(Link)`
   /* pc display min  */
   @media screen and (max-width: 1000px) {
     display: none;
+  }
+`;
+
+export const Tables = styled(Table)`
+  width: 100%;
+
+  th {
+    border: 1px solid #151516
+  }
+  td {
+    text-align: center;
+    line-height: 2.5rem;
+    border: 1px solid #151516
   }
 `;

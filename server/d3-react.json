@@ -34,5 +34,11 @@
         "level": 3,
         "categories":6,
         "description":"Interactive Chart exibition"
+    },
+    {
+        "name": "Data Understanding",
+        "level": 1,
+        "categories":7,
+        "description":"Data Understanding"
     }
 ]

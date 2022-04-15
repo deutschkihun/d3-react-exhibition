@@ -12,6 +12,7 @@ import { LineChart } from './pages/LineChart/LineChart';
 import { HeatMap } from './pages/HeatMap/HeatMap'
 import { BarChart } from './pages/BarChart/BarChart'
 import { InteractiveChart } from './pages/InteractiveChart/InteractiveChart';
+import { DataUnderstanding } from './pages/DataUnderstanding/DataUnderstanding';
 import { Seperator } from './ui-lib/lib'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Switch>
             <Router exact path="/" component={LandingPage} />
             <Router exact path="/SVG" component={SVG} />
+            <Router exact path="/DataUnderstanding" component={DataUnderstanding} />
             <Router exact path="/ChartBasic" component={ChartBasic} />
             <Router exact path="/LineChart" component={LineChart} />
             <Router exact path="/BarChart" component={BarChart} />
