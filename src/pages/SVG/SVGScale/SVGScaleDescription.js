@@ -7,25 +7,47 @@ export const SVGScaleDescription = () => {
         <Explanation>
                     <Pre>
                     <code>
-                        <span>{'let scaler = d3.scaleLinear().domain([0,100]).range([0,100]) '}</span>
+                        <span>{'  const init = {x: width / 2, y: height / 2} '}</span>
                         <br/>
-                        <span>{'let scaler_modified = d3.scaleLinear().domain([0,50]).range([0,300])'}</span>
+                        <span>{'  const MouseMoveRef = useRef(null)'}</span>
                         <br/>
-                        <span>{'    <svg width={width * 2} height={height * 2}>'}</span>
+                        <span>{'  const [mousePosition, setMousePosition] = useState(init)'}</span>
                         <br/>
-                        <span>{'        <g transform={`translate(${centerX},${centerY})`}>'}</span>
+                        <span>{'  const handleMouseMove = useCallback('}</span>
                         <br/>
-                        <span>{'            <circle fill={"black"} stroke={stroke} r={radius} cx={scaler(20)} cy={scaler(20)}></circle>'}</span>
+                        <span>{'           (e) => {'}</span>
                         <br/>
-                        <span>{'            <circle fill={"blue"} stroke={stroke} r={radius} cx={scaler_modified(20)} cy={scaler(20)}></circle>'}</span>
+                        <span>{'                  const leftOffSet = MouseMoveRef?.current?.getBoundingClientRect().left'}</span>
                         <br/>
-                        <span>{'            <circle fill={"yellow"} stroke={stroke} r={radius} cx={scaler(20)} cy={scaler_modified(20)}></circle>'}</span>
+                        <span>{'                  const TopOffSet = MouseMoveRef?.current?.getBoundingClientRect().top'}</span>
                         <br/>
-                        <span>{'            <circle fill={"red"} stroke={stroke} r={radius} cx={scaler_modified(20)} cy={scaler_modified(20)}></circle>'}</span>
-                        
-                        <span>{'        </g>'}</span>
+                        <span>{'                  const { clientX, clientY } = e'}</span>
                         <br/>
-                        <span>{'    </svg>'}</span>
+                        <span>{'                        setMousePosition({'}</span>
+                        <br/>
+                        <span>{'                                x: clientX - leftOffSet'}</span>
+                        <br/>
+                        <span>{'                                y: clientY - TopOffSet'}</span>
+                        <br/>
+                        <span>{'             })'}</span>
+                        <br/>
+                        <span>{'                 [MouseMoveRef,setMousePosition]'}</span>
+                        <br/>
+                        <span>{'             );'}</span>
+                        <br/>
+                        <span>{'   return ('}</span>
+                        <br/>
+                        <span>{'     <>'}</span>
+                        <br/>
+                        <span>{'       <svg ref={MouseMoveRef} width="100%" height={height * 2} onMouseMove={handleMouseMove}>'}</span>
+                        <br/>
+                        <span>{'           <circle cx={mousePosition.x} cy={mousePosition.y} r={radius}></circle>'}</span>
+                        <br/>
+                        <span>{'       </svg>'}</span>
+                        <br/>
+                        <span>{'     </>'}</span>
+                        <br/>
+                        <span>{'   )'}</span>
                     </code>
                     </Pre>
         </Explanation>

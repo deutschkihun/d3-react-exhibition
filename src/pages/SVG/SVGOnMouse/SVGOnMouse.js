@@ -1,19 +1,25 @@
-import React, {useState,useCallback} from 'react'
+import React, {useState,useCallback,useRef} from 'react'
 
 export const SVGOnMouse = ({width,height,radius}) => {
-    const init = {x: width / 2, y: height / 2} 
-    const [mousePosition, setMousePosition] = useState(init)
-    const handleMouseMove = useCallback(e => {
-        const { clientX, clientY } = e;
-        console.log( {clientX, clientY})
-        setMousePosition({x: clientX, y:clientY})
-    }, [setMousePosition])
-
-    // proportion calc 
+  const init = {x: width / 2, y: height / 2} 
+  const MouseMoveRef = useRef(null);
+  const [mousePosition, setMousePosition] = useState(init);
+  const handleMouseMove = useCallback(
+    (e) => {
+      const leftOffSet = MouseMoveRef?.current?.getBoundingClientRect().left;
+      const TopOffSet = MouseMoveRef?.current?.getBoundingClientRect().top;
+      const { clientX, clientY } = e;
+      setMousePosition({
+        x: clientX - leftOffSet,
+        y: clientY - TopOffSet,
+      });
+    },
+    [MouseMoveRef,setMousePosition]
+  );
 
   return (
       <>
-        <svg width="100%" height={height * 2} onMouseMove={handleMouseMove}> 
+        <svg ref={MouseMoveRef} width="100%" height={height * 2} onMouseMove={handleMouseMove}> 
             <circle cx={mousePosition.x} cy={mousePosition.y} r={radius}></circle>
         </svg>
       </>
