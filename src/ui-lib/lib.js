@@ -34,6 +34,7 @@ export const Btn = styled(Button)`
     margin: 0.5em auto;
     font-size: 15px;
     display: block;
+    width: 30%;
 `;
 
 export const Ref = styled.div``;
@@ -201,8 +202,7 @@ export const Dropdown = styled.ul`
   .dropdown:hover .dropdown_menu {
     font-size: 15px;
     display: block;
-    width: 100%;
-    max-width: 150px;
+    min-width: 100px;
     text-align: center;
 
     a {
@@ -224,7 +224,6 @@ export const Dropdown = styled.ul`
     display: none;
   }
 `;
-
 
 export const About = styled(Link)`
   font-size: 15px;
