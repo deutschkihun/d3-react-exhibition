@@ -44,7 +44,13 @@
     {
         "name": "Parsing CSV",
         "level": 0,
-        "categories":7,
+        "categories":8,
         "description":"Parsing CSV file with d3"
+    },
+    {
+        "name": "Scatterplot",
+        "level": 2,
+        "categories":9,
+        "description":"Scatterplot exhibition"
     }
 ]
