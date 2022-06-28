@@ -17,9 +17,5 @@ export const Rectangle = ({width,height,centerX,centerY,index,stroke,strokeWidth
                     .attr('stroke-width',strokeWidth)
     })
 
-    return (
-        <>
-            <svg id={"rectangle"+String(index)}/>
-        </>
-    )
+    return <svg id={"rectangle"+String(index)}/>
 }
