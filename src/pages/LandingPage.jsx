@@ -8,8 +8,12 @@ import { SearchEngine } from '../components/SearchEngine';
 import { categories, level } from '../data';
 import { ImageShowCase } from '../components/ImageShowCase';
 import { Container, Title } from '../ui-lib/lib';
+import {LoadingView} from '../components/LoadingView'
 
 export const LandingPage = () => {
+    const [limit, setLimit] = useState(8);
+    const [page, setPage] = useState(1);
+    const offset = (page -1) * limit
     const [items, setItems] = useState([])
     // eslint-disable-next-line no-unused-vars
     const [SearchTerm, setSearchTerm] = useState("")
@@ -21,6 +25,8 @@ export const LandingPage = () => {
     useEffect(() => {
         getAllProducts()
     }, [])
+
+    console.log(limit)
 
     const getAllProducts = async () => {
         await axios.get('/api/v1/products')
@@ -42,9 +48,9 @@ export const LandingPage = () => {
             })
     }
 
-    const renderCards = items.map((item, index) => {
+    const renderCards = items.slice(offset,offset + limit).map((item, index) => {
         return <Col lg={6} md={8} xs={24} key={index}>
-            <Card cover={<ImageShowCase name={item.name} />    }>
+            <Card cover={<ImageShowCase name={item.name} />}>
                 <Meta
                     title={item.name}
                     description={`${item.description}`}
@@ -70,7 +76,6 @@ export const LandingPage = () => {
             }).then(() => setFilters(newFilters))
     }
 
-    // improvement: pagination logic
     return (
         <Container>
             <Title>Welcome to D3 & React Exhibition</Title>
@@ -86,8 +91,23 @@ export const LandingPage = () => {
             <SearchEngine refreshFunction={updateSearchTerm}/>
             
             <Row gutter={[16, 16]} >
-                {renderCards}
+                {items.length === 0 ? <LoadingView title={"Loading ..."} body={"please wait a moment"} /> : renderCards}
             </Row>
+
+            <label>
+                Number of posts to display per page:&nbsp;
+                <select
+                    type="number"
+                    value={limit}
+                    onChange={({ target: { value } }) => setLimit(Number(value))}
+                >
+                <option value="4">4</option>
+                <option value="8">8</option>
+                <option value="12">12</option>
+                <option value="80">80</option>
+                <option value="100">100</option>
+                </select>
+            </label>
         </Container>
     )
 }
