@@ -74,7 +74,6 @@ export const LandingPage = () => {
             </Row>
 
             <SearchEngine refreshFunction={updateSearchTerm}/>
-            
             <Row gutter={[16, 16]} >
                 {items.length === 0 ? <LoadingView title={"Loading ..."} body={"please wait a moment"} /> : renderCards}
             </Row>
@@ -94,14 +93,13 @@ export const LandingPage = () => {
                 </select>
             </label>
 
-            <footer>
-                <Pagination
-                    total={items.length}
-                    limit={limit}
-                    page={page}
-                    setPage={setPage}
-                />
-            </footer>
+            
+            <Pagination
+                total={items.length}
+                limit={limit}
+                page={page}
+                setPage={setPage}
+            />
         </Container>
     )
 }
