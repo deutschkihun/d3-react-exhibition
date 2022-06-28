@@ -5,6 +5,7 @@ import {ParsingDescription} from './ParsingDescription'
 import {margin,height} from '../../data'
 import {CurvedColorViz} from './CurvedColorViz'
 import {StraightColorViz} from './StraightColorViz'
+import {LoadingView} from '../../components/LoadingView'
 
 export const Parsingcsv = () => {
     const [info, setInfo] = useState('')
@@ -24,7 +25,7 @@ export const Parsingcsv = () => {
 
     if(!info) {
         // loading spnnier implementation 
-        return <pre>Loading ...</pre>
+        return  <LoadingView title={"Loading ..."} body={"please wait a moment"} />
     }
     
 

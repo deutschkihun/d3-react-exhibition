@@ -16,12 +16,16 @@ import { DataUnderstanding } from './pages/DataUnderstanding/DataUnderstanding';
 import { Seperator } from './ui-lib/lib'
 import { Parsingcsv } from './pages/ParsingCSV/ParsingCSV';
 import {Scatterplot} from './pages/Scatterplot/Scatterplot'
+import {LoadingView} from './components/LoadingView'
 
 function App() {
   return (
     <>
-    <Suspense fallback={(<div>Loading...</div>)}>
-    <BrowserRouter>
+      <Suspense
+        fallback={
+          <LoadingView title={"Loading ..."} body={"please wait a moment"} />
+        }
+      >    <BrowserRouter>
       <Headers />
         <Seperator>
           <Routes>
