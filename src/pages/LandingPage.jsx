@@ -9,24 +9,16 @@ import { categories, level } from '../data';
 import { ImageShowCase } from '../components/ImageShowCase';
 import { Container, Title } from '../ui-lib/lib';
 import {LoadingView} from '../components/LoadingView'
+import {Pagination} from '../components/Pagination'
 
 export const LandingPage = () => {
     const [limit, setLimit] = useState(8);
     const [page, setPage] = useState(1);
     const offset = (page -1) * limit
     const [items, setItems] = useState([])
-    // eslint-disable-next-line no-unused-vars
-    const [SearchTerm, setSearchTerm] = useState("")
-    const [Filters, setFilters] = useState({
-        categories: [],
-        level: []
-    })
+    const [Filters, setFilters] = useState({ categories: [], level: [] })
 
-    useEffect(() => {
-        getAllProducts()
-    }, [])
-
-    console.log(limit)
+    useEffect(() => { getAllProducts()}, [])
 
     const getAllProducts = async () => {
         await axios.get('/api/v1/products')
@@ -34,18 +26,12 @@ export const LandingPage = () => {
                 if(response.data.length > 0) {
                     setItems(response.data.d3react)
                 }
-            })
+        })
     }
 
     const getProducts = async (body) => {
         await axios.post('/api/v1/products/filter', body)
-            .then(response => {
-                if (response.data.success) {
-                    setItems([...response.data.data])
-                } else {
-                    alert("Fail to load data")
-                }
-            })
+                   .then(response => response.data.success ? setItems([...response.data.data]) : alert("Fail to load data"))
     }
 
     const renderCards = items.slice(offset,offset + limit).map((item, index) => {
@@ -60,7 +46,6 @@ export const LandingPage = () => {
     })
 
     const updateSearchTerm = (newSearchTerm) => {
-        setSearchTerm(newSearchTerm)
         getProducts({
             filters: Filters,
             searchTerm: newSearchTerm
@@ -94,7 +79,7 @@ export const LandingPage = () => {
                 {items.length === 0 ? <LoadingView title={"Loading ..."} body={"please wait a moment"} /> : renderCards}
             </Row>
 
-            <label>
+            <label style={{margin:'1rem 0rem'}}>
                 Number of posts to display per page:&nbsp;
                 <select
                     type="number"
@@ -108,6 +93,15 @@ export const LandingPage = () => {
                 <option value="100">100</option>
                 </select>
             </label>
+
+            <footer>
+                <Pagination
+                    total={items.length}
+                    limit={limit}
+                    page={page}
+                    setPage={setPage}
+                />
+            </footer>
         </Container>
     )
 }

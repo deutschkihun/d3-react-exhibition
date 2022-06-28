@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { LoadingViewBody, LoadingViewTitle } from "../helper/lib";
+import { LoadingViewBody, LoadingViewTitle } from "../helper/spinner";
 import { Metrics } from "../helper/Metrics";
 
 const StyledLoadingView = styled.div`
