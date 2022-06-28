@@ -40,5 +40,11 @@
         "level": 1,
         "categories":7,
         "description":"Data Understanding"
+    },
+    {
+        "name": "Parsing CSV",
+        "level": 0,
+        "categories":7,
+        "description":"Parsing CSV file with d3"
     }
 ]

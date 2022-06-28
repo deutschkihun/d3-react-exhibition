@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
-import { color } from '../../../data';
 
 export const MultipleChartDropdown = ({width,height,margin}) => {
 

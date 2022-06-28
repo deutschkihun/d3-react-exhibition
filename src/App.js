@@ -14,6 +14,7 @@ import { BarChart } from './pages/BarChart/BarChart'
 import { InteractiveChart } from './pages/InteractiveChart/InteractiveChart';
 import { DataUnderstanding } from './pages/DataUnderstanding/DataUnderstanding';
 import { Seperator } from './ui-lib/lib'
+import { Parsingcsv } from './pages/ParsingCSV/ParsingCSV';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Router exact path="/InteractiveChart" component={InteractiveChart} />
             <Router exact path="/about" component={AboutPage} />
             <Router exact path="/profile" component={ProfilePage} />
+            <Router exact path="/parsingcsv" component={Parsingcsv} />
             <Router path="*" component={ErrorPage} />
           </Switch>
         </Seperator>

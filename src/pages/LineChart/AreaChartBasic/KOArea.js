@@ -62,10 +62,6 @@ export const KOArea = ({width,height,margin}) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
-    return (
-        <>
-            <svg id="koArea"/>
-        </>
-    )
+    return <svg id="koArea"/>
 }
 

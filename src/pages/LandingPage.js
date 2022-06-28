@@ -70,6 +70,7 @@ export const LandingPage = () => {
             }).then(() => setFilters(newFilters))
     }
 
+    // improvement: pagination logic
     return (
         <Container>
             <Title>Welcome to D3 & React Exhibition</Title>
