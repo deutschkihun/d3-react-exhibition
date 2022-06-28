@@ -16,6 +16,7 @@ export const LandingPage = () => {
     const [page, setPage] = useState(1);
     const offset = (page -1) * limit
     const [items, setItems] = useState([])
+    const [searchText, setSearchText] = useState('')
     const [Filters, setFilters] = useState({ categories: [], level: [] })
 
     useEffect(() => { getAllProducts()}, [])
@@ -46,6 +47,7 @@ export const LandingPage = () => {
     })
 
     const updateSearchTerm = (newSearchTerm) => {
+        setSearchText(newSearchTerm)
         getProducts({
             filters: Filters,
             searchTerm: newSearchTerm
@@ -74,9 +76,14 @@ export const LandingPage = () => {
             </Row>
 
             <SearchEngine refreshFunction={updateSearchTerm}/>
-            <Row gutter={[16, 16]} >
-                {items.length === 0 ? <LoadingView title={"Loading ..."} body={"please wait a moment"} /> : renderCards}
-            </Row>
+           
+            {
+                items.length === 0 && searchText ? <Title>No matched result</Title> : 
+                items.length === 0 ? <LoadingView title={"Loading ..."} body={"please wait a moment"} /> :
+                <Row gutter={[16, 16]}>
+                    {renderCards}
+                </Row>
+            }
 
             <label style={{margin:'1rem 0rem'}}>
                 Number of posts to display per page:&nbsp;
