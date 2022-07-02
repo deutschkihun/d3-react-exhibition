@@ -2,7 +2,6 @@
 import styled, {createGlobalStyle} from "styled-components"
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import Image from 'react-bootstrap/Image'
 import Table from 'react-bootstrap/Table'
 import 'antd/dist/antd.min.css';
 
@@ -30,23 +29,25 @@ export const GlobalStyle = createGlobalStyle`
     width: 100px;
     padding: 0 10px;
 
-    :nth-child(1) {
-      animation: stack-ani 1s alternate infinite;
-    }
 
     :nth-child(2) {
-      animation: stack-ani 1s alternate infinite 0.5s;
-
+      animation: stack-ani 1s alternate infinite 0s;
     }
 
     :nth-child(3) {
-      animation: stack-ani 1s alternate infinite 1s;
-
+      animation: stack-ani 1s alternate infinite 0.5s;
     }
 
     :nth-child(4) {
-      animation: stack-ani 1s alternate infinite 1.5s;
+      animation: stack-ani 1s alternate infinite 1s;
+    }
 
+    :nth-child(5) {
+      animation: stack-ani 1s alternate infinite 1.5s;
+    }
+
+    :nth-child(6) {
+      animation: stack-ani 1s alternate infinite 2s;
     }
   
     :hover {
@@ -110,7 +111,7 @@ export const Container = styled.div`
     margin: 3rem auto;
 `;
 
-export const Images = styled(Image)`
+export const Images = styled.img`
     width: 100%;
     max-height: 150px;
     padding: 1em;
@@ -320,7 +321,7 @@ export const Nav = styled.nav`
   margin: 16px;
 `;
 
-export const Btn = styled(Button)`
+export const RenderButton = styled(Button)`
     margin: 0.5em auto;
     font-size: 15px;
     display: block;

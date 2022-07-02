@@ -10,7 +10,7 @@ import { CustomAxisLabelDescription } from './CustomAxisLabel/CustomAxisLabelDes
 import {DataCoordinateDescription} from './DataCoordinate/DataCoordinateDescription'
 import { ChartBackground } from './ChartBackground/ChartBackground'
 import {ChartBackgroundDescription} from './ChartBackground/ChartBackgroundDescription'
-import { Title, VizContainer, VizWrapper, Ref, Message, Btn} from '../../ui-lib/lib'
+import { Title, VizContainer, VizWrapper, Ref, Message, RenderButton} from '../../ui-lib/lib'
 import {margin, width, height, pointer, band} from '../../data'
 
 export const ChartBasic = () => {
@@ -58,12 +58,12 @@ export const ChartBasic = () => {
                 {/* Chart basic: Random Axis range */}
                     <VizContainer>
                         <Title>Chart basic: Random Axis range
-                                    <Btn onClick={() => refreshHandler( <AxisBasic
+                                    <RenderButton children='Click me' onClick={() => refreshHandler( <AxisBasic
                                                                                 width={width}
                                                                                 height={height}
                                                                                 margin={margin}
                                                                                 refresh={true}
-                                                                            />,AxisBasicRef)}>Click Me</Btn>
+                                                                            />,AxisBasicRef)} />
                         </Title>
                         <Message>
                             The first thing for drawing a chart is to build a coordinate system. The coordinate system is divided into x-axis and y-axis 
@@ -81,15 +81,14 @@ export const ChartBasic = () => {
                     </VizContainer>
                     <AxisBasicDescription/>
 
-                {/* Chart basic: Displaying random data on the random coordinates */}
                     <VizContainer>
                         <Title>Chart basic: Displaying random data on the random coordinates
-                                    <Btn onClick={() => refreshHandler(<DataCoordinate
+                                    <RenderButton children='Click me' onClick={() => refreshHandler(<DataCoordinate
                                                                             width={width}
                                                                             height={height}
                                                                             margin={margin}
                                                                             refresh={true}
-                                                                        />,DataCoordinateRef)}>Click Me</Btn>
+                                                                        />,DataCoordinateRef)} />
                         </Title>
                         <Ref ref={DataCoordinateRef}>
                             <DataCoordinate
@@ -102,7 +101,6 @@ export const ChartBasic = () => {
                     </VizContainer>
                     <DataCoordinateDescription/>
 
-                {/* Chart basic: Displaying random data on the random coordinates */}
                     <VizContainer>
                         <Title>Chart Background</Title>
                         <Ref>

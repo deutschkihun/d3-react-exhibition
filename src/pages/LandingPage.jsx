@@ -8,7 +8,7 @@ import { SearchEngine } from '../components/SearchEngine';
 import { categories, level } from '../data';
 import { ImageShowCase } from '../components/ImageShowCase';
 import { Container, Title } from '../ui-lib/lib';
-import {LoadingView} from '../components/LoadingView'
+import {LoadingView} from '../helper/reuse/LoadingView'
 import {Pagination} from '../components/Pagination'
 
 export const LandingPage = () => {

@@ -1,14 +1,18 @@
 import React from 'react'
-import { useNavigate } from 'react-router';
-import { Wrapper, Btn, Title } from '../ui-lib/lib';
-
+import { Wrapper, Title } from '../ui-lib/lib';
+import { Button } from '../helper/reuse/Button';
 
 export const ErrorPage = () => {
-  const navigate = useNavigate();
     return (
         <Wrapper>
             <Title>Not Found 404</Title>
-            <Btn onClick={() => navigate('/')}>Back to main page</Btn>
+            <Button 
+                disable={false}
+                children='Back to main' 
+                size='sm' 
+                variant='success'
+                redirect={'/'} 
+            />
         </Wrapper>
     )
 }

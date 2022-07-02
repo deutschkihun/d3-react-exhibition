@@ -17,8 +17,9 @@ import { SVGScaleDescription } from './SVGScale/SVGScaleDescription';
 import {refreshHandler} from '../../helper/refreshHandler'
 import { Emoji } from './Emoji';
 import { SVGOnMouse } from './SVGOnMouse/SVGOnMouse'
-import {SVGBasic} from './SVGBasic/SVGBasic'
-import { VizContainer, VizWrapper, Title, Ref, Message,Btn } from '../../ui-lib/lib'
+import { SVGBasic } from './SVGBasic/SVGBasic'
+import { Button } from '../../helper/reuse/Button'
+import { VizContainer, VizWrapper, Title, Ref, Message,RenderButton } from '../../ui-lib/lib'
 
 export const SVG = () => {
 
@@ -47,66 +48,61 @@ export const SVG = () => {
                         </Message>
                 </VizContainer>
 
-                {/* SVG basic */}
-
                 <SVGBasic />
 
-                {/* SVG without D3: Circle */}
-                    <VizContainer>
-                        <Title>SVG without D3: Circle                        
-                                <Btn onClick={() => refreshHandler(<SVGWithoutD3
-                                                                        width={width / 4}
-                                                                        height={height / 4}
-                                                                        centerX={width / 8}
-                                                                        centerY={width / 8}
-                                                                        stroke={stroke}
-                                                                        radius={1.15}
-                                                                      />,SVGWithoutD3Ref)}>Click Me</Btn>
-                        </Title>
-                        <Ref ref={SVGWithoutD3Ref}>
-                        <SVGWithoutD3
+                <VizContainer>
+                    <Title>SVG without D3: Circle                  
+                    <RenderButton children='Click me' onClick={() => refreshHandler(<SVGWithoutD3
+                                                            width={width / 4}
+                                                            height={height / 4}
+                                                            centerX={width / 8}
+                                                            centerY={width / 8}
+                                                            stroke={stroke}
+                                                            radius={1.15}
+                                                        />,SVGWithoutD3Ref)}/>
+                    </Title>
+                    <Ref ref={SVGWithoutD3Ref}>
+                    <SVGWithoutD3
+                        width={width / 4}
+                        height={height / 4}
+                        centerX={width / 8}
+                        centerY={width / 8}
+                        stroke={stroke}
+                        radius={1.15}
+                        />
+                    </Ref>
+                </VizContainer>
+                <SVGWithoutD3Description/>
+
+                <VizContainer>
+                    <Title> SVG with D3: circle
+                            <RenderButton children='Click me' onClick={() => refreshHandler(<SVGWithD3
+                                                                    width={width / 4}
+                                                                    height={height / 4}
+                                                                    centerX={width / 8}
+                                                                    centerY={width / 8}
+                                                                    radius={20}
+                                                                    opacity={0.6}
+                                                                    refresh={true}
+                                                                />,SVGWithD3Ref)}/>
+                    </Title>
+                    <Ref ref={SVGWithD3Ref}>
+                        <SVGWithD3
                             width={width / 4}
                             height={height / 4}
                             centerX={width / 8}
                             centerY={width / 8}
-                            stroke={stroke}
-                            radius={1.15}
-                            />
-                        </Ref>
-                    </VizContainer>
-                    <SVGWithoutD3Description/>
+                            radius={20}
+                            opacity={0.6}
+                            refresh={false}
+                        />
+                    </Ref>
+                </VizContainer>
+                <SVGWithD3Description/>
 
-                {/* SVG with D3: Circle */}
-                    <VizContainer>
-                        <Title> SVG with D3: circle
-                                <Btn onClick={() => refreshHandler(<SVGWithD3
-                                                                        width={width / 4}
-                                                                        height={height / 4}
-                                                                        centerX={width / 8}
-                                                                        centerY={width / 8}
-                                                                        radius={20}
-                                                                        opacity={0.6}
-                                                                        refresh={true}
-                                                                    />,SVGWithD3Ref)}>Click Me</Btn>
-                        </Title>
-                        <Ref ref={SVGWithD3Ref}>
-                            <SVGWithD3
-                                width={width / 4}
-                                height={height / 4}
-                                centerX={width / 8}
-                                centerY={width / 8}
-                                radius={20}
-                                opacity={0.6}
-                                refresh={false}
-                            />
-                        </Ref>
-                    </VizContainer>
-                    <SVGWithD3Description/>
-
-                  {/* SVG with D3: Circle-Advance */}
                     <VizContainer>
                         <Title> SVG with D3: Circle-Advance
-                            <Btn onClick={() => refreshHandler(<SVGCircleAdvance
+                            <RenderButton children='Click me' onClick={() => refreshHandler(<SVGCircleAdvance
                                                                         width={width / 2}
                                                                         height={height / 2} 
                                                                         centerX={width / 32}
@@ -115,7 +111,7 @@ export const SVG = () => {
                                                                         index={0}
                                                                         opacity={0.6}
                                                                     />,SVGCircleAdvanceRef
-                                                                    )}>Click Me</Btn>
+                                                                    )} />
                         </Title>
                         <Ref ref={SVGCircleAdvanceRef}>
                             <SVGCircleAdvance
@@ -131,10 +127,10 @@ export const SVG = () => {
                     </VizContainer>
                     <SVGWithD3Description/>
               
-                {/* SVG with D3: Rectangle (Descending order) */}
                     <VizContainer>
                         <Title>SVG with D3: Rectangle (Descending order)
-                                <Btn onClick={() => refreshHandler(<SVGRectangle
+                            <Button></Button>
+                                <RenderButton children='Click me' onClick={() => refreshHandler(<SVGRectangle
                                                                             width={width}
                                                                             height={height}
                                                                             centerX={0}
@@ -142,7 +138,7 @@ export const SVG = () => {
                                                                             stroke={stroke}    
                                                                             strokeWidth={10}
                                                                             refresh={true}
-                                                                        />,SVGRectangleRef)}>Click Me</Btn>
+                                                                        />,SVGRectangleRef)}/>
                         </Title>
                             <Ref ref={SVGRectangleRef}>
                                 <SVGRectangle
@@ -158,7 +154,6 @@ export const SVG = () => {
                     </VizContainer>
                     <SVGRectangleDescription/>
 
-                {/* Ex.1) Olympic flag */}
                     <VizContainer>
                             <Title>Ex.1) Olympic flag</Title>
                             <OlympicFlag
@@ -173,7 +168,6 @@ export const SVG = () => {
                     </VizContainer>
                     <OlympicFlagDescription/>
 
-                {/* Ex.2) Emoji Basic: Smile,Bad,Crying,Angry */}
                     <VizContainer>
                         <Title>Ex.2) Emoji Basic: Smile,Bad,Crying,Angry</Title>
                         {faceRange.map((i) => (
@@ -194,12 +188,12 @@ export const SVG = () => {
                 {/* Ex.3) 16 Randomly generated smile Emojis */}
                     <VizContainer>
                         <Title>Ex.3) 16 Randomly generated smile Emojis
-                                <Btn onClick={() => refreshHandler(<Face
+                                <RenderButton children='Click me' onClick={() => refreshHandler(<Face
                                                                         width={width}
                                                                         height={height}
                                                                         centerX={width / 2}
                                                                         centerY={height / 2}
-                                                                        type={"random"}/>,FaceRef)}>Click Me</Btn>
+                                                                        type={"random"}/>,FaceRef)} />
                         </Title>
                         <Ref ref={FaceRef}>
                             <Face

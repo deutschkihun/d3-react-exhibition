@@ -5,7 +5,7 @@ import {ParsingDescription} from './ParsingDescription'
 import {margin,height} from '../../data'
 import {CurvedColorViz} from './CurvedColorViz'
 import {StraightColorViz} from './StraightColorViz'
-import {LoadingView} from '../../components/LoadingView'
+import {LoadingView} from '../../helper/reuse/LoadingView'
 
 export const Parsingcsv = () => {
     const [info, setInfo] = useState('')

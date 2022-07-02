@@ -1,7 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { LoadingViewBody, LoadingViewTitle } from "../helper/spinner";
-import { Metrics } from "../helper/Metrics";
+import { Metrics } from "../Metrics";
+
+
+const LoadingViewTitle = styled.h1`
+  font-family: ${(p) => p.theme.fontFamily};
+  color: ${(p) => p.theme.primaryTextColor};
+  font-size: 24px;
+  font-weight: 200;
+  margin: 16px 0px 4px;
+`;
+
+const LoadingViewBody = styled.p`
+  font-family: ${(p) => p.theme.fontFamily};
+  color: ${(p) => p.theme.primaryTextColor};
+  font-size: 16px;
+  font-weight: 400;
+  margin: 8px 0px 8px 0px;
+  white-space: pre-wrap;
+`;
+
 
 const StyledLoadingView = styled.div`
   display: flex;
