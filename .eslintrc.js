@@ -12,6 +12,11 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    'global-require': 0,
+    'no-nested-ternary': 0,
+    'no-alert': 0,
+    'jsx-a11y/label-has-associated-control': 0,
+    'react/no-children-prop': 0,
     'react/prop-types': 0,
     'no-extra-semi': 'error', // 확장자로 js와 jsx 둘다 허용하도록 수정
     'react/jsx-filename-extension': [1, { extensions: ['js', 'jsx'] }], // 화살표 함수의 파라미터가 하나일때 괄호 생략

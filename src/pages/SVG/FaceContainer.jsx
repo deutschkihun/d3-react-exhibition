@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-/* eslint-disable no-nested-ternary */
 import React from 'react'
 import { Eyes } from './Eyes'
 import { EyeBrow } from './EyeBrow'
@@ -57,9 +55,7 @@ export function FaceContainer({
           <CryingMouth mouthRadius={mouthRadius} mouthWidth={mouthWidth} />
         ) : type === 'angry' ? (
           <AngryMouth mouthRadius={mouthRadius} mouthWidth={mouthWidth} />
-        ) : (
-          <></>
-        )}
+        ) : null}
       </g>
     </svg>
   )
