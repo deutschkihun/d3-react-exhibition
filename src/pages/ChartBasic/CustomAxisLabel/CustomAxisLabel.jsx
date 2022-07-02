@@ -1,27 +1,12 @@
 import React from 'react'
-import {AxisLabel} from './AxisLabel'
-import {AxisLabelAdvance} from './AxisLabelAdvance'
+import { AxisLabel } from './AxisLabel'
+import { AxisLabelAdvance } from './AxisLabelAdvance'
 
-export const CustomAxisLabel = ({
-    width,
-    height,
-    margin,
-    pointer,
-    band,
-}) => (
+export function CustomAxisLabel({ width, height, margin, pointer, band }) {
+  return (
     <>
-        <AxisLabel
-            width={width}
-            height={height}
-            margin={margin}
-            band={band}
-        />
-        <AxisLabelAdvance
-            width={width}
-            height={height}
-            margin={margin}
-            pointer={pointer}
-        />
+      <AxisLabel width={width} height={height} margin={margin} band={band} />
+      <AxisLabelAdvance width={width} height={height} margin={margin} pointer={pointer} />
     </>
-)
-
+  )
+}

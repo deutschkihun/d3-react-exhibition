@@ -4,11 +4,13 @@ import { Path } from './Path'
 import { Text } from './Text'
 import { Gradation } from './Gradation'
 
-export const SVGBasic = () => (
+export function SVGBasic() {
+  return (
     <>
-        <ViewBox />
-        <Path />
-        <Text />
-        <Gradation />
+      <ViewBox />
+      <Path />
+      <Text />
+      <Gradation />
     </>
-)
+  )
+}

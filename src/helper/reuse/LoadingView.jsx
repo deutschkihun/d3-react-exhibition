@@ -1,36 +1,34 @@
-import React from "react";
-import styled from "styled-components";
-import { Metrics } from "../Metrics";
-
+import React from 'react'
+import styled from 'styled-components'
+import { Metrics } from '../Metrics'
 
 const LoadingViewTitle = styled.h1`
-  font-family: ${(p) => p.theme.fontFamily};
-  color: ${(p) => p.theme.primaryTextColor};
+  font-family: ${p => p.theme.fontFamily};
+  color: ${p => p.theme.primaryTextColor};
   font-size: 24px;
   font-weight: 200;
   margin: 16px 0px 4px;
-`;
+`
 
 const LoadingViewBody = styled.p`
-  font-family: ${(p) => p.theme.fontFamily};
-  color: ${(p) => p.theme.primaryTextColor};
+  font-family: ${p => p.theme.fontFamily};
+  color: ${p => p.theme.primaryTextColor};
   font-size: 16px;
   font-weight: 400;
   margin: 8px 0px 8px 0px;
   white-space: pre-wrap;
-`;
-
+`
 
 const StyledLoadingView = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   text-align: center;
-`;
+`
 
 const StyledLoadingViewSpinnerContainer = styled.div`
   margin: 64px auto;
-`;
+`
 
 const StyledSpinnerContainer = styled.div`
   position: relative;
@@ -41,90 +39,82 @@ const StyledSpinnerContainer = styled.div`
       transform: rotate(360deg);
     }
   }
-`;
-
+`
 
 const StyledSpinner = styled.div`
-  height: ${(p) => p.size}px;
-  width: ${(p) => p.size}px;
+  height: ${p => p.size}px;
+  width: ${p => p.size}px;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const LoadingSpinnerAnimation = styled.div`
   animation: fuelspinner 1.5s linear infinite;
-  border: 4px solid ${"white"};
-  border-top-color: ${"black"};
+  border: 4px solid ${'white'};
+  border-top-color: ${'black'};
   border-radius: 50%;
   box-sizing: border-box;
-  content: "";
-  height: ${(p) => p.size}px;
+  content: '';
+  height: ${p => p.size}px;
   position: absolute;
-  width: ${(p) => p.size}px;
+  width: ${p => p.size}px;
   z-index: 1;
   display: inline-block;
-`;
+`
 
 const LoadingSpinnerAnimationWaiting = styled(LoadingSpinnerAnimation)`
   border-top-color: white;
-`;
+`
 
 const LoadingSpinnerAnimationSlow = styled(LoadingSpinnerAnimation)`
   animation: fuelspinner 3s linear infinite;
-`;
+`
 
 const StyledSpinnerImage = styled.img`
   max-width: 50%;
   max-height: 50%;
-`;
+`
 
-export function LoadingSpinner(props) {
-  const { img, alt, waiting, slow, primaryColor, backgroundColor, size } =
-    props;
-  let spinner;
+export function LoadingSpinner({ img, alt, waiting, slow, primaryColor, backgroundColor, size, className }) {
+  let spinner
   if (waiting) {
     spinner = (
       <LoadingSpinnerAnimationWaiting
-        className={props.className}
+        className={className}
         primaryColor={primaryColor}
         backgroundColor={backgroundColor}
         size={size}
       />
-    );
+    )
   } else if (slow) {
     spinner = (
       <LoadingSpinnerAnimationSlow
-        className={props.className}
+        className={className}
         primaryColor={primaryColor}
         backgroundColor={backgroundColor}
         size={size}
       />
-    );
+    )
   } else {
     spinner = (
       <LoadingSpinnerAnimation
-        className={props.className}
+        className={className}
         primaryColor={primaryColor}
         backgroundColor={backgroundColor}
         size={size}
       />
-    );
+    )
   }
 
   return (
     <StyledSpinnerContainer>
-      <StyledSpinner
-        className={props.className}
-        primaryColor={primaryColor}
-        backgroundColor={backgroundColor}
-        size={size}
-      >
+      <StyledSpinner className={className} primaryColor={primaryColor} backgroundColor={backgroundColor} size={size}>
         {spinner}
         <StyledSpinnerImage src={img} alt={alt} />
       </StyledSpinner>
     </StyledSpinnerContainer>
-  );
+  )
 }
 
 LoadingSpinner.defaultProps = {
@@ -132,14 +122,14 @@ LoadingSpinner.defaultProps = {
   size: 32,
   waiting: false,
   slow: false,
-};
+}
 
 const PaddedText = styled.div`
   padding: 0 ${Metrics.defaultPadding};
-`;
+`
 
 export function LoadingView(props) {
-  const { title, body } = props;
+  const { title, body } = props
 
   return (
     <StyledLoadingView>
@@ -151,12 +141,12 @@ export function LoadingView(props) {
         <LoadingViewBody>{body}</LoadingViewBody>
       </PaddedText>
     </StyledLoadingView>
-  );
+  )
 }
 
 LoadingView.defaultProps = {
-  title: "",
+  title: '',
   waiting: false,
   slow: false,
   size: 192,
-};
+}

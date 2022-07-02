@@ -1,29 +1,32 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react'
-import { Collapse, Radio } from 'antd';
-const { Panel } = Collapse;
+import { Collapse, Radio } from 'antd'
 
-export const RadioBox = (props) => {
+const { Panel } = Collapse
 
-    const [Value, setValue] = useState(0)
-    const renderRadioBox = () => (
-        props.list && props.list.map(value => (
-            <Radio key={value._id} value={value._id}> {value.name} </Radio>
-        ))
-    )
+export function RadioBox({ list, handleFilters }) {
+  const [Value, setValue] = useState(0)
+  const renderRadioBox = () =>
+    list &&
+    list.map(value => (
+      <Radio key={value._id} value={value._id}>
+        {' '}
+        {value.name}{' '}
+      </Radio>
+    ))
 
-    const handleChange = (event) => {
-        setValue(event.target.value)
-        props.handleFilters([event.target.value])
-    }
+  const handleChange = event => {
+    setValue(event.target.value)
+    handleFilters([event.target.value])
+  }
 
-    return (
-        <Collapse defaultActiveKey={['0']} >
-            <Panel header="Level" key="1">
-                <Radio.Group onChange={handleChange} value={Value}>
-                    {renderRadioBox()}
-                </Radio.Group>
-            </Panel>
-        </Collapse>
-    )
+  return (
+    <Collapse defaultActiveKey={['0']}>
+      <Panel header="Level" key="1">
+        <Radio.Group onChange={handleChange} value={Value}>
+          {renderRadioBox()}
+        </Radio.Group>
+      </Panel>
+    </Collapse>
+  )
 }
-

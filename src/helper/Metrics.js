@@ -1,13 +1,13 @@
 export class Metrics {
   static get maxWidth() {
-    return "768px";
+    return '768px'
   }
 
   static get contentWidth() {
-    return "500px";
+    return '500px'
   }
 
   static get defaultPadding() {
-    return "20px";
+    return '20px'
   }
 }

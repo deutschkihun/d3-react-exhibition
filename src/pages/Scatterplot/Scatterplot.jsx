@@ -1,16 +1,12 @@
 import React from 'react'
-import { VizContainer,VizWrapper,Title } from '../../ui-lib/lib';
+import { VizContainer, VizWrapper, Title } from '../../ui-lib/lib'
 
-export const Scatterplot = () => {
-    return (
-        <>
-            <VizWrapper>
-                <VizContainer>
-                    <Title>Comming soon Scatterplot</Title>
-                </VizContainer>   
-            </VizWrapper>
-
-        </>
-    )
+export function Scatterplot() {
+  return (
+    <VizWrapper>
+      <VizContainer>
+        <Title>Comming soon Scatterplot</Title>
+      </VizContainer>
+    </VizWrapper>
+  )
 }
-

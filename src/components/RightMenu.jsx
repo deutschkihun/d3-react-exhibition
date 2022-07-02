@@ -1,24 +1,24 @@
-import React from 'react';
-import { Menu, Badge } from 'antd';
-import {useNavigate} from 'react-router'
-import {Link} from 'react-router-dom'
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React from 'react'
+import { Menu, Badge } from 'antd'
+import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
 import profile from '../assets/profile.svg'
 
-export const RightMenu = (props) => {
+export function RightMenu({ mode }) {
   const navigate = useNavigate()
-    return (
-      <Menu mode={props.mode}>
-        <Menu.Item>
-          <Link to="/about">About</Link>
-        </Menu.Item>
+  return (
+    <Menu mode={mode}>
+      <Menu.Item>
+        <Link to="/about">About</Link>
+      </Menu.Item>
 
-        <Menu.Item style={{ paddingBottom: 3 }}>
-          <Badge>
-            <img src={profile} alt="profile" onClick={() => navigate('/profile')}/>
-          </Badge>
-        </Menu.Item>
-      </Menu>
-    )
+      <Menu.Item style={{ paddingBottom: 3 }}>
+        <Badge>
+          <img src={profile} alt="profile" onClick={() => navigate('/profile')} />
+        </Badge>
+      </Menu.Item>
+    </Menu>
+  )
 }
-
-

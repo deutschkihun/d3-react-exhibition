@@ -1,9 +1,8 @@
-
-import styled, {createGlobalStyle} from "styled-components"
+import styled, { createGlobalStyle } from 'styled-components'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
-import 'antd/dist/antd.min.css';
+import 'antd/dist/antd.min.css'
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -54,46 +53,45 @@ export const GlobalStyle = createGlobalStyle`
       animation-play-state: paused;
     }
   }
-`;
+`
 
 export const Wrapper = styled.div`
-    padding-top:50px;
-    flex-direction:column;
-    text-align:center;
-    justify-content: center;
-    font-size: 3rem;
-    padding-left:10vw;
-    padding-right:10vw;
-`;
+  padding-top: 50px;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 3rem;
+  padding-left: 10vw;
+  padding-right: 10vw;
+`
 
 export const Title = styled.h1`
-    text-align: center;
-`;
+  text-align: center;
+`
 
 export const SubTitle = styled.h2`
-    text-align: center;
-`;
-
+  text-align: center;
+`
 
 export const Message = styled.p`
   text-align: justify;
   font-size: 17px;
-`;
+`
 
-export const Ref = styled.div``;
+export const Ref = styled.div``
 
 export const FooterWrapper = styled.div`
-    height:80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-`;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+`
 
 export const Seperator = styled.div`
-    padding-top:69px;
-    min-height:calc(100vh - 80px);
+  padding-top: 69px;
+  min-height: calc(100vh - 80px);
 `
 
 export const VizContainer = styled.form`
@@ -104,18 +102,18 @@ export const VizContainer = styled.form`
   margin-top: 6rem;
   padding: 2rem 2.5rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-`;
+`
 
 export const Container = styled.div`
-    width: 75%;
-    margin: 3rem auto;
-`;
+  width: 75%;
+  margin: 3rem auto;
+`
 
 export const Images = styled.img`
-    width: 100%;
-    max-height: 150px;
-    padding: 1em;
-`;
+  width: 100%;
+  max-height: 150px;
+  padding: 1em;
+`
 
 export const Menu = styled.nav`
   padding: 0 20px;
@@ -124,9 +122,9 @@ export const Menu = styled.nav`
   box-shadow: 0 0 30px #f3f1f1;
   background-color: white;
   position: fixed;
-  z-index:5;
-  width:100%;
-`;
+  z-index: 5;
+  width: 100%;
+`
 
 export const VizWrapper = styled.div`
   margin: auto;
@@ -135,21 +133,21 @@ export const VizWrapper = styled.div`
   grid-row-gap: 0px;
   padding-left: 5vw;
   padding-right: 5vw;
-`;
+`
 
 export const Content = styled.div`
-    margin: 0 auto;
-    box-shadow: none;
-    margin-top: 3rem;
-    width: 60vw;
-    min-width: 400px;
-    max-width: 1200px;
-    justify-content:flex-end;
-`;
+  margin: 0 auto;
+  box-shadow: none;
+  margin-top: 3rem;
+  width: 60vw;
+  min-width: 400px;
+  max-width: 1200px;
+  justify-content: flex-end;
+`
 
 export const Pre = styled.pre`
-    background-color: #eee;
-    padding: 0.5em 1em 0.5em 1em;
+  background-color: #eee;
+  padding: 0.5em 1em 0.5em 1em;
 `
 
 export const Explanation = styled.form`
@@ -159,7 +157,7 @@ export const Explanation = styled.form`
   width: 60vw;
   min-width: 400px;
   max-width: 1200px;
-`;
+`
 
 export const Grid = styled.div`
   max-width: 1200px;
@@ -188,8 +186,7 @@ export const Grid = styled.div`
       grid-column: 1 / 2;
     }
   }
-`;
-
+`
 
 export const Home = styled(Link)`
   font-size: 15px;
@@ -218,7 +215,7 @@ export const Home = styled(Link)`
   @media screen and (max-width: 480px) {
     display: none;
   }
-`;
+`
 
 export const Header = styled.header`
   position: fixed;
@@ -230,7 +227,7 @@ export const Header = styled.header`
   padding: 16px 0;
   transition: 0.3s;
   border-bottom: rgba(0, 0, 0, 0);
-`;
+`
 
 export const Dropdown = styled.ul`
   font-size: 15px;
@@ -268,7 +265,7 @@ export const Dropdown = styled.ul`
   @media screen and (max-width: 1000px) {
     display: none;
   }
-`;
+`
 
 export const About = styled(Link)`
   font-size: 15px;
@@ -283,7 +280,7 @@ export const About = styled(Link)`
   @media screen and (max-width: 1000px) {
     display: none;
   }
-`;
+`
 
 export const Profile = styled(Link)`
   font-size: 15px;
@@ -298,20 +295,20 @@ export const Profile = styled(Link)`
   @media screen and (max-width: 1000px) {
     display: none;
   }
-`;
+`
 
 export const Tables = styled(Table)`
   width: 100%;
 
   th {
-    border: 1px solid #151516
+    border: 1px solid #151516;
   }
   td {
     text-align: center;
     line-height: 2.5rem;
-    border: 1px solid #151516
+    border: 1px solid #151516;
   }
-`;
+`
 
 export const Nav = styled.nav`
   display: flex;
@@ -319,21 +316,21 @@ export const Nav = styled.nav`
   align-items: center;
   gap: 4px;
   margin: 16px;
-`;
+`
 
 export const RenderButton = styled(Button)`
-    margin: 0.5em auto;
-    font-size: 15px;
-    display: block;
-    width: 30%;
-`;
+  margin: 0.5em auto;
+  font-size: 15px;
+  display: block;
+  width: 30%;
+`
 
 export const PagninationBtn = styled.button`
   border: none;
   padding: 8px;
   background: blue;
   color: white;
- 
+
   &:hover {
     background: rgb(91, 97, 254);
     cursor: pointer;
@@ -354,4 +351,4 @@ export const PagninationBtn = styled.button`
     cursor: revert;
     transform: revert;
   }
-`;
+`
