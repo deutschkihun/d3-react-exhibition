@@ -17,6 +17,7 @@ import { SVGScaleDescription } from './SVGScale/SVGScaleDescription';
 import {refreshHandler} from '../../helper/refreshHandler'
 import { Emoji } from './Emoji';
 import { SVGOnMouse } from './SVGOnMouse/SVGOnMouse'
+import {SVGBasic} from './SVGBasic/SVGBasic'
 import { VizContainer, VizWrapper, Title, Ref, Message,Btn } from '../../ui-lib/lib'
 
 export const SVG = () => {
@@ -45,6 +46,10 @@ export const SVG = () => {
                             size without loss of quality and can be easily localized by updating the text within them, without the need of a graphical editor to do so.
                         </Message>
                 </VizContainer>
+
+                {/* SVG basic */}
+
+                <SVGBasic />
 
                 {/* SVG without D3: Circle */}
                     <VizContainer>
