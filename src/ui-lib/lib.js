@@ -1,9 +1,28 @@
 
-import styled from "styled-components"
+import styled, {createGlobalStyle} from "styled-components"
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
 import Table from 'react-bootstrap/Table'
+import 'antd/dist/antd.min.css';
+
+export const GlobalStyle = createGlobalStyle`
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif !important;
+    line-height: 1.75 !important;
+  }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+`;
+
 
 
 export const Wrapper = styled.div`
@@ -35,7 +54,7 @@ export const Ref = styled.div``;
 export const FooterWrapper = styled.div`
     height:80px;
     display: flex;
-    fiex-direction:column;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
@@ -47,11 +66,13 @@ export const Seperator = styled.div`
 `
 
 export const VizContainer = styled.form`
-  width: 60vw;
+  width: 70vw;
   min-width: 400px;
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 6rem;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 `;
 
 export const Container = styled.div`

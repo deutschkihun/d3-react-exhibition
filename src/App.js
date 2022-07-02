@@ -17,10 +17,12 @@ import { Seperator } from './ui-lib/lib'
 import { Parsingcsv } from './pages/ParsingCSV/ParsingCSV';
 import {Scatterplot} from './pages/Scatterplot/Scatterplot'
 import {LoadingView} from './components/LoadingView'
+import {GlobalStyle} from './ui-lib/lib'
 
 function App() {
   return (
     <>
+      <GlobalStyle/>
       <Suspense
         fallback={
           <LoadingView title={"Loading ..."} body={"please wait a moment"} />
