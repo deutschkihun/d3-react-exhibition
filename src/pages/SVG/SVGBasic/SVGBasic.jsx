@@ -4,8 +4,6 @@ import { Path } from './Path'
 import { Text } from './Text'
 import { Gradation } from './Gradation'
 
-
-
 export const SVGBasic = () => (
     <>
         <ViewBox />

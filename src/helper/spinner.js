@@ -351,8 +351,8 @@ export const Grid3 = styled.div`
   }
 
   button {
-    width: 100%
-    max-width: 200px
+    width: 100%;
+    max-width: 200px;
   }
 `;
 
@@ -429,7 +429,7 @@ export const Form = styled.form`
 
   img {
     width: 100%;
-    heigh: 50%;
+    height: 50%;
   }
 
   h3 {

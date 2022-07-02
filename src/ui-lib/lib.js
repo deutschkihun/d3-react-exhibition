@@ -7,7 +7,6 @@ import Table from 'react-bootstrap/Table'
 import 'antd/dist/antd.min.css';
 
 export const GlobalStyle = createGlobalStyle`
-
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -21,9 +20,40 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     list-style-type: none;
   }
+
+  @keyframes stack-ani {
+    from { transform: translateY()}
+    to { transform: translateY(1em)}
+  }
+
+  .stack {
+    width: 100px;
+    padding: 0 10px;
+
+    :nth-child(1) {
+      animation: stack-ani 1s alternate infinite;
+    }
+
+    :nth-child(2) {
+      animation: stack-ani 1s alternate infinite 0.5s;
+
+    }
+
+    :nth-child(3) {
+      animation: stack-ani 1s alternate infinite 1s;
+
+    }
+
+    :nth-child(4) {
+      animation: stack-ani 1s alternate infinite 1.5s;
+
+    }
+  
+    :hover {
+      animation-play-state: paused;
+    }
+  }
 `;
-
-
 
 export const Wrapper = styled.div`
     padding-top:50px;

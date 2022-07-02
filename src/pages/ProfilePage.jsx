@@ -11,7 +11,7 @@ export const ProfilePage = () => {
 
     useEffect(() => {
       d3.selectAll('.icon')
-        .attr('width','50')
+        .attr('width','100')
         .style('padding','5px')
     }, [])
     
