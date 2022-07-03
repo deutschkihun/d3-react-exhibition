@@ -62,8 +62,7 @@ export function GGplot2({ width, height, margin }) {
       .style('font-size', '16px')
       .style('text-decoration', 'underline')
       .text(`ggplot2 style`)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id="GGplot2" />
 }

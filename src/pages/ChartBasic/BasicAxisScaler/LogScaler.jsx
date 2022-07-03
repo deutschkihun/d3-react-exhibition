@@ -38,8 +38,7 @@ export function LogScaler({ width, height, margin, index }) {
       .style('font-size', '16px')
       .style('text-decoration', 'underline')
       .text(`Log Scaler with base 2`)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, index, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id={`chart_scaler${String(index)}`} />
 }

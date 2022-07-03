@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import React, { useEffect, useState } from 'react'
 import * as d3 from 'd3'
 import { randomColorGenerator } from '../../../helper/randomColorGenerator'
@@ -39,8 +38,6 @@ export function BarChartBasic({ width, height }) {
           .style('fill', randomColorGenerator()),
       )
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [data, height, width])
   return <svg id="barchartbasic" />
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react'
 import { Collapse, Checkbox } from 'antd'
 
@@ -22,7 +21,7 @@ export function CheckBox({ list, handleFilters }) {
     list &&
     list.map((value, index) => (
       <>
-        <Checkbox onChange={() => handleToggle(value._id)} checked={Checked.indexOf(value._id) !== -1} />
+        <Checkbox onChange={() => handleToggle(value.id)} checked={Checked.indexOf(value.id) !== -1} />
         <span>{`  ${value.name}  `}</span>
       </>
     ))

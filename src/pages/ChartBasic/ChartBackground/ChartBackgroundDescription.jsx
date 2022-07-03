@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import React from 'react'
 import { Pre, Explanation } from '../../../ui-lib/lib'
 
@@ -21,7 +20,7 @@ export function ChartBackgroundDescription() {
           <br />
           <span>{'                     .append("g")'}</span>
           <br />
-          <span>{'                     .attr("transform",`translate(${margin.left},${margin.top + 20})`)'}</span>
+          <span>{'                     .attr("transform",`translate(margin.left,margin.top + 20})`)'}</span>
           <br />
           <span>
             axisTemplate.append(&ldquo;rect&ldquo;).attr(&ldquo;x&ldquo;,0).attr(&ldquo;y&ldquo;,0).attr(&ldquo;height&ldquo;,
@@ -30,7 +29,7 @@ export function ChartBackgroundDescription() {
           <br />
           <span>axisTemplate.append(&ldquo;g&ldquo;)</span>
           <br />
-          <span>{'                 .attr("transform",`translate(0,${height})`)'}</span>
+          <span>{'                 .attr("transform",`translate(0,height)`)'}</span>
           <br />
           <span>{'                 .call(d3.axisBottom(x_scale_linear).tickSize(-height*1.3).ticks(10))'}</span>
           <br />

@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
 import { Wrapper, Title, Message } from '../ui-lib/lib'

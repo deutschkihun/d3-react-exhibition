@@ -71,8 +71,6 @@ export function MultipleChart({ width, height, margin }) {
           return color(d[0])
         })
     })
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
   return <div id="multiplechart" />
 }

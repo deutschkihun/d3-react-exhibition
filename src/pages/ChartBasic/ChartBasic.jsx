@@ -65,7 +65,7 @@ export function ChartBasic() {
 
       <VizContainer>
         <Title>
-          Chart basic: Displaying random data on the random coordinates
+          Chart basic: Displaying random data and coordinates
           <RenderButton
             onClick={() =>
               refreshHandler(

@@ -4,9 +4,6 @@ import { Explanation, Pre } from '../../../ui-lib/lib'
 export function SVGWithD3Description() {
   return (
     <Explanation>
-      <h3>
-        Creat a {'<svg> tag'} and wrap circle with {'<circle> tag'}. This should be selectd by d3.select
-      </h3>
       <Pre>
         <code>
           <span>{'    var svg = d3.select("#ex_rect1").attr("width","55vw")'}</span>

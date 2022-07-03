@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
 import { range } from 'd3'
@@ -6,12 +5,12 @@ import { range } from 'd3'
 export function Flag({ width, height, centerX, centerY, radius, strokeWidth }) {
   const array = range(5)
   const loop = range(2)
-  const cx = [110, 240, 370, 175, 305]
-  const cy = [100, 100, 100, 175, 175]
-  const color = ['blue', 'black', 'red', 'yellow', 'green']
 
   useEffect(() => {
-    loop.map(k => {
+    const cx = [110, 240, 370, 175, 305]
+    const cy = [100, 100, 100, 175, 175]
+    const color = ['blue', 'black', 'red', 'yellow', 'green']
+    loop.forEach(k => {
       const olympicFlag = d3
         .select(`#olympicflag${String(k)}`)
         .attr('width', width)
@@ -30,8 +29,7 @@ export function Flag({ width, height, centerX, centerY, radius, strokeWidth }) {
           .style('fill-opacity', '0'),
       )
     })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [array, centerX, centerY, height, loop, radius, strokeWidth, width])
 
   return (
     <>

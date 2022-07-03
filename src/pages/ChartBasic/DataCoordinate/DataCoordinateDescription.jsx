@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import React from 'react'
 import { Pre, Explanation } from '../../../ui-lib/lib'
 
@@ -26,15 +25,12 @@ export function DataCoordinateDescription() {
           <span>refresh && axisTemplate.selectChildren(&ldquo;circle&ldquo;).remove()</span>
           <br />
           <span>
-            {
-              'let axisTemplateElement = axisTemplate.append("g").attr("transform",`translate(${margin.left},${margin.top})`)'
-            }
+            let axisTemplateElement =
+            axisTemplate.append(&quot;g&quot;).attr(&quot;transform&quot;,`translate(margin.left,margin.top)`)
           </span>
           <br />
           <span>
-            {
-              'axisTemplateElement.append("g").attr("transform",`translate(0,${height})`).call(d3.axisBottom(x_scale_axis));'
-            }
+            axisTemplateElement.append(&quot;g&quot;).attr(&quot;transform&quot;,`translate(0,height)`).call(d3.axisBottom(x_scale_axis));
           </span>
           <br />
           <span>axisTemplateElement.append(&ldquo;g&ldquo;).call(d3.axisLeft(y_scale_axis));</span>

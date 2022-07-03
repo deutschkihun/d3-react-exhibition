@@ -1,6 +1,6 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable no-use-before-define */
 /* eslint-disable consistent-return */
-/* eslint-disable no-return-assign */
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
 
@@ -113,11 +113,11 @@ export function KOInteractive({ width, height, margin }) {
       function updateChart(event, d) {
         const extent = event.selection
         if (!extent) {
-          if (!idleTimeout) return (idleTimeout = setTimeout(idled, 350)) // This allows to wait a little bit
+          if (!idleTimeout) return (idleTimeout = setTimeout(idled, 350))
           x.domain([4, 8])
         } else {
           x.domain([x.invert(extent[0]), x.invert(extent[1])])
-          line.select('.brush').call(brush.move, null) // This remove the grey brush area as soon as the selection has been done
+          line.select('.brush').call(brush.move, null)
         }
 
         xAxis.transition().duration(1000).call(d3.axisBottom(x))
@@ -138,8 +138,7 @@ export function KOInteractive({ width, height, margin }) {
           )
       }
     })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  })
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id="koInteractive" />
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import React from 'react'
 import { Explanation, Pre } from '../../../ui-lib/lib'
 
@@ -22,15 +21,12 @@ export function AxisBasicDescription() {
           <span>{'refresh && axisTemplate.selectChildren("g").remove() '}</span>
           <br />
           <span>
-            {
-              'let axisTemplateElement = axisTemplate.append("g").attr("transform",`translate(${margin.left},${margin.top})`)'
-            }{' '}
+            let axisTemplateElement =
+            axisTemplate.append(&quot;g&quot;).attr(&quot;transform&quot;,`translate(margin.left,margin.top)`)
           </span>
           <br />
           <span>
-            {
-              'axisTemplateElement.append("g").append("g").attr("transform",`translate(0,${height})`).call(d3.axisBottom(x_scale_axis))'
-            }{' '}
+            axisTemplateElement.append(&quot;g&quot;).append(&quot;g&quot;).attr(&quot;transform&quot;,`translate(0,height)`).call(d3.axisBottom(x_scale_axis))
           </span>
           <br />
           <span>{'axisTemplateElement.append("g").call(d3.axisLeft(y_scale_axis)) '}</span>

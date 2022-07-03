@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import React from 'react'
 import { Pre, Explanation } from '../../../ui-lib/lib'
 
@@ -24,9 +23,9 @@ export function CustomAxisLabelDescription() {
             }
           </span>
           <br />
-          <span>{'                     .append("g").attr("transform",`translate(${margin.left},${margin.top})`)'}</span>
+          <span>{'                     .append("g").attr("transform",`translate(margin.left,margin.top)`)'}</span>
           <br />
-          <span>{'            axisTemplate.append("g").attr("transform",`translate(0,${height})`)'}</span>
+          <span>{'            axisTemplate.append("g").attr("transform",`translate(0,height)`)'}</span>
           <br />
           <span>{'                                    .call(d3.axisBottom(x_scale_pointer))'}</span>
           <br />

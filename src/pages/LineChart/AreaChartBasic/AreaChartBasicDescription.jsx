@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import React from 'react'
 import { Pre, Explanation } from '../../../ui-lib/lib'
 
@@ -27,7 +26,7 @@ export function AreaChartBasicDescription() {
           <br />
           <span>{'   appleChart.append("g")'}</span>
           <br />
-          <span>{'             .attr("transform", `translate(0, ${height})`)'}</span>
+          <span>{'             .attr("transform", `translate(0, height)`)'}</span>
           <br />
           <span>{'             .call(d3.axisBottom(x));'}</span>
           <br />

@@ -18,22 +18,15 @@ export function FaceContainer({
   mouthWidth,
   mouthRadius,
 }) {
-  // eslint-disable-next-line react/no-unstable-nested-components
-  function BackgroundCircle({ radius }) {
-    return (
-      <circle
-        r={radius}
-        fill={type === 'angry' ? 'red' : type === 'random' ? randomColorGenerator() : 'yellow'}
-        stroke="black"
-        strokeWidth={strokeWidth}
-      />
-    )
-  }
-
   return (
     <svg width={width} height={height}>
       <g transform={`translate(${centerX},${centerY})`}>
-        <BackgroundCircle type={type} radius={centerY - strokeWidth / 2} strokeWidth={strokeWidth} />
+        <circle
+          r={centerY - strokeWidth / 2}
+          fill={type === 'angry' ? 'red' : type === 'random' ? randomColorGenerator() : 'yellow'}
+          stroke="black"
+          strokeWidth={strokeWidth}
+        />
 
         {type === 'crying' && (
           <Tears eyeOffsetX={eyeOffsetX + 20} eyeOffsetY={eyeOffsetY + 20} eyeRadius={eyeRadius / 2} />

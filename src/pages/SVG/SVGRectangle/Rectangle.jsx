@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
 import { randomColorGenerator } from '../../../helper/randomColorGenerator'

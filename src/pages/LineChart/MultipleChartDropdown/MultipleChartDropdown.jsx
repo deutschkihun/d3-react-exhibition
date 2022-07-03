@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect } from 'react'
 import * as d3 from 'd3'
 
@@ -94,12 +93,11 @@ export function MultipleChartDropdown({ width, height, margin }) {
           .attr('stroke-width', 1.9)
       })
     })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return (
     <>
-      <select id="selectButton" />
+      <select id="selectButton" aria-label="button" />
       <div id="multiplechartdropdown" />
     </>
   )

@@ -32,9 +32,7 @@ export function HoverBasic({ margin, width, height }) {
       .on('mouseout', () => {
         return hoverEvent.style('visibility', 'hidden')
       })
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, width])
 
   return <svg id="hover_rect" />
 }

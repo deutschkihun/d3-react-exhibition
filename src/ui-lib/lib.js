@@ -169,7 +169,6 @@ export const Grid = styled.div`
   grid-gap: 20px;
   justify-items: center;
 
-  /* pc display min  */
   @media screen and (max-width: 1000px) {
     .fa-bars {
       padding-top: 5px;
@@ -178,7 +177,6 @@ export const Grid = styled.div`
     }
   }
 
-  /* tablet pc and mobile device */
   @media screen and (max-width: 768px) {
     .fa-bars {
       padding-left: 1rem;
@@ -201,17 +199,14 @@ export const Home = styled(Link)`
     display: none;
   }
 
-  /* pc display min  */
   @media screen and (max-width: 1000px) {
     grid-column: 5 / 9;
   }
 
-  /* tablet pc */
   @media screen and (max-width: 768px) {
     grid-column: 4 / 11;
   }
 
-  /* mobile device */
   @media screen and (max-width: 480px) {
     display: none;
   }
@@ -261,7 +256,6 @@ export const Dropdown = styled.ul`
       color: #fff;
     }
   }
-  /* pc display min  */
   @media screen and (max-width: 1000px) {
     display: none;
   }
@@ -276,7 +270,6 @@ export const About = styled(Link)`
     color: #151516;
   }
 
-  /* pc display min  */
   @media screen and (max-width: 1000px) {
     display: none;
   }
@@ -291,7 +284,6 @@ export const Profile = styled(Link)`
     color: #151516;
   }
 
-  /* pc display min  */
   @media screen and (max-width: 1000px) {
     display: none;
   }

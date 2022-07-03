@@ -2,39 +2,39 @@ import * as d3 from 'd3'
 
 const categories = [
   {
-    _id: 1,
+    id: 1,
     name: 'SVG',
   },
   {
-    _id: 2,
+    id: 2,
     name: 'Chart Basic',
   },
   {
-    _id: 3,
+    id: 3,
     name: 'Line Chart',
   },
   {
-    _id: 4,
+    id: 4,
     name: 'Bar Chart',
   },
   {
-    _id: 5,
+    id: 5,
     name: 'Heat Map',
   },
   {
-    _id: 6,
+    id: 6,
     name: 'Interactive Chart',
   },
   {
-    _id: 7,
+    id: 7,
     name: 'Data Understanding',
   },
   {
-    _id: 8,
+    id: 8,
     name: 'Parsing CSV',
   },
   {
-    _id: 9,
+    id: 9,
     name: 'Scatterplot',
   },
 ]

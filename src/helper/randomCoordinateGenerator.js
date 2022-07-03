@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 const randomGenerator = (from, to) => {
   return (Math.random() * (to - from) + from).toFixed(0) * 1
 }

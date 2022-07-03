@@ -22,8 +22,7 @@ export function HighlightingBrushedElement({ margin, width, height }) {
       .attr('stroke-width', '1')
       .attr('fill', 'skyblue')
     brushingBoth.call(brushBoth(width, height)).on('start brush', (element, event, d) => updateChart(element, event)) // Each time the brush selection changes, trigger the 'updateChart' function
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id="HighlightingBrushedElement" />
 }

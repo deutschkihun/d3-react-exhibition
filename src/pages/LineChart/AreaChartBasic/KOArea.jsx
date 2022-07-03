@@ -85,9 +85,7 @@ export function KOArea({ width, height, margin }) {
         .style('text-decoration', 'underline')
         .text(`Coca cola stock evolution with area`)
     })
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id="koArea" />
 }

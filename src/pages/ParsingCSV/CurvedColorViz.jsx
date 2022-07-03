@@ -13,7 +13,6 @@ export function CurvedColorViz({ data, height, margin }) {
       .style('transform', 'translate(50%,50%)')
 
     colorPie(data).map(d => parsedCSV.append('path').attr('fill', d.data['RGB hex value']).attr('d', pieArc(d)))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [colorPie, data, height, margin.bottom, margin.top, pieArc])
   return <svg id="parsedCSV" />
 }

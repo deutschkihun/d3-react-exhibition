@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import React from 'react'
 import { Pre, Explanation } from '../../../ui-lib/lib'
 
@@ -23,14 +22,12 @@ export function BasicAxisScalerDescription() {
           <br />
           <span>{'                    .append("g")'}</span>
           <br />
-          <span>{'                    .attr("transform",`translate(${margin.left},${margin.top})`)'}</span>
+          <span>{'                    .attr("transform",`translate(margin.left,margin.top)`)'}</span>
           <br />
-          <span>{'                    .attr("transform",`translate(${margin.left},${margin.top})`)'}</span>
+          <span>{'                    .attr("transform",`translate(margin.left,margin.top)`)'}</span>
           <br />
           <span>
-            {
-              'axisTemplate.append("g").append("g").attr("transform",`translate(0,${height})`).call(d3.axisBottom(x_scale_linear))'
-            }
+            axisTemplate.append(&quot;g&quot;).append(&quot;g&quot;).attr(&quot;transform&quot;,`translate(0,height)`).call(d3.axisBottom(x_scale_linear))
           </span>
           <br />
           <span>axisTemplate.append(&apos;g&apos;).call(d3.axisLeft(y_scale_linear));</span>
@@ -52,14 +49,12 @@ export function BasicAxisScalerDescription() {
           <br />
           <span>{'                    .append("g")'}</span>
           <br />
-          <span>{'                    .attr("transform",`translate(${margin.left},${margin.top})`)'}</span>
+          <span>{'                    .attr("transform",`translate(margin.left,margin.top)`)'}</span>
           <br />
-          <span>{'                    .attr("transform",`translate(${margin.left},${margin.top})`)'}</span>
+          <span>{'                    .attr("transform",`translate(margin.left,margin.top)`)'}</span>
           <br />
           <span>
-            {
-              'axisTemplate.append("g").append("g").attr("transform",`translate(0,${height})`).call(d3.axisBottom(x_scale_log))'
-            }
+            axisTemplate.append(&quot;g&quot;).append(&quot;g&quot;).attr(&quot;transform&quot;,`translate(0,height)`).call(d3.axisBottom(x_scale_log))
           </span>
           <br />
           <span>axisTemplate.append(&apos;g&apos;).call(d3.axisLeft(y_scale_log));</span>

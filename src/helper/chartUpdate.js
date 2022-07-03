@@ -1,11 +1,10 @@
-/* eslint-disable no-underscore-dangle */
 import * as d3 from 'd3'
 
 export function updateChart(element, e, d) {
   // Get the selection coordinate
-  const { extent } = e._groups[0][0].__brush
-  console.log('extent', extent[0])
-  console.log('extent', extent[1])
+  // const { extent } = e._groups[0][0]._brush
+  // console.log('extent', extent[0])
+  // console.log('extent', extent[1])
 
   return false
   // Is the circle in the selection?

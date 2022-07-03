@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useRef } from 'react'
 import { range } from 'd3'
 import { Face } from './Face'

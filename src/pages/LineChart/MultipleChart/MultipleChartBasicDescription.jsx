@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import React from 'react'
 import { Pre, Explanation } from '../../../ui-lib/lib'
 
@@ -28,7 +27,7 @@ export function MultipleChartBasicDescription() {
           <br />
           <span>{'                .attr("height", height + margin.top + margin.bottom)'}</span>
           <br />
-          <span>{'              .append("g").attr("transform", `translate(${margin.left},${margin.top})`);'}</span>
+          <span>{'              .append("g").attr("transform", "translate(margin.left,margin.top)");'}</span>
           <br />
           <span>Other things like axis and label are same as other example</span>
         </code>

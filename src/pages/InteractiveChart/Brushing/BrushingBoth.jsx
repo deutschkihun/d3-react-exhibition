@@ -21,8 +21,7 @@ export function BrushingBoth({ margin, width, height }) {
       .attr('fill', 'black')
 
     brushingBoth.call(brushBoth(width, height))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id="brushingBoth" />
 }

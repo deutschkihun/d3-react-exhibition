@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react'
 import { Collapse, Radio } from 'antd'
 
@@ -9,9 +8,8 @@ export function RadioBox({ list, handleFilters }) {
   const renderRadioBox = () =>
     list &&
     list.map(value => (
-      <Radio key={value._id} value={value._id}>
-        {' '}
-        {value.name}{' '}
+      <Radio key={value.id} value={value.id}>
+        {value.name}
       </Radio>
     ))
 

@@ -40,8 +40,7 @@ export function LinearScaler({ width, height, margin }) {
       .style('font-size', '16px')
       .style('text-decoration', 'underline')
       .text(`Linear Scaler`)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id="linearScaler" />
 }

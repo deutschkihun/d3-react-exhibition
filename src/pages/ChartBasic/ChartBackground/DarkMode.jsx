@@ -74,8 +74,7 @@ export function DarkMode({ width, height, margin, index }) {
       .style('fill', 'white')
       .style('text-decoration', 'underline')
       .text(`Dark mode`)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id="darkmode" />
 }

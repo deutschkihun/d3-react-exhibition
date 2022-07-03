@@ -38,8 +38,7 @@ export function Plain({ width, height, margin, index }) {
       .style('font-size', '16px')
       .style('text-decoration', 'underline')
       .text(`Plain`)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [height, margin.bottom, margin.left, margin.right, margin.top, width])
 
   return <svg id="plain" />
 }
