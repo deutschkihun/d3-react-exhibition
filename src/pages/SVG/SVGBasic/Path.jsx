@@ -14,7 +14,6 @@ export function Path() {
       <VizContainer>
         <Title>SVG basic: path</Title>
         <Message>
-          {' '}
           M: starting point of drawing, L: line drawing, set value to draw first line from M, H: horizontal line, V:
           vertical line, Z: finish rest line, C: curve (start,adjust point (curving point) end)
         </Message>

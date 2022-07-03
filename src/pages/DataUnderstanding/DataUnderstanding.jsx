@@ -79,7 +79,7 @@ export function DataUnderstanding() {
                 Instant <br /> ex.) right now: quantitive
               </td>
               <td>
-                Interval <br /> ex.) this year: ordinal{' '}
+                Interval <br /> ex.) this year: ordinal
               </td>
             </tr>
             <tr>

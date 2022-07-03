@@ -53,6 +53,64 @@ export const GlobalStyle = createGlobalStyle`
       animation-play-state: paused;
     }
   }
+
+  @keyframes eye-ani {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0.2); }
+  }
+
+  .right-eye {
+    transform-origin: 19px 42px;
+    animation: eye-ani 0.5s alternate infinite;
+  }
+
+  .left-eye {
+    transform-origin: 19px 42px;
+    animation: eye-ani 0.5s alternate infinite 0.5s;
+  }
+
+  @keyframes dash-ani {
+    0% { stroke-dashoffset: 700; stroke:black }
+    50% { stroke-dashoffset: 350; stroke:blue }
+    100% { stroke-dashoffset: 0; stroke: red }
+  }
+  .stroke-circle {
+    stroke: black;
+    stroke-width: 5;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 0;
+    fill: transparent;
+    animation: dash-ani 2s infinite alternate;
+  }
+  .stroke-path {
+    stroke: black;
+    stroke-width: 5;
+    stroke-dasharray: 727;
+    fill: transparent;
+    animation: dash-ani 2s linear infinite alternate;
+  }
+
+  @keyframes logo-ani {
+    0% { stroke-dashoffset: 5171; stroke:deepskyblue }
+    20% { stroke-dashoffset: 4171; stroke:dodgerblue }
+    40% { stroke-dashoffset: 3171; stroke:darkgreen }
+    60% { stroke-dashoffset: 2171; stroke:darkslategrey }
+    80% { stroke-dashoffset: 1171; stroke:darkgoldenrod }
+    100% { stroke-dashoffset: 0; stroke:darkolivegreen }
+  }
+  .cls-1 {
+    fill: #fff;
+  }
+
+  .cls-2 {
+    fill: none;
+    stroke: #f91d00;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 25px;
+    stroke-dasharray: 5171;
+    animation: logo-ani 10s linear infinite alternate;
+  }
 `
 
 export const Wrapper = styled.div`

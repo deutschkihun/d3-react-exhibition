@@ -40,7 +40,7 @@ export function Text() {
             <span>
               {
                 '    <path id="text-curve" d="M 50 100 C 50 100, 400 600, 500 400 C 500 400, 600 -400, 1000 600"></path> '
-              }{' '}
+              }
             </span>
             <br />
             <span>{'  </defs> '} </span>
@@ -52,17 +52,17 @@ export function Text() {
             <span>
               {
                 '      hello my <tspan className="strong">friends</tspan> my name is Kihun Kim. nice to see you. how are you ?'
-              }{' '}
+              }
             </span>
             <br />
             <span>
               {
                 '      hello my <tspan className="strong">friends</tspan> my name is Kihun Kim. nice to see you. how are you ?'
-              }{' '}
+              }
             </span>
             <br />
             <span>
-              {'      hello my <tspan className="strong">friends</tspan> my name is Kihun Kim. nice to see you.'}{' '}
+              {'      hello my <tspan className="strong">friends</tspan> my name is Kihun Kim. nice to see you.'}
             </span>
             <br />
             <span>{'    </textPath> '} </span>

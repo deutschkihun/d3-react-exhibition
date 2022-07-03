@@ -23,7 +23,6 @@ function App() {
     <>
       <GlobalStyle />
       <Suspense fallback={<LoadingView title="Loading ..." body="please wait a moment" />}>
-        {' '}
         <BrowserRouter>
           <Headers />
           <Seperator>

@@ -17,8 +17,8 @@ import { refreshHandler } from '../../helper/refreshHandler'
 import { Emoji } from './Emoji'
 import { SVGOnMouse } from './SVGOnMouse/SVGOnMouse'
 import { SVGBasic } from './SVGBasic/SVGBasic'
-import { Button } from '../../helper/reuse/Button'
 import { VizContainer, VizWrapper, Title, Ref, Message, RenderButton } from '../../ui-lib/lib'
+import { SVGOnMouseAdvance } from './SVGOnMouse/SVGOnMouseAdvance'
 
 export function SVG() {
   const width = 160
@@ -68,7 +68,6 @@ export function SVG() {
               )
             }
           >
-            {' '}
             Click me
           </RenderButton>
         </Title>
@@ -87,7 +86,6 @@ export function SVG() {
 
       <VizContainer>
         <Title>
-          {' '}
           SVG with D3: circle
           <RenderButton
             onClick={() =>
@@ -124,7 +122,6 @@ export function SVG() {
 
       <VizContainer>
         <Title>
-          {' '}
           SVG with D3: Circle-Advance
           <RenderButton
             onClick={() =>
@@ -256,6 +253,11 @@ export function SVG() {
         <SVGOnMouse width={width} height={height} stroke={stroke} radius={10} />
       </VizContainer>
       <SVGScaleDescription />
+
+      <VizContainer>
+        <Title>Ex.6) SVG mouse cursor with pattern effect</Title>
+        <SVGOnMouseAdvance width={width} height={height} stroke={stroke} radius={10} />
+      </VizContainer>
     </VizWrapper>
   )
 }

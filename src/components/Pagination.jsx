@@ -6,7 +6,6 @@ export function Pagination({ total, limit, page, setPage }) {
   return (
     <Nav>
       <PagninationBtn onClick={() => setPage(page - 1)} disabled={page === 1}>
-        {' '}
         &lt;
       </PagninationBtn>
       {Array(numPages)
