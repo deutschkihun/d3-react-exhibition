@@ -15,6 +15,8 @@ export function Prerequisite() {
   const [justifycontent, setJustifycontent] = useState('flex-start')
   const [alignitem, setAlignitem] = useState('stretch')
   const [aligncontent, setAligncontent] = useState('stretch')
+  const [flexgrow, setFlexgrow] = useState('0')
+  const [flexshrink, setFlexshrink] = useState('100%')
   useEffect(() => {
     d3.selectAll('.item').style('color', 'blue').style('border', '1px solid black').style('padding', '1px')
   }, [])
@@ -297,6 +299,80 @@ export function Prerequisite() {
           <div className="item">item1item1item1item1item1item1item1item1</div>
           <div className="item">item2item2item2item2item2item2item2item2</div>
           <div className="item">item3item3item3item3item3item3item3item3</div>
+        </div>
+      </VizContainer>
+
+      <VizContainer>
+        <Title>Flex item attribute: [flex]</Title>
+        <Message>
+          flex has 3 sub-attributes: <strong style={{ color: 'red' }}>flex-grow, flex-shrink, flex-basis</strong>. The
+          <strong style={{ color: 'red' }}> flex-basis </strong> sets the default size for flex items (width when
+          flex-direction is row, height when flex-direction is column). The
+          <strong style={{ color: 'red' }}> flex-basis </strong>
+          can be percentage, pixel or em. The <strong style={{ color: 'red' }}> flex-grow</strong> contains numeric
+          values, and once a value greater than zero is set, the item changes to a flexible box, larger than its
+          original size, and fills the empty space. The <strong style={{ color: 'red' }}> flex-shrink</strong> contains
+          numeric values, and once a value greater than zero is set, the item turns into a flexible box and is smaller
+          than the flex-basis.
+        </Message>
+      </VizContainer>
+
+      <VizContainer>
+        <Title>flex-grow</Title>
+        <Collapse>
+          <Panel header="option">
+            <Radio.Group onChange={e => setFlexgrow(e.target.value)} value={flexgrow}>
+              <Radio value="0">0</Radio>
+              <Radio value="1">1</Radio>
+            </Radio.Group>
+          </Panel>
+        </Collapse>
+        <div
+          className="container"
+          style={{
+            display: 'flex',
+            background: 'yellow',
+            padding: '0px',
+            width: 'auto',
+          }}
+        >
+          <div className="item" style={{ flexGrow: `${flexgrow}` }}>
+            item1item1item1
+          </div>
+          <div className="item" style={{ flexGrow: `${flexgrow}` }}>
+            item2item2item2
+          </div>
+          <div className="item" style={{ flexGrow: `${flexgrow}` }}>
+            item3item3item3
+          </div>
+        </div>
+      </VizContainer>
+
+      <VizContainer>
+        <Title>flex-shrink</Title>
+        <Collapse>
+          <Panel header="option">
+            <Radio.Group onChange={e => setFlexshrink(e.target.value)} value={flexshrink}>
+              <Radio value="100%">100%</Radio>
+              <Radio value="10%">10%</Radio>
+            </Radio.Group>
+          </Panel>
+        </Collapse>
+        <div
+          className="container"
+          style={{
+            display: 'flex',
+            background: 'yellow',
+            padding: '0px',
+            width: 'auto',
+          }}
+        >
+          <div className="item" style={{ flexShrink: 0 }}>
+            item1item1item1
+          </div>
+          <div className="item" style={{}}>
+            item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2
+          </div>
         </div>
       </VizContainer>
     </VizWrapper>

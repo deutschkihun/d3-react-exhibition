@@ -16,7 +16,7 @@ import { DataUnderstanding } from './pages/DataUnderstanding/DataUnderstanding'
 import { Seperator, GlobalStyle } from './ui-lib/lib'
 import { Parsingcsv } from './pages/ParsingCSV/ParsingCSV'
 import { Scatterplot } from './pages/Scatterplot/Scatterplot'
-import { LoadingView } from './helper/reuse/LoadingView'
+import { LoadingView } from './helper/LoadingView'
 import { Prerequisite } from './pages/Prerequisite/Prerequisite'
 
 function App() {

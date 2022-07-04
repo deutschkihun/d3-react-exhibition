@@ -5,7 +5,7 @@ import react from '../assets/react.svg'
 import js from '../assets/js.svg'
 import node from '../assets/node.svg'
 import mongo from '../assets/mongo.svg'
-import { Button } from '../helper/reuse/Button'
+import { Button } from '../helper/Button'
 
 export function AboutPage() {
   return (

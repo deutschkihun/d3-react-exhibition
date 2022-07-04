@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import * as d3 from 'd3'
-import { VizContainer, Title, VizWrapper, Message, SubTitle, Tables } from '../../ui-lib/lib'
+import { VizContainer, Title, VizWrapper, Message, Tables } from '../../ui-lib/lib'
 import { ParsingDescription } from './ParsingDescription'
 import { margin, height } from '../../data'
 import { CurvedColorViz } from './CurvedColorViz'
 import { StraightColorViz } from './StraightColorViz'
-import { LoadingView } from '../../helper/reuse/LoadingView'
+import { LoadingView } from '../../helper/LoadingView'
 
 export function Parsingcsv() {
   const [info, setInfo] = useState('')
@@ -36,10 +36,8 @@ export function Parsingcsv() {
           CSV is currently the most commonly used data format for data analysis and visualization. A comma-separated
           values (CSV) file is a delimited text file that uses a comma to separate values. Therefore, it is one of the
           important competencies to use csv to process unpurified original data into the desired form and use it for
-          data visualization and data analysis.
+          data visualization and data analysis. csv
         </Message>
-
-        <SubTitle>In order to parse, data must be asynchronously processed first.</SubTitle>
       </VizContainer>
 
       <ParsingDescription />

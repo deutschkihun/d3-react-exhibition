@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Metrics } from '../Metrics'
+import { Metrics } from './Metrics'
 
 const LoadingViewTitle = styled.h1`
   font-family: ${p => p.theme.fontFamily};

@@ -43,11 +43,11 @@ export function SVGOnMouseAdvance({ width, height }) {
           </svg>
         </pattern>
         <mask id="mask-glass">
-          <circle cx={mousePosition.x} cy={mousePosition.y} r="60" fill="#fff" />
+          <circle cx={mousePosition.x} cy={mousePosition.y} r="70" fill="#fff" />
         </mask>
       </defs>
       <g mask="url(#mask-glass)">
-        <rect className="bg-rect" x="0" y="0" width="100%" height="100%" fill="url(#bg-pattern3)" />
+        <rect className="bg-rect" x="0" y="0" fill="url(#bg-pattern3)" />
       </g>
     </svg>
   )

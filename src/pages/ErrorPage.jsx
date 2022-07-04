@@ -1,6 +1,6 @@
 import React from 'react'
 import { Wrapper, Title } from '../ui-lib/lib'
-import { Button } from '../helper/reuse/Button'
+import { Button } from '../helper/Button'
 
 export function ErrorPage() {
   return (

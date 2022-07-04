@@ -8,10 +8,15 @@ export function ParsingDescription() {
         <code>
           <span>**Using d3.csv **</span>
           <br />
+          <span>
+            csv url =
+            https://gist.githubusercontent.com/curran/b236990081a24761f7000567094914e0/raw/cssNamedColors.csv&quot;
+          </span>
+          <br />
           <br />
           <span>{'      d3.csv(csvUrl).then(data => {'} </span>
           <br />
-          <span>const response = await fetch(url); </span>
+          <span> const response = await fetch(url); </span>
           <br />
           <span>{'    return await response.text();'} </span>
           <br />
