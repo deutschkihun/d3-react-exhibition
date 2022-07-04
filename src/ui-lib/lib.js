@@ -21,7 +21,11 @@ export const GlobalStyle = createGlobalStyle`
 
   @keyframes stack-ani {
     from { transform: translateY()}
-    to { transform: translateY(1em)}
+    to { transform: translateY(1em) scale(1.05)}
+  }
+
+  .svg-category {
+    animation: stack-ani 1s alternate infinite 0s;
   }
 
   .stack {

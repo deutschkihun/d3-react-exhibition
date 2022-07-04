@@ -17,6 +17,7 @@ import { Seperator, GlobalStyle } from './ui-lib/lib'
 import { Parsingcsv } from './pages/ParsingCSV/ParsingCSV'
 import { Scatterplot } from './pages/Scatterplot/Scatterplot'
 import { LoadingView } from './helper/reuse/LoadingView'
+import { Prerequisite } from './pages/Prerequisite/Prerequisite'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
               <Router exact path="/profile" element={<ProfilePage />} />
               <Router exact path="/parsingcsv" element={<Parsingcsv />} />
               <Router exact path="/scatterplot" element={<Scatterplot />} />
+              <Router exact path="/Prerequisite" element={<Prerequisite />} />
               <Router path="*" element={<ErrorPage />} />
             </Routes>
           </Seperator>

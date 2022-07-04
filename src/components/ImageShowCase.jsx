@@ -5,5 +5,7 @@ import { Images } from '../ui-lib/lib'
 export function ImageShowCase({ name }) {
   const navigate = useNavigate()
   const image = require(`../uploads/${name}.svg`)
-  return <Images src={image} alt={name} onClick={() => navigate(`${name.replace(/\s/g, '')}`)} />
+  return (
+    <Images className="svg-category" src={image} alt={name} onClick={() => navigate(`${name.replace(/\s/g, '')}`)} />
+  )
 }

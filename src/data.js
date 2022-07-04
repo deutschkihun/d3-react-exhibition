@@ -3,38 +3,42 @@ import * as d3 from 'd3'
 const categories = [
   {
     id: 1,
-    name: 'SVG',
+    name: 'Prerequisite',
   },
   {
     id: 2,
-    name: 'Chart Basic',
+    name: 'SVG',
   },
   {
     id: 3,
-    name: 'Line Chart',
+    name: 'Chart Basic',
   },
   {
     id: 4,
-    name: 'Bar Chart',
+    name: 'Line Chart',
   },
   {
     id: 5,
-    name: 'Heat Map',
+    name: 'Bar Chart',
   },
   {
     id: 6,
-    name: 'Interactive Chart',
+    name: 'Heat Map',
   },
   {
     id: 7,
-    name: 'Data Understanding',
+    name: 'Interactive Chart',
   },
   {
     id: 8,
-    name: 'Parsing CSV',
+    name: 'Data Understanding',
   },
   {
     id: 9,
+    name: 'Parsing CSV',
+  },
+  {
+    id: 10,
     name: 'Scatterplot',
   },
 ]

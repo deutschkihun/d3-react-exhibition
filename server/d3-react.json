@@ -1,4 +1,10 @@
-[
+[    
+    {
+        "name": "Prerequisite",
+        "level": 0,
+        "categories":10,
+        "description":"Prerequisite for this application"
+    },
     {
         "name": "SVG",
         "level": 1,
