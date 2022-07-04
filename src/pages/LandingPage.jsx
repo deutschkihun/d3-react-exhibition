@@ -38,7 +38,6 @@ export function LandingPage() {
   }
 
   const renderCards = items.slice(offset, offset + limit).map((item, index) => {
-    console.log(item)
     return (
       <Col lg={6} md={8} xs={24}>
         <Card cover={<ImageShowCase name={item.name} />}>

@@ -52,6 +52,13 @@ export function AboutPage() {
           variant="success"
           redirect="https://www.youtube.com/watch?v=2LhoCfjm8R4"
         />
+        <Button
+          disabled={false}
+          children="studiomeal"
+          size="sm"
+          variant="success"
+          redirect="https://studiomeal.com/archives/197"
+        />
       </Wrapper>
     </>
   )
