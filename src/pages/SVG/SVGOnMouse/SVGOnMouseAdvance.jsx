@@ -22,7 +22,7 @@ export function SVGOnMouseAdvance({ width, height }) {
   return (
     <svg viewBox="0 0 700 700" ref={MouseMoveRefAdvance} onMouseMove={handleMouseMove}>
       <defs>
-        <pattern id="bg-pattern3" x="0" y="0" width="0.1" height="0.1">
+        <pattern id="mask-pattern" x="0" y="0" width="0.1" height="0.1">
           <svg xmlns="http://www.w3.org/2000/svg">
             <path
               d="M138.61,133a29.89,29.89,0,1,1,21.14-8.75A29.72,29.72,0,0,1,138.61,133Zm0-55.38a25.49,25.49,0,1,0,18,7.46A25.32,25.32,0,0,0,138.61,77.63Z"
@@ -47,7 +47,7 @@ export function SVGOnMouseAdvance({ width, height }) {
         </mask>
       </defs>
       <g mask="url(#mask-glass)">
-        <rect className="bg-rect" x="0" y="0" fill="url(#bg-pattern3)" />
+        <rect className="bg-rect" x="0" y="0" width="100%" height="100%" fill="url(#mask-pattern)" />
       </g>
     </svg>
   )
