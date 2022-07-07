@@ -43,7 +43,7 @@ export function SVGOnMouseAdvance({ width, height }) {
           </svg>
         </pattern>
         <mask id="mask-glass">
-          <circle cx={mousePosition.x} cy={mousePosition.y} r="70" fill="#fff" />
+          <circle cx={mousePosition.x / 1.5} cy={mousePosition.y / 1.5} r="70" fill="#fff" />
         </mask>
       </defs>
       <g mask="url(#mask-glass)">
