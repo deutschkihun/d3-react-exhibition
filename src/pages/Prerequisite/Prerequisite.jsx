@@ -18,6 +18,8 @@ export function Prerequisite() {
   const [aligncontent, setAligncontent] = useState('stretch')
   const [gridTemplateColumns, setGridTemplateColumns] = useState('1fr 2fr 1fr')
   const [gap, setGap] = useState('10px 10px')
+  const [placeitem, setPlaceitem] = useState('stretch center')
+  const [placecontent, setPlacecontent] = useState('start space-between')
 
   useEffect(() => {
     d3.selectAll('.item').style('color', 'blue').style('border', '1px solid black').style('padding', '1px')
@@ -565,6 +567,7 @@ export function Prerequisite() {
           <div className="item">I</div>
           <div className="item">J</div>
         </div>
+        <Message> gridAutoRows: minmax(100px, auto)</Message>
       </VizContainer>
 
       <VizContainer>
@@ -695,6 +698,134 @@ export function Prerequisite() {
       <VizContainer>
         <Title>Grid item attribute: [grid-template-areas] </Title>
         <Message>Define area with name</Message>
+        <div
+          className="container"
+          style={{
+            display: 'grid',
+            gap: '1rem',
+            gridTemplateColumns: '1fr 3fr 1fr',
+            gridTemplateAreas: "'header header header' 'sidebar-a main sidebar-b' 'footer footer footer'",
+          }}
+        >
+          <div className="header item" style={{ gridArea: 'header' }}>
+            Header
+          </div>
+          <div className="sidebar-a item" style={{ gridArea: 'sidebar-a' }}>
+            Sidebar A
+          </div>
+          <div className="sidebar-b item" style={{ gridArea: 'sidebar-b' }}>
+            Sidebar B
+          </div>
+          <div className="main item" style={{ gridArea: 'main' }}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptatibus quam rerum facilis sit
+            fuga asperiores totam dolor qui, animi blanditiis recusandae aperiam nemo inventore unde voluptatum officia
+            eveniet at molestiae, exercitationem repudiandae nam eum. In dignissimos ipsam alias deserunt deleniti
+            asperiores inventore nisi consequuntur, minus fuga placeat incidunt necessitatibus voluptatum nostrum
+            tempore, dolorem facilis temporibus recusandae eum eligendi ullam. Itaque quos fugit porro sunt velit?
+            Cumque quod accusantium excepturi earum temporibus vitae incidunt laboriosam magnam ipsa fugiat! Ad rem
+            consectetur, nisi et possimus hic ullam fugit quibusdam molestiae ab quas itaque? Impedit aliquid dolorem
+            ipsa ex quod animi inventore ab, asperiores distinctio nulla ducimus exercitationem accusantium debitis,
+            incidunt cupiditate commodi! Quis modi architecto itaque sequi mollitia cupiditate accusamus fugit explicabo
+            dolorum repellendus consequuntur labore culpa, magnam sunt at obcaecati quisquam exercitationem libero.
+            Architecto officia expedita cupiditate possimus eveniet nemo quibusdam dolor? Commodi tempora accusamus
+            doloremque nisi quasi suscipit non, deleniti veniam illum consectetur libero animi voluptate modi officiis.
+            Nobis cum in soluta provident hic, ullam consequuntur officia ab ipsa quae nihil vitae sapiente est. Aliquam
+            aut odit, facere porro voluptatibus voluptatum dolorum eveniet eius molestias similique, voluptate
+            consequatur provident culpa perspiciatis fuga iusto alias. Dicta soluta ducimus debitis nulla.
+          </div>
+          <div className="footer item" style={{ gridArea: 'footer' }}>
+            Footer
+          </div>
+        </div>
+        <Message>
+          set area name in grid-template-areas: &quot;header header header&quot; &quot;sidebar-a main sidebar-b&quot;
+          &quot;footer footer footer&quot;
+        </Message>
+      </VizContainer>
+
+      <VizContainer>
+        <Title>Grid item attribute: [place-items]</Title>
+        <Message>
+          place-items: align-items(colums sorting) justify-items(row sorting). Each keyword can be &quot;stretch center
+          start end&quot;
+        </Message>
+        <Collapse>
+          <Panel header="option">
+            <Radio.Group onChange={e => setPlaceitem(e.target.value)} value={placeitem}>
+              <Radio value="stretch center">stretch center</Radio>
+              <Radio value="center stretch">center stretch</Radio>
+              <Radio value="end start">end start</Radio>
+              <Radio value="start end">start end</Radio>
+            </Radio.Group>
+          </Panel>
+        </Collapse>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '3px',
+            minHeight: '300px',
+            placeItems: `${placeitem}`,
+          }}
+        >
+          <div className="item">A</div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+          <div className="item">E</div>
+          <div className="item">F</div>
+          <div className="item">G</div>
+          <div className="item">H</div>
+          <div className="item">I</div>
+        </div>
+      </VizContainer>
+
+      <VizContainer>
+        <Title>Grid item attribute: [place-contents]</Title>
+        <Message>
+          place-content: align-contents(colums sorting) justify-content(row sorting). Each keyword can be &quot;stretch
+          center start end space-between space-around space-evenly&quot;
+        </Message>
+        <Collapse>
+          <Panel header="option">
+            <Radio.Group onChange={e => setPlacecontent(e.target.value)} value={placecontent}>
+              <Radio value="start space-between">stretch space-between</Radio>
+              <Radio value="space-between stretch">space-between stretch</Radio>
+              <Radio value="start space-around">start space-around</Radio>
+              <Radio value="space-around start">space-around start</Radio>
+            </Radio.Group>
+          </Panel>
+        </Collapse>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '3px',
+            minHeight: '300px',
+            placeContent: `${placecontent}`,
+          }}
+        >
+          <div className="item">A</div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+          <div className="item">E</div>
+          <div className="item">F</div>
+          <div className="item">G</div>
+          <div className="item">H</div>
+          <div className="item">I</div>
+        </div>
+        <Message>
+          In addition, individual items can be sorted using attributes such as align-self or justify-self.
+        </Message>
       </VizContainer>
     </VizWrapper>
   )
