@@ -15,8 +15,6 @@ export function Prerequisite() {
   const [justifycontent, setJustifycontent] = useState('flex-start')
   const [alignitem, setAlignitem] = useState('stretch')
   const [aligncontent, setAligncontent] = useState('stretch')
-  const [flexgrow, setFlexgrow] = useState('0')
-  const [flexshrink, setFlexshrink] = useState('100%')
   useEffect(() => {
     d3.selectAll('.item').style('color', 'blue').style('border', '1px solid black').style('padding', '1px')
   }, [])
@@ -34,27 +32,26 @@ export function Prerequisite() {
 
       <VizContainer>
         <Title>CSS flex</Title>
-        <Message>In order to implement css flex, a parent container and a child item are basically required.</Message>
-        <Explanation>
-          <Pre>
-            <code>
-              <span>{'<div className="container"> '} </span>
-              <br />
-              <span>{'    <div className="item1">item1</div> '} </span>
-              <br />
-              <span>{'    <div className="item2">item2</div> '} </span>
-              <br />
-              <span>{'    <div className="item3">item3</div> '} </span>
-              <br />
-              <span>{'</div>'} </span>
-            </code>
-          </Pre>
-        </Explanation>
         <Message>
-          Flex properties that can be applied when developing are divided into parent container properties and child
-          item properties.
+          In order to implement css flex, a parent container and a child item are basically required. Flex properties
+          that can be applied when developing are divided into parent container properties and child item properties.
         </Message>
       </VizContainer>
+      <Explanation>
+        <Pre>
+          <code>
+            <span>{'<div className="container"> '} </span>
+            <br />
+            <span>{'    <div className="item1">item1</div> '} </span>
+            <br />
+            <span>{'    <div className="item2">item2</div> '} </span>
+            <br />
+            <span>{'    <div className="item3">item3</div> '} </span>
+            <br />
+            <span>{'</div>'} </span>
+          </code>
+        </Pre>
+      </Explanation>
 
       <VizContainer>
         <Title>Flex container attribute [display]</Title>
@@ -115,9 +112,18 @@ export function Prerequisite() {
             flexDirection: `${flexdirection}`,
           }}
         >
-          <div className="item">item1item1item1item1item1item1</div>
-          <div className="item">item2</div>
-          <div className="item">item3</div>
+          <div className="item" style={{ flex: '0 1 auto' }}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nulla eaque officiis officiis officiis
+              officiis officiis officiis
+            </p>
+          </div>
+          <div className="item" style={{ flex: '0 1 auto ' }}>
+            CCCCCC
+          </div>
+          <div className="item" style={{ flex: '0 1 auto ' }}>
+            DDDDDDDD
+          </div>
         </div>
       </VizContainer>
 
@@ -146,9 +152,18 @@ export function Prerequisite() {
             flexWrap: `${wrap}`,
           }}
         >
-          <div className="item">item1item1item1item1item1item1tem1tem1</div>
-          <div className="item">item2item2item2item2item2item2item2item2</div>
-          <div className="item">item3item3item3item3item3item3item3item3</div>
+          <div className="item" style={{ flex: '0 1 auto' }}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nulla eaque officiis officiis officiis
+              officiis officiis officiis
+            </p>
+          </div>
+          <div className="item" style={{ flex: '0 1 auto ' }}>
+            CCCCCC
+          </div>
+          <div className="item" style={{ flex: '0 1 auto ' }}>
+            DDDDDDDD
+          </div>
         </div>
       </VizContainer>
 
@@ -158,24 +173,24 @@ export function Prerequisite() {
           flex-flow is shortline command for writing
           <strong style={{ color: 'red' }}> flex-direction and flex-wrap</strong>
         </Message>
-        <Explanation>
-          <Pre>
-            <code>
-              <span>{'.container { '} </span>
-              <br />
-              <span>{'    flex-flow: row wrap; /* is equal to flex-direction: row; flex-wrap: wrap */ '} </span>
-              <br />
-              <span>
-                {
-                  '    flex-flow: column-reverse nowrap; /* is equal to flex-direction: column-reverse; flex-wrap: nowrap */ '
-                }
-              </span>
-              <br />
-              <span>{'}'} </span>
-            </code>
-          </Pre>
-        </Explanation>
       </VizContainer>
+      <Explanation>
+        <Pre>
+          <code>
+            <span>{'.container { '} </span>
+            <br />
+            <span>{'    flex-flow: row wrap; /* is equal to flex-direction: row; flex-wrap: wrap */ '} </span>
+            <br />
+            <span>
+              {
+                '    flex-flow: column-reverse nowrap; /* is equal to flex-direction: column-reverse; flex-wrap: nowrap */ '
+              }
+            </span>
+            <br />
+            <span>{'}'} </span>
+          </code>
+        </Pre>
+      </Explanation>
 
       <VizContainer>
         <Title>Alignment</Title>
@@ -252,20 +267,22 @@ export function Prerequisite() {
           <strong style={{ color: 'red' }}>Tip: </strong>
           Using justify-content:center and align-item:center to set content on the middle
         </Message>
-        <Explanation>
-          <Pre>
-            <code>
-              <span>{'.container { '} </span>
-              <br />
-              <span>{'  justify-content: center'} </span>
-              <br />
-              <span>{'  align-items: center'} </span>
-              <br />
-              <span>{'}'} </span>
-            </code>
-          </Pre>
-        </Explanation>
+      </VizContainer>
+      <Explanation>
+        <Pre>
+          <code>
+            <span>{'.container { '} </span>
+            <br />
+            <span>{'  justify-content: center'} </span>
+            <br />
+            <span>{'  align-items: center'} </span>
+            <br />
+            <span>{'}'} </span>
+          </code>
+        </Pre>
+      </Explanation>
 
+      <VizContainer>
         <Title>Flex container attribute: [align-content]</Title>
         <Message>
           Sorting multiple lines, This property determines the vertical axis alignment when the row of items is more
@@ -289,91 +306,67 @@ export function Prerequisite() {
           style={{
             display: 'flex',
             background: 'yellow',
-            padding: '0px',
             width: 'auto',
-            flexFlow: 'row wrap',
+            padding: '0px',
+            flexWrap: 'wrap',
             minHeight: '200px',
             alignContent: `${aligncontent}`,
           }}
         >
-          <div className="item">item1item1item1item1item1item1item1item1</div>
-          <div className="item">item2item2item2item2item2item2item2item2</div>
-          <div className="item">item3item3item3item3item3item3item3item3</div>
+          <div className="item" style={{ flex: '1 1 auto' }}>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nulla eaque officiis</p>
+          </div>
+          <div className="item" style={{ flex: '1 1 auto ' }}>
+            CCCCCC
+          </div>
+          <div className="item" style={{ flex: '1 1 auto ' }}>
+            DDDDDDDD
+          </div>
         </div>
       </VizContainer>
 
       <VizContainer>
         <Title>Flex item attribute: [flex]</Title>
         <Message>
-          flex has 3 sub-attributes: <strong style={{ color: 'red' }}>flex-grow, flex-shrink, flex-basis</strong>. The
-          <strong style={{ color: 'red' }}> flex-basis </strong> sets the default size for flex items (width when
-          flex-direction is row, height when flex-direction is column). The
-          <strong style={{ color: 'red' }}> flex-basis </strong>
-          can be percentage, pixel or em. The <strong style={{ color: 'red' }}> flex-grow</strong> contains numeric
-          values, and once a value greater than zero is set, the item changes to a flexible box, larger than its
-          original size, and fills the empty space. The <strong style={{ color: 'red' }}> flex-shrink</strong> contains
-          numeric values, and once a value greater than zero is set, the item turns into a flexible box and is smaller
-          than the flex-basis.
+          <>
+            <ul>flex-grow: 0 (size fix), 1 or bigger (size flexible grow)</ul>
+            <ul>flex-shrink: 0 (size fix), 1 or bigger (size flexible shrink)</ul>
+            <ul>flex-basis: absolute size of item box</ul>
+          </>
         </Message>
       </VizContainer>
 
       <VizContainer>
-        <Title>flex-grow</Title>
-        <Collapse>
-          <Panel header="option">
-            <Radio.Group onChange={e => setFlexgrow(e.target.value)} value={flexgrow}>
-              <Radio value="0">0</Radio>
-              <Radio value="1">1</Radio>
-            </Radio.Group>
-          </Panel>
-        </Collapse>
         <div
           className="container"
-          style={{
-            display: 'flex',
-            background: 'yellow',
-            padding: '0px',
-            width: 'auto',
-          }}
+          style={{ display: 'flex', background: 'yellow', width: 'auto', padding: '0px', flexWrap: 'wrap' }}
         >
-          <div className="item" style={{ flexGrow: `${flexgrow}` }}>
-            item1item1item1
+          <div className="item" style={{ flex: '1 1 20%' }}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nulla eaque officiis eligendi ullam hic
+              temporibus corrupti ducimus sunt! Aut quae rem nobis dolores facilis repudiandae qui, possimus rerum error
+              veritatis quidem blanditiis quia nesciunt? Fugit veritatis quaerat consectetur quam est, sed sint quae
+              vitae velit vel dolorem cumque illum.
+            </p>
           </div>
-          <div className="item" style={{ flexGrow: `${flexgrow}` }}>
-            item2item2item2
+          <div className="item" style={{ flex: '1 1 60%' }}>
+            BB
           </div>
-          <div className="item" style={{ flexGrow: `${flexgrow}` }}>
-            item3item3item3
+          <div className="item" style={{ flex: '1 1 20%' }}>
+            CCCCCC
+          </div>
+          <div className="item" style={{ flex: '1 1 auto' }}>
+            DDDDDDDD
           </div>
         </div>
+        <Message>setting flex: 1 1 20% / flex: 1 1 60% / flex: 1 1 20% / flex: 1 1 auto</Message>
       </VizContainer>
 
       <VizContainer>
-        <Title>flex-shrink</Title>
-        <Collapse>
-          <Panel header="option">
-            <Radio.Group onChange={e => setFlexshrink(e.target.value)} value={flexshrink}>
-              <Radio value="100%">100%</Radio>
-              <Radio value="10%">10%</Radio>
-            </Radio.Group>
-          </Panel>
-        </Collapse>
-        <div
-          className="container"
-          style={{
-            display: 'flex',
-            background: 'yellow',
-            padding: '0px',
-            width: 'auto',
-          }}
-        >
-          <div className="item" style={{ flexShrink: 0 }}>
-            item1item1item1
-          </div>
-          <div className="item" style={{}}>
-            item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2item2
-          </div>
-        </div>
+        <Title>CSS Grid</Title>
+        <Message>Grid layaout is same as flex: parent container and chidren items</Message>
+
+        <Title>Grid container attribute [display,grid-template-rows grid-template-columns]</Title>
       </VizContainer>
     </VizWrapper>
   )
