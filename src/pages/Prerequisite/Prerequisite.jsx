@@ -5,6 +5,7 @@ import { VizContainer, VizWrapper, Title, Message, Explanation, Pre, Images } fr
 import flex from '../../assets/flex.png'
 import inlineflex from '../../assets/inline-flex.png'
 import justify from '../../assets/justify-content.png'
+import area from '../../assets/area.png'
 
 const { Panel } = Collapse
 
@@ -15,6 +16,9 @@ export function Prerequisite() {
   const [justifycontent, setJustifycontent] = useState('flex-start')
   const [alignitem, setAlignitem] = useState('stretch')
   const [aligncontent, setAligncontent] = useState('stretch')
+  const [gridTemplateColumns, setGridTemplateColumns] = useState('1fr 2fr 1fr')
+  const [gap, setGap] = useState('10px 10px')
+
   useEffect(() => {
     d3.selectAll('.item').style('color', 'blue').style('border', '1px solid black').style('padding', '1px')
   }, [])
@@ -364,9 +368,333 @@ export function Prerequisite() {
 
       <VizContainer>
         <Title>CSS Grid</Title>
-        <Message>Grid layaout is same as flex: parent container and chidren items</Message>
+        <Message>
+          Grid layaout is same as flex: parent container and chidren items. But css-flex is a one-way layout system
+          (1-dimensional) grid is a two-way (horizontal-vertical) layout system (two-dimensional)
+        </Message>
+      </VizContainer>
+      <VizContainer>
+        <Title>Grid container attribute: [display]</Title>
+        <Message>Set display to grid that able to use grid container</Message>
+      </VizContainer>
+      <Explanation>
+        <Pre>
+          <code>
+            <span>{'<div className="container" style={{display:"grid"}}> '} </span>
+            <br />
+            <span>{'    <div className="item1">item1</div> '} </span>
+            <br />
+            <span>{'    <div className="item2">item2</div> '} </span>
+            <br />
+            <span>{'    <div className="item3">item3</div> '} </span>
+            <br />
+            <span>{'</div>'} </span>
+          </code>
+        </Pre>
+      </Explanation>
+      <VizContainer>
+        <Title>Grid container attribute: [grid-template]</Title>
+        <Message>grid template has grid-template-rows and grid-template-columns</Message>
+        <Collapse>
+          <Panel header="option">
+            <Radio.Group onChange={e => setGridTemplateColumns(e.target.value)} value={gridTemplateColumns}>
+              <Radio value="1fr 2fr 1fr">1fr 2fr 1fr</Radio>
+              <Radio value="repeat(3, 1fr)">repeat(3, 1fr)</Radio>
+              <Radio value="50px 50px auto">50px 50px auto</Radio>
+              <Radio value="10% 80% 10%">10% 80% 10%</Radio>
+            </Radio.Group>
+          </Panel>
+        </Collapse>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: `${gridTemplateColumns}`,
+          }}
+        >
+          <div className="item">A</div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+          <div className="item">F</div>
+          <div className="item">G</div>
+          <div className="item">H</div>
+          <div className="item">I</div>
+          <div className="item">J</div>
+        </div>
+        <Message>Fr is fraction, which divides the size of the track according to the number ratio.</Message>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateRows: 'repeat(3, minmax(100px, auto))',
+          }}
+        >
+          <div className="item">A</div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+          <div className="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nulla eaque officiis eligendi ullam hic
+            temporibus corrupti ducimus sunt! Aut quae rem nobis dolores facilis repudiandae qui, possimus rerum error
+            veritatis quidem blanditiis quia nesciunt? Fugit veritatis quaerat consectetur quam est, sed sint quae vitae
+            velit vel dolorem cumque illum.
+          </div>
+          <div className="item">G</div>
+          <div className="item">H</div>
+          <div className="item">I</div>
+          <div className="item">J</div>
+        </div>
+        <Message>
+          Following exmaple has gridTemplateColumns: repeat(3, 1fr), gridTemplateRows: repeat(3, minmax(100px, auto)).
+          minmax can set (min, max) of column or row.
+        </Message>
+        <Message>auto-fill vs auto-fit</Message>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(20%,auto))',
+          }}
+        >
+          <div className="item">A</div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+        </div>
+        <Message> gridTemplateColumns: repeat(auto-fill, minmax(20%,auto)),</Message>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(20%,auto))',
+          }}
+        >
+          <div className="item">A</div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+        </div>
+        <Message> gridTemplateColumns: repeat(auto-fit, minmax(20%,auto)),</Message>
+      </VizContainer>
 
-        <Title>Grid container attribute [display,grid-template-rows grid-template-columns]</Title>
+      <VizContainer>
+        <Title>Grid container attribute: [gap]</Title>
+        <Message>gap has row-gap and column-gap</Message>
+        <Collapse>
+          <Panel header="option">
+            <Radio.Group onChange={e => setGap(e.target.value)} value={gap}>
+              <Radio value="10px 10px">10px 10px</Radio>
+              <Radio value="1rem 2rem">1rem 2rem</Radio>
+              <Radio value="10% 15%">10% 15%</Radio>
+              <Radio value="0">0</Radio>
+            </Radio.Group>
+          </Panel>
+        </Collapse>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateRows: 'repeat(3, minmax(100px, auto))',
+            gap: `${gap}`,
+          }}
+        >
+          <div className="item">A</div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+          <div className="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nulla eaque officiis eligendi ullam hic
+            temporibus corrupti ducimus sunt! Aut quae rem nobis dolores facilis repudiandae qui, possimus rerum error
+            veritatis quidem blanditiis quia nesciunt? Fugit veritatis quaerat consectetur quam est, sed sint quae vitae
+            velit vel dolorem cumque illum.
+          </div>
+          <div className="item">G</div>
+          <div className="item">H</div>
+          <div className="item">I</div>
+          <div className="item">J</div>
+        </div>
+      </VizContainer>
+
+      <VizContainer>
+        <Title>Grid container attribute: [grid-auto] </Title>
+        <Message>
+          grid-auto has grid-auto-rows and grid-auto-templates. we can use grid-auto when we don&apos;t know how many
+          rows or columns are needed. So with grid-auto, we don&apos;t need repeat function.
+        </Message>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridAutoRows: 'minmax(100px, auto)',
+          }}
+        >
+          <div className="item">A</div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+          <div className="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nulla eaque officiis eligendi ullam hic
+            temporibus corrupti ducimus sunt! Aut quae rem nobis dolores facilis repudiandae qui, possimus rerum error
+            veritatis quidem blanditiis quia nesciunt? Fugit veritatis quaerat consectetur quam est, sed sint quae vitae
+            velit vel dolorem cumque illum.
+          </div>
+          <div className="item">G</div>
+          <div className="item">H</div>
+          <div className="item">I</div>
+          <div className="item">J</div>
+        </div>
+      </VizContainer>
+
+      <VizContainer>
+        <Title>Grid item attribute: [grid-area] </Title>
+        <Message>Setting grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end </Message>
+        <Images src={area} style={{ maxHeight: 'none' }} />
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '3px',
+          }}
+        >
+          <div className="item" style={{ gridArea: '1/1/2/3' }}>
+            A
+          </div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+          <div className="item">E</div>
+          <div className="item">F</div>
+          <div className="item">G</div>
+          <div className="item">H</div>
+          <div className="item">I</div>
+        </div>
+        <Message>gridArea: 1/1/2/3. It means row from 1 to 2, columns from 1 to 3</Message>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '3px',
+          }}
+        >
+          <div className="item" style={{ gridArea: '1/1/span 3/ span 2' }}>
+            A
+          </div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item">D</div>
+          <div className="item">E</div>
+          <div className="item" style={{ gridArea: '4/2/span 2/ span 2' }}>
+            F
+          </div>
+          <div className="item">G</div>
+          <div className="item">H</div>
+          <div className="item">I</div>
+        </div>
+        <Message>
+          gridArea: 1 / 1 / span 3 / span 2 (It means, row from 1 goes 3 blocks and columns from 1 goes 2 blocks )and
+          gridArea: 4 / 2 / span 2 / span 2.(It means, row from 4 goes 2 blocks and columns from 2 goes 2 blocks)
+        </Message>
+
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridAutoRows: 'minmax(100px,auto)',
+            gap: '3px',
+          }}
+        >
+          <div className="item" style={{ gridArea: '1/1/3/4' }}>
+            A
+          </div>
+          <div className="item">B</div>
+          <div className="item">C</div>
+          <div className="item" style={{ gridArea: '1/3/4/4', backgroundColor: 'rgba( 255,160,122,0.5 )' }}>
+            D
+          </div>
+        </div>
+        <Message>gridArea: 1 / 1 / 3 / 4 and gridArea: 1/3/4/4 with rgba( 255,160,122,0.5 )</Message>
+        <div
+          className="container"
+          style={{
+            background: 'yellow',
+            width: 'auto',
+            padding: '0px',
+            display: 'grid',
+            gridTemplateColumns: '50px',
+            gridAutoColumns: '1fr 2fr',
+            gap: '3px',
+          }}
+        >
+          <div className="item" style={{ gridColumn: 2 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 3 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 4 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 5 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 6 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 7 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 8 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 9 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 10 }}>
+            A
+          </div>
+          <div className="item" style={{ gridColumn: 11 }}>
+            A
+          </div>
+        </div>
+        <Message>gridColumn: 2 (same as gridColumn: 2 / auto)</Message>
+      </VizContainer>
+      <VizContainer>
+        <Title>Grid item attribute: [grid-template-areas] </Title>
+        <Message>Define area with name</Message>
       </VizContainer>
     </VizWrapper>
   )
