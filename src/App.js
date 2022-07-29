@@ -15,7 +15,6 @@ import { InteractiveChart } from './pages/InteractiveChart/InteractiveChart'
 import { DataUnderstanding } from './pages/DataUnderstanding/DataUnderstanding'
 import { Seperator, GlobalStyle } from './ui-lib/lib'
 import { Parsingcsv } from './pages/ParsingCSV/ParsingCSV'
-import { Scatterplot } from './pages/Scatterplot/Scatterplot'
 import { LoadingView } from './helper/LoadingView'
 import { Prerequisite } from './pages/Prerequisite/Prerequisite'
 
@@ -39,7 +38,6 @@ function App() {
               <Router exact path="/about" element={<AboutPage />} />
               <Router exact path="/profile" element={<ProfilePage />} />
               <Router exact path="/parsingcsv" element={<Parsingcsv />} />
-              <Router exact path="/scatterplot" element={<Scatterplot />} />
               <Router exact path="/Prerequisite" element={<Prerequisite />} />
               <Router path="*" element={<ErrorPage />} />
             </Routes>

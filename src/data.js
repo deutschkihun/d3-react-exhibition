@@ -37,10 +37,6 @@ const categories = [
     id: 9,
     name: 'Parsing CSV',
   },
-  {
-    id: 10,
-    name: 'Scatterplot',
-  },
 ]
 
 const level = [
