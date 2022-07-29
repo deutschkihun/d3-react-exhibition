@@ -45,23 +45,23 @@ const categories = [
 
 const level = [
   {
-    _id: 0,
+    id: 0,
     name: 'All',
   },
   {
-    _id: 1,
+    id: 1,
     name: 'Newbie',
   },
   {
-    _id: 2,
+    id: 2,
     name: 'Beginner',
   },
   {
-    _id: 3,
+    id: 3,
     name: 'Intermediate',
   },
   {
-    _id: 4,
+    id: 4,
     name: 'Advance',
   },
 ]

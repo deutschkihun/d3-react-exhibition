@@ -12,6 +12,7 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    'no-underscore-dangle': ['off'],
     'global-require': 0,
     'no-nested-ternary': 0,
     'no-alert': 0,

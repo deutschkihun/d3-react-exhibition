@@ -20,7 +20,7 @@ export function RadioBox({ list, handleFilters }) {
 
   return (
     <Collapse defaultActiveKey={['0']}>
-      <Panel header="Level" key="1">
+      <Panel header="Level" key="radio">
         <Radio.Group onChange={handleChange} value={Value}>
           {renderRadioBox()}
         </Radio.Group>
